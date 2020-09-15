@@ -1,0 +1,15 @@
+$ColorPrimary: #e5e5e5;
+$ColorPrimary100: #b4b1b1;
+$ColorPrimary200: #333333;
+$ColorSecondary: #ff46a7;
+$ColorSecondary100: #ff0098;
+$ColorSecondary200: #920f68;
+
+$colors: ("grey": $ColorPrimary, "pink": $ColorSecondary);
+
+$widthMobile: 320px;
+$widthTablet: 768px;
+$widthDesktop: 1440px;
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
