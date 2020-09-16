@@ -1,0 +1,25 @@
+.slider-pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.slider-pagination__button {
+  box-sizing: border-box;
+  width: 24px;
+  height: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 4px 0;
+  background-color: $ColorPrimary100;
+  background-clip: content-box;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &--active,
+  &:hover,
+  &:focus {
+    background-color: $ColorSecondary;
+    outline: none;
+  }
+}

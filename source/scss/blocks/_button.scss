@@ -1,0 +1,31 @@
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 270px;
+  max-width: 345px;
+  min-height: 65px;
+  padding: 22px 15px;
+  font-weight: $fontSemiBold;
+  font-size: $fontTextButton;
+  line-height: $lineHeightButton;
+  vertical-align: middle;
+  text-align: center;
+  color: $ColorWhite;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background: linear-gradient(270deg, $ColorSecondary100, $ColorSecondary400) $ColorSecondary100;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 10px 15px rgba($ColorSecondary, 0.3);
+  cursor: pointer;
+  transition:
+    box-shadow 0.3s,
+    transform 0.3s;
+
+  &:hover,
+  &:focus {
+    box-shadow: 2px 12px 15px rgba($ColorSecondary, 0.4);
+    outline: none;
+    transform: translate(-2px, -2px);
+  }
+}

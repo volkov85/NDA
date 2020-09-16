@@ -1,0 +1,103 @@
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
+.header__logo {
+  margin-right: auto;
+
+  img {
+    display: block;
+    width: 116px;
+  }
+}
+
+.header__menu {
+  margin-top: 15px;
+  margin-right: 60px;
+  margin-left: 60px;
+}
+
+.header__menu-list {
+  @extend %list-reset;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__menu-item {
+  margin-right: 30px;
+  margin-bottom: 5px;
+  margin-left: 30px;
+}
+
+.header__menu-link {
+  position: relative;
+  font-weight: $fontSemiBold;
+  font-size: $fontTextNav;
+  line-height: $lineHeightNav;
+  color: inherit;
+  text-transform: uppercase;
+  transition: color 0.3s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $ColorSecondary;
+    transition:
+      color 0.3s,
+      width 0.3s;
+  }
+
+  &--active {
+    &::before {
+      width: 24px;
+    }
+  }
+
+  &--active,
+  &:hover,
+  &:focus {
+    color: $ColorSecondary;
+    outline: none;
+  }
+}
+
+.header__lang {
+  display: flex;
+  margin-top: 17px;
+}
+
+.header__lang-item {
+  margin-right: 15px;
+  font-size: $fontTextNav;
+  line-height: $lineHeightNav;
+  color: $ColorPrimary300;
+  text-transform: capitalize;
+  transition: color 0.3s;
+  cursor: pointer;
+
+  &--active {
+    text-decoration: underline;
+  }
+
+  &--active,
+  &:hover,
+  &:focus {
+    color: $ColorSecondary300;
+    outline: none;
+  }
+}

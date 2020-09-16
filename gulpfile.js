@@ -66,10 +66,7 @@ exports.js = js;
 
 // Сжатие файлов изображений
 exports.img = () => {
-  return src([
-    `source/img/*.{png,jpg,svg}`,
-    `!source/img/icon-*.svg`
-  ])
+  return src(`source/img/*.{png,jpg,svg}`)
     .pipe(imagemin([
       imageminPngquant({
         speed: 1,

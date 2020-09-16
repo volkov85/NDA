@@ -22,8 +22,16 @@ $lineHeightRegular: 19px;
 $lineHeightMedium: 20px;
 $lineHeightLarge: 22px;
 
+$lineHeightH1: 65px;
+$lineHeightH2: 40px;
+
+$lineHeightNav: 14px;
+$lineHeightButton: 21px;
+
+$fontLight: 300;
 $fontRegular: 400;
 $fontMedium: 500;
+$fontSemiBold: 600;
 $fontBold: 700;
 $fontExtraBold: 800;
 $fontBlack: 900;
@@ -33,4 +41,14 @@ $fontColorMaintext: #9e9d9d;
 $fontColorWhite: #ffffff;
 $fontColorGrey: #e5e5e5;
 $fontColorDarkGrey: #707070;
+$fontColorLightGrey: #c4c4c4;
 $fontColorPink: #ff46a7;
+
+// Подключаем шрифт Gilroy
+@include font-face("Gilroy", "Light", $fontLight);
+@include font-face("Gilroy", "Regular");
+@include font-face("Gilroy", "Medium", $fontMedium);
+@include font-face("Gilroy", "SemiBold", $fontSemiBold);
+@include font-face("Gilroy", "Bold", $fontBold);
+@include font-face("Gilroy", "ExtraBold", $fontExtraBold);
+@include font-face("Gilroy", "Black", $fontBlack);

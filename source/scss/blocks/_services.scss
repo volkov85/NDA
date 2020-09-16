@@ -1,0 +1,90 @@
+.services {
+  margin-top: 120px;
+  margin-bottom: 100px;
+}
+
+.services__title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 35px;
+  font-weight: $fontBold;
+  font-size: $fontHeadersH2;
+  line-height: 1.2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 0;
+    width: 124px;
+    height: 4px;
+    background-color: $ColorSecondary;
+  }
+}
+
+.services__slider {
+  display: grid;
+  grid-template-rows: repeat(2, 240px);
+  grid-template-columns: repeat(3, 372px);
+  gap: 28px;
+  margin-bottom: 27px;
+}
+
+.services__slide {
+  position: relative;
+  box-sizing: border-box;
+  width: 372px;
+  min-height: 240px;
+  padding: 57px 20px 30px 30px;
+  color: $ColorPrimary300;
+  background: linear-gradient(57deg, $ColorPrimary400, currentColor 257%);
+  border-radius: 6px;
+  box-shadow: 0 10px 10px rgba($ColorPrimary300, 0.25);
+  transition:
+    color 0.3s,
+    box-shadow 0.3s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    width: 38px;
+    height: 41px;
+    background: url("../img/services_card-icon.svg") center / contain no-repeat;
+  }
+
+  &--active,
+  &:hover,
+  &:focus {
+    color: $ColorSecondary;
+    background: linear-gradient(54deg, $ColorPrimary400, currentColor 133%);
+    outline: none;
+    box-shadow: 0 5px 10px rgba($ColorSecondary, 0.25);
+
+    .services__slide-title {
+      color: $ColorPrimary;
+    }
+  }
+}
+
+.services__slide-title {
+  margin: 0;
+  margin-bottom: 35px;
+  padding-right: 40px;
+  font-weight: $fontBold;
+  font-size: $fontHeadersH6;
+  line-height: $lineHeightRegular;
+  color: $ColorSecondary;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.services__slide-text {
+  margin: 0;
+  color: $ColorPrimary;
+
+  span {
+    font-weight: $fontLight;
+  }
+}

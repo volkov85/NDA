@@ -188,9 +188,6 @@
 
     "scss/selector-no-redundant-nesting-selector": true,
 
-    "scss/no-duplicate-dollar-variables": [true, {
-      "ignoreInside": ["at-rule"]
-    }],
     "scss/no-duplicate-mixins": true
   }
 }

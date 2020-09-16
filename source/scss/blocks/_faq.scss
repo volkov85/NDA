@@ -1,0 +1,100 @@
+.faq__wrapper {
+  box-sizing: border-box;
+  width: 542px;
+  padding: 122px 15px 73px 58px;
+}
+
+.faq__title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 18px;
+  font-weight: $fontBold;
+  font-size: $fontHeadersH2;
+  line-height: 1.2;
+  color: $ColorPrimary300;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 0;
+    width: 124px;
+    height: 4px;
+    background-color: $ColorSecondary;
+  }
+}
+
+.faq__text {
+  margin: 0;
+  margin-bottom: 9px;
+  font-weight: $fontMedium;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $ColorPrimary300;
+}
+
+.faq__qa-list {
+  display: flex;
+  flex-direction: column;
+  width: 469px;
+  margin-bottom: 25px;
+}
+
+.faq__qa-question {
+  position: relative;
+  padding: 26px 30px 28px;
+  font-weight: $fontMedium;
+  font-size: $fontTextMedium;
+  line-height: $lineHeightButton;
+  color: inherit;
+  transition: color 0.3s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 32px;
+    left: 0;
+    width: 11px;
+    height: 12px;
+    background-color: $ColorSecondary;
+    border-radius: 2px;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $ColorSecondary;
+  }
+
+  &:hover,
+  &:focus {
+    color: $ColorSecondary;
+    outline: none;
+  }
+}
+
+.faq__link-all {
+  position: relative;
+  font-weight: $fontMedium;
+  font-size: $fontTextLarge;
+  line-height: 1.2;
+  color: $ColorSecondary;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $ColorSecondary;
+    transition: width 0.3s;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &::before {
+      width: 0;
+    }
+  }
+}
