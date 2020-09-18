@@ -1,68 +1,55 @@
+.hero {
+  .container {
+    position: relative;
+  }
+}
+
 .hero__wrapper {
   position: relative;
-  padding-top: 105px;
+  padding-top: 70px;
 }
 
 .hero__slide {
   position: relative;
   display: flex;
-  justify-content: space-evently;
+  justify-content: space-between;
   align-items: center;
-
-  @media (min-height: 755px) {
-    justify-content: space-between;
-  }
 }
 
 .hero__slide-content {
   width: 430px;
-  margin-top: 50px;
+  margin-top: 23px;
 }
 
 .hero__slide-title {
   margin: 0;
-  margin-bottom: 25px;
+  margin-bottom: 27px;
   font-weight: $fontBold;
-  font-size: 5vh;
-  line-height: calc(5vh * 1.75);
+  font-size: $fontHeadersH1;
+  line-height: $lineHeightH1;
   text-transform: uppercase;
-
-  @media (min-height: 755px) {
-    font-size: $fontHeadersH1;
-    line-height: $lineHeightH1;
-  }
 }
 
 .hero__slide-text {
   width: 345px;
   margin: 0;
-  margin-bottom: 35px;
   font-weight: $fontMedium;
   font-size: $fontHeadersH2;
   line-height: $lineHeightH2;
 }
 
 .hero__slide-image {
-  margin-top: 27px;
-  margin-right: -35px;
+  margin-right: -20px;
 
   img {
     display: block;
-    width: auto;
-    height: calc(100vh - 105px);
-    max-height: 623px;
-
-    @media (min-height: 755px) {
-      width: 655px;
-      height: auto;
-    }
   }
 }
 
 .hero__slide-links {
   position: absolute;
-  right: 17px;
-  bottom: 53px;
+  right: 12px;
+  bottom: 40px;
   width: 400px;
   display: flex;
   justify-content: flex-end;
@@ -90,7 +77,8 @@
 .hero__slider-control {
   position: absolute;
   right: 15px;
-  bottom: 128px;
+  bottom: 107px;
+  z-index: 1;
   display: flex;
   flex-direction: column;
 }
@@ -123,24 +111,8 @@
 .hero__social {
   position: absolute;
   top: 107px;
-  right: -5px;
-  z-index: 1;
-  display: flex;
-  flex-direction: column-reverse;
-
-  span {
-    margin-top: 55px;
-    margin-left: -18px;
-    font-weight: $fontBold;
-    font-size: $fontTextNav;
-    line-height: $lineHeightNav;
-    color: $ColorSecondary;
-    text-transform: capitalize;
-    transform: rotate(-90deg);
-  }
-}
-
-.hero__social-links {
+  right: 30px;
+  z-index: 2;
   display: flex;
   flex-direction: column;
 }

@@ -6,7 +6,7 @@
 .reviews__title {
   position: relative;
   margin: 0;
-  margin-bottom: 45px;
+  margin-bottom: 31px;
   font-weight: $fontBold;
   font-size: $fontHeadersH2;
   line-height: 1.2;
@@ -24,7 +24,7 @@
 
 .reviews__list {
   display: grid;
-  grid-template-rows: repeat(2, 260px);
+  grid-template-rows: repeat(2, 312px);
   grid-template-columns: 285px 297px 302px 285px;
 }
 
@@ -33,7 +33,8 @@
   display: flex;
   flex-direction: column;
   width: 285px;
-  min-height: 260px;
+  min-height: 312px;
+  background-color: $ColorPrimary;
   transition: transform 0.3s;
 
   &::before {
@@ -63,9 +64,8 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus-within {
     z-index: 1;
-    outline: none;
     transform: scale(1.05);
 
     &::before {
@@ -80,7 +80,8 @@
       }
     }
 
-    .reviews__card-text {
+    .reviews__card-text,
+    .reviews__card-link {
       color: $ColorPrimary;
     }
   }
@@ -90,14 +91,14 @@
   position: relative;
   z-index: 1;
   box-sizing: border-box;
-  min-height: 130px;
-  padding: 25px 30px 15px 15px;
+  min-height: 156px;
+  padding: 24px 13px 25px 15px;
 }
 
 .reviews__card-title {
   position: relative;
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   font-weight: $fontBold;
   font-size: $fontTextSmall;
   line-height: $lineHeightSmall;
@@ -108,7 +109,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: -5px;
+    top: -6px;
     left: 0;
     width: 24px;
     height: 2px;
@@ -124,6 +125,22 @@
   line-height: $lineHeightSmall;
   color: $ColorPrimary100;
   transition: color 0.3s;
+}
+
+.reviews__card-link {
+  position: absolute;
+  bottom: 7px;
+  left: 15px;
+  font-weight: $fontMedium;
+  font-size: $fontTextTiny;
+  line-height: $fontTextMedium;
+  color: $ColorSecondary;
+
+  &:hover,
+  &:focus {
+    color: $ColorPrimary;
+    outline: none;
+  }
 }
 
 .reviews__card-image {

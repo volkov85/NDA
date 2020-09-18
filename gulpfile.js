@@ -64,6 +64,27 @@ function js() {
 }
 exports.js = js;
 
+// Копирование файлов библиотек *.css
+function csslibs() {
+  return src([
+    `node_modules/swiper/swiper-bundle.min.{css,css.map}`,
+    `node_modules/fullpage.js/dist/fullpage.min.{css,css.map}`
+  ])
+    .pipe(dest(`build/css/vendors`));
+}
+exports.csslibs = csslibs;
+
+// Копирование файлов библиотек *.js
+function jslibs() {
+  return src([
+    `node_modules/swiper/swiper-bundle.min.{js,js.map}`,
+    `node_modules/fullpage.js/dist/fullpage.min.{js,js.map}`,
+    `node_modules/fullpage.js/vendors/scrolloverflow.min.{js,js.map}`
+  ])
+    .pipe(dest(`build/js/vendors`));
+}
+exports.jslibs = jslibs;
+
 // Сжатие файлов изображений
 exports.img = () => {
   return src(`source/img/*.{png,jpg,svg}`)
@@ -92,7 +113,7 @@ function copy() {
   return src([
     `source/fonts/**/*.{woff,woff2}`,
     `source/img/**`,
-    `!source/img/icon-*.svg`,
+    `source/img/icon-*.svg`,
     `source/*.ico`
   ], {
     base: `source`
@@ -127,12 +148,12 @@ exports.refresh = refresh;
 // Создание сборки проекта
 exports.build = series(
   clean,
-  parallel(copy, css, js, html)
+  parallel(copy, css, js, csslibs, jslibs, html)
 );
 
 // Создание сборки проекта и запуск сервера Browsersync
 exports.start = series(
   clean,
-  parallel(copy, css, js, html),
+  parallel(copy, css, js, csslibs, jslibs, html),
   server
 );

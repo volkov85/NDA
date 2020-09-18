@@ -1,4 +1,6 @@
 .partnership {
+  display: flex;
+  align-items: center;
   background-image: linear-gradient(57deg, $ColorPrimary400, $ColorPrimary300 257%);
 }
 
@@ -6,17 +8,27 @@
   box-sizing: border-box;
   width: 685px;
   margin-left: auto;
-  padding: 50px 85px 73px 15px;
+  padding: 93px 85px 52px 15px;
 }
 
 .partnership__title {
+  position: relative;
   display: block;
-  margin-bottom: 20px;
-  font-weight: $fontSemiBold;
+  margin-bottom: 45px;
+  font-weight: $fontBold;
   font-size: $fontHeadersH2;
-  line-height: $lineHeightH2;
+  line-height: 1.2;
   color: $ColorSecondary300;
-  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -24px;
+    left: 0;
+    width: 124px;
+    height: 4px;
+    background-color: $ColorWhite;
+  }
 }
 
 .partnership__text {
@@ -33,26 +45,27 @@
   width: 572px;
 }
 
-.partnership__form-steps {
+.partnership__form-variants {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 55px;
+  margin-bottom: 52px;
 }
 
-.partnership__form-step {
+.partnership__form-variant {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 170px;
+
+  &:not(:last-child) {
+    margin-right: 115px;
+  }
 
   &--active {
-    .partnership__form-step-title {
-      color: $ColorWhite;
+    .partnership__form-variant-title {
+      color: $ColorSecondary;
     }
 
-    .partnership__form-step-desc {
-      font-weight: $fontBold;
-      color: $ColorSecondary300;
+    .partnership__form-variant-desc {
+      color: $fontColorLightGrey;
 
       &::before {
         width: 100%;
@@ -61,23 +74,23 @@
   }
 }
 
-.partnership__form-step-title {
+.partnership__form-variant-title {
   margin: 0;
-  margin-bottom: 12px;
-  font-weight: $fontMedium;
-  font-size: $fontTextNav;
-  line-height: $lineHeightNav;
+  margin-bottom: 11px;
+  font-weight: $fontSemiBold;
+  font-size: $fontTextMedium;
+  line-height: $lineHeightButton;
   color: $ColorPrimary300;
   text-transform: uppercase;
   transition: color 0.3s;
 }
 
-.partnership__form-step-desc {
+.partnership__form-variant-desc {
   position: relative;
   margin: 0;
   font-weight: $fontMedium;
-  font-size: $fontTextSmall;
-  line-height: $lineHeightSmall;
+  font-size: $fontTextNav;
+  line-height: $lineHeightNav;
   color: $ColorPrimary300;
   text-transform: uppercase;
   transition: color 0.3s;
@@ -89,28 +102,37 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: $ColorSecondary300;
+    background-color: $ColorPrimary300;
     border-radius: 1px;
     transition: width 0.3s;
   }
 }
 
 .partnership__form-stage {
+  display: none;
+
+  &--active {
+    display: block;
+  }
+}
+
+.partnership__form-fields {
   display: grid;
-  grid-template-rows: repeat(3, 54px);
   grid-template-columns: repeat(2, 270px);
-  gap: 25px 32px;
-  margin-bottom: 35px;
+  gap: 36px 32px;
+  margin-bottom: 16px;
 }
 
 .partnership__form-field {
   position: relative;
+  min-height: 54px;
   font-weight: $fontMedium;
   font-size: $fontTextSmall;
   line-height: $lineHeightSmall;
   color: $ColorWhite;
 
-  input {
+  input,
+  textarea {
     box-sizing: border-box;
     width: 100%;
     padding: 17px 15px;
@@ -141,6 +163,10 @@
     }
   }
 
+  textarea {
+    height: 110px;
+  }
+
   span {
     position: absolute;
     top: 17px;
@@ -152,12 +178,99 @@
     pointer-events: none;
     user-select: none;
   }
+
+  &--wide {
+    grid-column: 1 / 3;
+  }
+}
+
+.partnership__form-row {
+  margin-bottom: 3px;
+
+  p {
+    margin: 0;
+    margin-bottom: 13px;
+    font-weight: $fontMedium;
+    font-size: $fontTextSmall;
+    line-height: $lineHeightNav_Footer;
+    color: $ColorSecondary;
+  }
+}
+
+.partnership__form-checkbox-wrapper {
+  display: flex;
+}
+
+.partnership__form-checkbox {
+  position: relative;
+  display: inline-block;
+  padding-left: 26px;
+  font-weight: $fontMedium;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightSmall;
+  color: $ColorWhite;
+  transition: color 0.3s;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: 36px;
+  }
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 18px;
+    height: 18px;
+    opacity: 0;
+    cursor: pointer;
+
+    &:checked + span {
+      &::after {
+        transform: none;
+      }
+    }
+  }
+
+  span {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      width: 18px;
+      height: 18px;
+      border: 1px solid $ColorWhite;
+      border-radius: 5px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 9px;
+      height: 9px;
+      background: url("../img/icon-check.svg") center / contain no-repeat;
+      transform: scale(0);
+      transition: transform 0.3s;
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+    color: $ColorPrimary100;
+  }
 }
 
 .partnership__form-privacy {
   position: relative;
   display: inline-block;
-  margin-bottom: 63px;
+  margin-top: 25px;
+  margin-bottom: 30px;
   padding-left: 32px;
   font-weight: $fontMedium;
   font-size: $fontTextSmall;
@@ -201,10 +314,9 @@
       position: absolute;
       top: 5px;
       left: 5px;
-      width: 8px;
-      height: 8px;
-      background-color: $ColorSecondary;
-      border-radius: 2px;
+      width: 9px;
+      height: 9px;
+      background: url("../img/icon-check.svg") center / contain no-repeat;
       transform: scale(0);
       transition: transform 0.3s;
     }
@@ -213,5 +325,37 @@
   &:hover,
   &:focus-within {
     color: $ColorPrimary100;
+  }
+}
+
+.partnership__form-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 470px;
+  margin-top: -13px;
+}
+
+.partnership__form-back {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0;
+  font-weight: $fontSemiBold;
+  font-size: $fontTextButton;
+  line-height: $lineHeightButton;
+  vertical-align: middle;
+  text-align: center;
+  color: $ColorWhite;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background: none;
+  border: none;
+  transition: color 0.3s;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $ColorPrimary100;
+    outline: none;
   }
 }

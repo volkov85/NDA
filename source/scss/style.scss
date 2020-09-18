@@ -8,7 +8,7 @@
 @import "misc/fonts";
 
 // Подключаем шаблонные и вспомогательные классы
-@import "misc/extends", "blocks/visually-hidden", "blocks/container", "blocks/columns";
+@import "misc/extends", "blocks/visually-hidden", "blocks/container", "blocks/columns", "blocks/overlay";
 
 // Подключаем основные стили
 @import "misc/base", "blocks/page", "blocks/button", "blocks/slider-pagination";
@@ -33,3 +33,9 @@
 
 // Подключаем стили блока FAQ
 @import "blocks/faq";
+
+// Подключаем стили всплывающих окон
+@import "blocks/popup", "blocks/qa-answer", "blocks/partner";
+
+// Подключаем стили блока footer
+@import "blocks/footer";

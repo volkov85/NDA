@@ -45,5 +45,9 @@
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.1",
     "scss-resets": "^0.5.2"
+  },
+  "dependencies": {
+    "fullpage.js": "^3.0.9",
+    "swiper": "^6.2.0"
   }
 }

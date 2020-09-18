@@ -1,6 +1,6 @@
 .columns {
   display: grid;
   grid-template-columns: calc(50% + 85px) 1fr;
-  margin-top: 87px;
+  height: 100%;
   background-color: $ColorWhite;
 }

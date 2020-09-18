@@ -1,0 +1,37 @@
+.qa-answer {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 45px 143px 52px 45px;
+}
+
+.qa-answer__title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 32px;
+  padding-left: 30px;
+  font-weight: $fontMedium;
+  font-size: $fontHeadersPopup;
+  line-height: 1.2;
+  color: $ColorSecondary;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 11px;
+    height: 12px;
+    background-color: $ColorSecondary;
+    border-radius: 2px;
+  }
+}
+
+.qa-answer__text {
+  margin: 0;
+  margin-bottom: auto;
+  font-weight: $fontMedium;
+  font-size: $fontTextMedium;
+  line-height: $lineHeightPopup;
+}

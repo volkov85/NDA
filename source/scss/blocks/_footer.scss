@@ -1,0 +1,139 @@
+.footer {
+  background-color: $ColorPrimary200;
+  padding: 36px 0;
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 33px;
+  border-bottom: 1px solid $ColorPrimary300;
+}
+
+.footer__logo span {
+  display: inline-block;
+  font-weight: $fontSemiBold;
+  font-size: $fontTextNav_Footer;
+  color: $fontColorWhite;
+  width: 100px;
+  margin: auto 33px;
+}
+
+.footer__logo {
+  display: flex;
+  min-height: 60px;
+}
+
+.footer__menu {
+  margin: auto 0;
+}
+
+.footer__menu-list {
+  @extend %list-reset;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__menu-item {
+  margin: 0 30px 5px 30px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.footer__menu-link {
+  font-weight: $fontRegular;
+  font-size: $fontTextNav_Footer;
+  line-height: $lineHeightNav_Footer;
+  color: $fontColorGrey;
+  transition: color 0.3s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $ColorSecondary;
+    transition:
+      color 0.3s,
+      width 0.3s;
+  }
+
+  &--active {
+    &::before {
+      width: 24px;
+    }
+  }
+
+  &--active,
+  &:hover,
+  &:focus {
+    color: $ColorSecondary;
+    outline: none;
+  }
+}
+
+.footer__middle {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 31px;
+  padding-top: 24px;
+}
+
+.footer__social {
+  display: flex;
+  justify-content: space-between;
+  width: 170px;
+}
+
+.footer__soial-link {
+  width: 25px;
+  height: 25px;
+  background: center / contain no-repeat;
+
+  @each $icon in fb, ig, vk, yt {
+    &--#{$icon} {
+      background-image: url("../img/icon-social-#{$icon}.svg");
+    }
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    filter: grayscale(1) brightness(0.8);
+  }
+}
+
+.footer__link-ask {
+  color: $fontColorPink;
+  font-size: $fontTextNav_Footer;
+  line-height: $lineHeightNav_Footer;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    right: 120px;
+    width: 244px;
+    height: 1px;
+    background-color: $ColorSecondary;
+  }
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__bottom-link,
+.footer__bottom-copyright {
+  color: $fontColorWhite;
+  font-size: $fontTextNav_Footer;
+  line-height: $lineHeightNav_Footer;
+  font-weight: $fontRegular;
+  margin: 0;
+}
