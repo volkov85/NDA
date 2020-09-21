@@ -7,6 +7,7 @@
 .partnership__wrapper {
   box-sizing: border-box;
   width: 685px;
+  min-height: 810px;
   margin-left: auto;
   padding: 93px 85px 52px 15px;
 }
@@ -139,14 +140,17 @@
     font: inherit;
     color: inherit;
     background: none;
-    border: 1px solid currentColor;
+    border: 1px solid $ColorWhite;
     border-radius: 10px;
-    transition: color 0.3s;
+    transition:
+      color 0.3s,
+      border-color 0.3s;
 
     &.filled,
     &:hover,
     &:focus {
-      color: $ColorSecondary;
+      color: $ColorWhite;
+      border-color: $ColorSecondary;
 
       + span {
         color: $ColorSecondary;
@@ -337,9 +341,11 @@
 }
 
 .partnership__form-back {
+  position: relative;
   display: inline-block;
   box-sizing: border-box;
   padding: 0;
+  padding-left: 28px;
   font-weight: $fontSemiBold;
   font-size: $fontTextButton;
   line-height: $lineHeightButton;
@@ -352,6 +358,18 @@
   border: none;
   transition: color 0.3s;
   cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 18px;
+    height: 8px;
+    background: url("../img/icon-arrow.svg") center / contain no-repeat;
+    filter: brightness(0) invert(1);
+    transform: scaleX(-1);
+  }
 
   &:hover,
   &:focus {

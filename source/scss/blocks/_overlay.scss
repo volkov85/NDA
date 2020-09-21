@@ -5,6 +5,13 @@
   bottom: 0;
   left: 0;
   z-index: 10;
-  display: none;
-  background-color: rgba($ColorBlack, 0.5);
+  background-color: rgba($ColorPrimary200, 0.75);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+
+  &--shown {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }

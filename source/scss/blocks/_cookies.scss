@@ -1,0 +1,22 @@
+.cookies {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $ColorWhite;
+}
+
+.cookies__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 114px;
+}
+
+.cookies__text {
+  margin: 0;
+  font-weight: $fontSemiBold;
+  font-size: $fontTextCookies;
+  line-height: 1.2;
+  color: $ColorSecondary;
+}

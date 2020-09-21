@@ -6,6 +6,7 @@
 .faq__wrapper {
   box-sizing: border-box;
   width: 542px;
+  min-height: 810px;
   padding: 93px 15px 73px 31px;
 }
 
@@ -47,30 +48,38 @@
 
 .faq__qa-question {
   position: relative;
-  padding: 30px 30px 33px;
   font-weight: $fontMedium;
   font-size: $fontTextMedium;
   line-height: $lineHeightButton;
-  color: inherit;
   border-bottom: 1px solid $ColorSecondary;
-  transition: color 0.3s;
 
   &::before {
     content: "";
     position: absolute;
     top: 35px;
-    left: 0;
+    right: 28px;
     width: 11px;
     height: 12px;
     background-color: $ColorSecondary;
     border-radius: 2px;
   }
 
-  &:hover,
-  &:focus {
-    color: $ColorSecondary;
-    outline: none;
+  a {
+    display: block;
+    padding: 30px 50px 33px 0;
+    color: inherit;
+    transition: color 0.3s;
+
+    &:hover,
+    &:focus {
+      color: $ColorSecondary;
+      outline: none;
+    }
   }
+}
+
+.faq__qa-answer {
+  display: none;
 }
 
 .faq__link-all {
@@ -85,7 +94,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 1px;
     background-color: $ColorSecondary;
     transition: width 0.3s;
@@ -96,7 +105,7 @@
     outline: none;
 
     &::before {
-      width: 0;
+      width: 100%;
     }
   }
 }

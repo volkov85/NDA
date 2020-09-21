@@ -34,6 +34,7 @@
   flex-direction: column;
   width: 285px;
   min-height: 312px;
+  overflow: hidden;
   background-color: $ColorPrimary;
   transition: transform 0.3s;
 
@@ -48,11 +49,16 @@
     background-image: linear-gradient(31deg, $ColorSecondary200 16%, transparent 120%);
     opacity: 0;
     transition: opacity 0.3s;
+    transform: scale(-1);
     pointer-events: none;
   }
 
   &:nth-child(2n) {
     flex-direction: column-reverse;
+
+    &::before {
+      transform: scale(1);
+    }
   }
 
   &:nth-child(4n-2) {
@@ -83,6 +89,10 @@
     .reviews__card-text,
     .reviews__card-link {
       color: $ColorPrimary;
+    }
+
+    .reviews__card-image {
+      filter: grayscale(1);
     }
   }
 }
@@ -144,6 +154,8 @@
 }
 
 .reviews__card-image {
+  transition: filter 0.3s;
+
   img {
     display: block;
   }

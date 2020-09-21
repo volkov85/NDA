@@ -2,17 +2,15 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  z-index: 10;
+  z-index: 15;
   display: none;
   width: 745px;
   height: 487px;
   background-color: $ColorWhite;
-  transform: translate(-50%, -373px) scale(0);
-  transition: transform 0.3s;
 
   &--shown {
     display: flex;
-    transform: translate(-50%, -373px) scale(1);
+    animation: 0.3s both zoom-in;
   }
 }
 
