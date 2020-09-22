@@ -8,6 +8,11 @@
   width: 542px;
   min-height: 810px;
   padding: 93px 15px 73px 31px;
+
+  @media (min-width: $width2K) {
+    width: 562px;
+    padding-left: 51px;
+  }
 }
 
 .faq__title {

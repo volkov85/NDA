@@ -8,7 +8,7 @@
 @import "misc/fonts";
 
 // Подключаем шаблонные и вспомогательные классы
-@import "misc/extends", "blocks/visually-hidden", "blocks/container", "blocks/columns", "blocks/overlay";
+@import "misc/extends", "blocks/visually-hidden", "blocks/container", "blocks/columns", "blocks/rows", "blocks/overlay";
 
 // Подключаем анимацию
 @import "misc/animations";
@@ -36,6 +36,9 @@
 
 // Подключаем стили блока FAQ
 @import "blocks/faq";
+
+// Подключаем стили блока контактов
+@import "blocks/contacts";
 
 // Подключаем стили всплывающих окон
 @import "blocks/popup", "blocks/qa-answer", "blocks/partner";

@@ -1,6 +1,10 @@
 .reviews {
   margin-top: 107px;
   margin-bottom: 80px;
+
+  .container {
+    padding-top: 100px;
+  }
 }
 
 .reviews__title {
@@ -26,14 +30,24 @@
   display: grid;
   grid-template-rows: repeat(2, 312px);
   grid-template-columns: 285px 297px 302px 285px;
+
+  @media (min-width: $width2K) {
+    grid-template-rows: repeat(2, 408px);
+    grid-template-columns: repeat(4, 381px);
+  }
+
+  @media (min-width: $width4K) {
+    grid-template-rows: repeat(2, 774px);
+    grid-template-columns: 707px 737px 749px 707px;
+  }
 }
 
 .reviews__card {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 285px;
-  min-height: 312px;
+  width: 100%;
+  min-height: 100%;
   overflow: hidden;
   background-color: $ColorPrimary;
   transition: transform 0.3s;
@@ -59,14 +73,6 @@
     &::before {
       transform: scale(1);
     }
-  }
-
-  &:nth-child(4n-2) {
-    width: 297px;
-  }
-
-  &:nth-child(4n-1) {
-    width: 302px;
   }
 
   &:hover,
@@ -100,9 +106,14 @@
 .reviews__card-info {
   position: relative;
   z-index: 1;
+  flex-grow: 1;
   box-sizing: border-box;
   min-height: 156px;
   padding: 24px 13px 25px 15px;
+
+  @media (min-width: $width2K) {
+    padding: 28px 15px 32px;
+  }
 }
 
 .reviews__card-title {
@@ -125,6 +136,10 @@
     height: 2px;
     background-color: $ColorPrimary100;
     border-radius: 1px;
+
+    @media (min-width: $width2K) {
+      top: -8px;
+    }
   }
 }
 
@@ -151,6 +166,10 @@
     color: $ColorPrimary;
     outline: none;
   }
+
+  @media (min-width: $width2K) {
+    bottom: 15px;
+  }
 }
 
 .reviews__card-image {
@@ -158,5 +177,6 @@
 
   img {
     display: block;
+    width: 100%;
   }
 }

@@ -5,4 +5,16 @@
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
+
+  @media (min-width: $width2K) {
+    max-width: 1524px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  @media (min-width: $width4K) {
+    max-width: 2900px;
+    padding-right: 60px;
+    padding-left: 60px;
+  }
 }

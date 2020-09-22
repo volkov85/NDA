@@ -17,12 +17,20 @@ let heroSwiper = new Swiper(`.hero__wrapper`, {
  * Добавление слайдера блока features
  */
 let featuresSwiper = new Swiper(`.features__wrapper`, {
+  speed: 1000,
   loop: true,
   slidesPerView: 3,
   spaceBetween: 28,
   centeredSlides: true,
   autoplay: {
     delay: 5000,
+  },
+  breakpoints: {
+    3840: {
+      slidesPerView: 4,
+      spaceBetween: 88,
+      centeredSlides: false
+    }
   },
   pagination: {
     el: `.features__pagination`,
@@ -73,8 +81,10 @@ let fullpage = new fullpage(`#fullpage`, {
   onLeave(origin, destination) {
     if (destination.isFirst) {
       header.classList.remove(`header--small`);
+      header.classList.remove(`header--dark`);
     } else {
       header.classList.add(`header--small`);
+      header.classList.add(`header--dark`);
     }
   }
 });

@@ -76,57 +76,10 @@
   }
 }
 
-.footer__middle {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 31px;
-  padding-top: 24px;
-}
-
-.footer__social {
-  display: flex;
-  justify-content: space-between;
-  width: 170px;
-}
-
-.footer__soial-link {
-  width: 25px;
-  height: 25px;
-  background: center / contain no-repeat;
-
-  @each $icon in fb, ig, vk, yt {
-    &--#{$icon} {
-      background-image: url("../img/icon-social-#{$icon}.svg");
-    }
-  }
-
-  &:hover,
-  &:focus {
-    outline: none;
-    filter: grayscale(1) brightness(0.8);
-  }
-}
-
-.footer__link-ask {
-  color: $fontColorPink;
-  font-size: $fontTextNav_Footer;
-  line-height: $lineHeightNav_Footer;
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 10px;
-    right: 120px;
-    width: 244px;
-    height: 1px;
-    background-color: $ColorSecondary;
-  }
-}
-
 .footer__bottom {
   display: flex;
   justify-content: space-between;
+  padding-top: 24px;
 }
 
 .footer__bottom-link,

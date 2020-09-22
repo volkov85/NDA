@@ -1,6 +1,10 @@
 .services {
   margin-top: 120px;
   margin-bottom: 100px;
+
+  .container {
+    padding-top: 100px;
+  }
 }
 
 .services__title {
@@ -74,10 +78,19 @@
   color: $ColorSecondary;
   text-transform: uppercase;
   transition: color 0.3s;
+
+  @media (min-width: $width2K) {
+    width: 70%;
+  }
 }
 
 .services__slide-text {
   margin: 0;
   font-size: $fontTextSmall;
   color: $ColorPrimary;
+
+  @media (min-width: $width2K) {
+    font-size: $fontTextRegular;
+    line-height: 1.2;
+  }
 }

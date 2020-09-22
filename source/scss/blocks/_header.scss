@@ -4,7 +4,9 @@
   right: 0;
   left: 0;
   z-index: 2;
-  transition: transform 0.3s;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
   pointer-events: none;
 
   &--dark {
@@ -18,6 +20,16 @@
   align-items: flex-start;
   padding-top: 32px;
   padding-bottom: 30px;
+
+  @media (min-width: $width2K) {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  @media (min-width: $width4K) {
+    padding-top: 61px;
+    padding-bottom: 61px;
+  }
 }
 
 .header__logo {
@@ -28,11 +40,23 @@
     display: block;
     width: 116px;
     transition: width 0.3s;
+
+    @media (min-width: $width2K) {
+      width: 94px;
+    }
+
+    @media (min-width: $width4K) {
+      width: 116px;
+    }
   }
 
   .header--small & {
     img {
       width: 61px;
+
+      @media (min-width: $width2K) {
+        width: 94px;
+      }
     }
   }
 }
@@ -41,7 +65,20 @@
   margin-top: 22px;
   margin-right: 60px;
   margin-left: 20px;
+  transition: margin-top 0.3s;
   pointer-events: auto;
+
+  .header--small & {
+    margin-top: 19px;
+  }
+
+  @media (min-width: $width2K) {
+    margin-top: 34px;
+
+    .header--small & {
+      margin-top: 34px;
+    }
+  }
 }
 
 .header__menu-list {
@@ -92,15 +129,34 @@
       width: 24px;
     }
   }
+
+  @media (min-width: $width2K) {
+    font-size: $fontTextMedium;
+    line-height: $lineHeightButton;
+  }
 }
 
 .header__lang {
   display: flex;
   margin-top: 25px;
+  transition: margin-top 0.3s;
   pointer-events: auto;
+
+  .header--small & {
+    margin-top: 20px;
+  }
+
+  @media (min-width: $width2K) {
+    margin-top: 30px;
+
+    .header--small & {
+      margin-top: 30px;
+    }
+  }
 }
 
 .header__lang-item {
+  position: relative;
   margin-right: 16px;
   font-size: $fontTextNav;
   line-height: $lineHeightNav;
@@ -109,8 +165,21 @@
   transition: color 0.3s;
   cursor: pointer;
 
-  &--active {
-    text-decoration: underline;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $ColorSecondary;
+    transition:
+      color 0.3s,
+      width 0.3s;
+
+    @media (min-width: $width2K) {
+      height: 2px;
+    }
   }
 
   .header--dark & {
@@ -122,5 +191,14 @@
   &:focus {
     color: $ColorSecondary300 !important;
     outline: none;
+
+    &::before {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: $width2K) {
+    font-size: $fontTextLarge;
+    line-height: 1.2;
   }
 }

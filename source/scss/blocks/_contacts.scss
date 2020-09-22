@@ -1,0 +1,142 @@
+.contacts {
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(80deg, rgba($ColorBlack, 0.85) -11%, rgba($fontColorHeaders, 0.6) 120%),
+    url("../img/contacts_bg@1x.jpg") center / cover no-repeat;
+
+  .container {
+    padding-top: 100px;
+  }
+
+  @media (min-resolution: 144dpi) {
+    background-image:
+      linear-gradient(80deg, rgba($ColorBlack, 0.85) -11%, rgba($fontColorHeaders, 0.6) 120%),
+      url("../img/contacts_bg@2x.jpg");
+  }
+}
+
+.contacts__title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 31px;
+  font-weight: $fontBold;
+  font-size: $fontHeadersH2;
+  line-height: 1.2;
+  color: $ColorWhite;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 0;
+    width: 124px;
+    height: 4px;
+    background-color: $ColorSecondary;
+  }
+}
+
+.contacts__info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 110px;
+  width: 820px;
+  margin-bottom: 28px;
+  font-style: normal;
+
+  @media (min-width: $width2K) {
+    width: 1000px;
+  }
+}
+
+.contacts__block {
+  &:last-child {
+    align-self: center;
+  }
+}
+
+.contacts__label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: $fontBold;
+  font-size: $fontTextXLarge;
+  line-height: 1.2;
+  color: $ColorSecondary;
+}
+
+.contacts__text {
+  margin: 0;
+  font-weight: $fontMedium;
+  font-size: $fontTextLarge;
+  line-height: 1.2;
+  color: $ColorWhite;
+
+  a {
+    color: inherit;
+    transition: color 0.3s;
+
+    &:hover,
+    &:focus {
+      color: $ColorSecondary;
+      outline: none;
+    }
+  }
+}
+
+.contacts__socials {
+  display: flex;
+  justify-content: space-between;
+  width: 265px;
+  margin-top: 19px;
+}
+
+.contacts__socials-link {
+  width: 25px;
+  height: 25px;
+  background: center / contain no-repeat;
+  filter: grayscale(1) brightness(2.2);
+  transition: filter 0.3s;
+
+  @each $icon in fb, ig, vk, yt {
+    &--#{$icon} {
+      background-image: url("../img/icon-social-#{$icon}.svg");
+    }
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    filter: none;
+  }
+}
+
+.contacts__block-link-ask {
+  position: relative;
+  display: inline-block;
+  font-weight: $fontSemiBold;
+  font-size: $fontTextHuge;
+  line-height: 1.2;
+  text-align: center;
+  color: $ColorSecondary;
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $ColorSecondary;
+    transition: width 0.3s;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &::before {
+      width: 100%;
+    }
+  }
+}

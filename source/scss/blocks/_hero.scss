@@ -14,11 +14,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (min-width: $width2K) {
+    min-height: 560px;
+  }
 }
 
 .hero__slide-content {
   width: 430px;
   margin-top: 23px;
+
+  @media (min-width: $width2K) {
+    width: 460px;
+  }
+
+  @media (min-width: $width4K) {
+    width: 1100px;
+  }
 }
 
 .hero__slide-title {
@@ -28,6 +40,11 @@
   font-size: $fontHeadersH1;
   line-height: $lineHeightH1;
   text-transform: uppercase;
+
+  @media (min-width: $width4K) {
+    font-size: $fontHeaders4KH1;
+    line-height: 1.2;
+  }
 }
 
 .hero__slide-text {
@@ -44,6 +61,26 @@
   img {
     display: block;
     max-height: 570px;
+
+    @media (min-width: $width2K) {
+      width: auto;
+      max-height: 423px;
+    }
+  }
+
+  @media (min-width: $width2K) {
+    margin-right: 42px;
+
+    img {
+      width: auto;
+      max-height: 423px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    img {
+      max-height: none;
+    }
   }
 }
 
@@ -80,11 +117,16 @@
   right: 15px;
   bottom: 107px;
   z-index: 1;
-  display: flex;
+  display: none;
   flex-direction: column;
 
   &--shown {
+    display: flex;
     animation: 0.5s 0.5s both move-left;
+  }
+
+  @media (min-width: $width2K) {
+    bottom: 120px;
   }
 }
 
@@ -116,17 +158,38 @@
 .hero__social {
   position: absolute;
   top: 107px;
-  right: 30px;
+  right: 10px;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
+  display: none;
+  flex-direction: column-reverse;
 
   &--shown {
+    display: flex;
     animation: 0.5s both move-left;
+  }
+
+  span {
+    margin-top: 55px;
+    margin-left: -18px;
+    font-weight: $fontBold;
+    font-size: $fontTextNav;
+    line-height: $lineHeightNav;
+    color: $ColorSecondary;
+    text-transform: capitalize;
+    transform: rotate(-90deg);
+  }
+
+  @media (min-width: $width2K) {
+    right: 22px;
   }
 }
 
-.hero__soial-link {
+.hero__social-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__social-link {
   width: 16px;
   height: 15px;
   color: inherit;
