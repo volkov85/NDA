@@ -2,8 +2,10 @@
   margin-top: 107px;
   margin-bottom: 80px;
 
-  .container {
-    padding-top: 100px;
+  @media (min-width: $widthFHD) and (max-width: $width4K - 1) {
+    .container {
+      max-width: 1720px;
+    }
   }
 }
 
@@ -24,6 +26,16 @@
     height: 4px;
     background-color: $ColorSecondary;
   }
+
+  @media (min-width: $width4K) {
+    font-size: $fontHeadersH2 * 1.5;
+
+    &::before {
+      top: -25px;
+      width: 200px;
+      height: 6px;
+    }
+  }
 }
 
 .reviews__list {
@@ -31,9 +43,9 @@
   grid-template-rows: repeat(2, 312px);
   grid-template-columns: 285px 297px 302px 285px;
 
-  @media (min-width: $width2K) {
-    grid-template-rows: repeat(2, 408px);
-    grid-template-columns: repeat(4, 381px);
+  @media (min-width: $widthFHD) {
+    grid-template-rows: repeat(2, 400px);
+    grid-template-columns: 419px 437px 444px 419px;
   }
 
   @media (min-width: $width4K) {
@@ -49,7 +61,7 @@
   width: 100%;
   min-height: 100%;
   overflow: hidden;
-  background-color: $ColorPrimary;
+  background-color: $ColorWhite;
   transition: transform 0.3s;
 
   &::before {
@@ -111,8 +123,12 @@
   min-height: 156px;
   padding: 24px 13px 25px 15px;
 
-  @media (min-width: $width2K) {
+  @media (min-width: $widthFHD) {
     padding: 28px 15px 32px;
+  }
+
+  @media (min-width: $width4K) {
+    padding: 40px 30px;
   }
 }
 
@@ -136,9 +152,22 @@
     height: 2px;
     background-color: $ColorPrimary100;
     border-radius: 1px;
+  }
 
-    @media (min-width: $width2K) {
+  @media (min-width: $widthFHD) {
+    font-size: $fontTextLarge;
+    line-height: 1.2;
+
+    &::before {
       top: -8px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    &::before {
+      top: -12px;
+      width: 32px;
+      height: 4px;
     }
   }
 }
@@ -150,6 +179,16 @@
   line-height: $lineHeightSmall;
   color: $ColorPrimary100;
   transition: color 0.3s;
+
+  @media (min-width: $widthFHD) {
+    font-size: $fontTextReview;
+    line-height: 1.6;
+  }
+
+  @media (min-width: $width4K) {
+    font-size: $fontTextNav * 2;
+    line-height: 1.2;
+  }
 }
 
 .reviews__card-link {
@@ -167,8 +206,16 @@
     outline: none;
   }
 
-  @media (min-width: $width2K) {
+  @media (min-width: $widthFHD) {
     bottom: 15px;
+    font-size: $fontTextNav;
+  }
+
+  @media (min-width: $width4K) {
+    bottom: 30px;
+    left: 30px;
+    font-size: $fontTextTiny * 2;
+    line-height: 1.2;
   }
 }
 

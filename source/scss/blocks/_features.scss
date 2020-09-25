@@ -1,5 +1,46 @@
 .features {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  width: 570px;
   margin-top: 5px;
+
+  @media (max-height: 899px) and (min-width: $widthDesktopWide) and (max-width: $widthFHD - 1) {
+    .slider-pagination {
+      display: none;
+    }
+  }
+
+  @media (max-width: $widthDesktopWide - 1) {
+    .slider-pagination {
+      justify-content: flex-start;
+    }
+  }
+
+  @media (min-width: $widthDesktopWide) {
+    position: static;
+    left: 0;
+    width: initial;
+  }
+
+  @media (min-width: $widthFHD) {
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    width: 850px;
+
+    @media (max-width: $width4K - 1) {
+      .slider-pagination {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  @media (min-width: $width4K) {
+    position: static;
+    left: 0;
+    width: initial;
+  }
 }
 
 .features__title {
@@ -19,17 +60,37 @@
     height: 4px;
     background-color: $ColorSecondary;
   }
+
+  @media (max-width: $widthDesktopWide - 1), (min-width: $widthFHD) and (max-width: $width4K - 1) {
+    @include visually-hidden();
+  }
+
+  @media (min-width: $width4K) {
+    font-size: $fontHeadersH2 * 1.5;
+
+    &::before {
+      top: -25px;
+      width: 200px;
+      height: 6px;
+    }
+  }
 }
 
 .features__slider {
   display: flex;
   margin-bottom: 25px;
+
+  @media (max-height: 899px) and (min-width: $widthDesktopWide) and (max-width: $widthFHD - 1) {
+    margin-bottom: 0;
+  }
 }
 
 .features__slide {
+  box-sizing: border-box;
   width: 373px;
   height: 242px;
   margin-right: 28px;
+  padding: 28px 22px 10px;
   color: $ColorPrimary400;
   background: linear-gradient(167deg, $ColorPrimary300 0%, $ColorPrimary400 97%);
   border-radius: 10px;
@@ -40,13 +101,35 @@
     color 0.3s,
     box-shadow 0.3s;
 
-  &.swiper-slide-active,
+  &::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    right: 23px;
+    width: 153px;
+    height: 141px;
+    background: linear-gradient(87deg, $ColorPrimary300, $ColorPrimary400 210%);
+    mask-image: url("../img/features_mask.svg");
+    mask-size: contain;
+    z-index: 2;
+  }
+
   &:hover,
   &:focus {
     color: $ColorSecondary;
     background: linear-gradient(347deg, $ColorBlack -14%, currentColor 87%);
     outline: none;
     box-shadow: 0 5px 10px rgba($ColorSecondary, 0.25);
+
+    &::before {
+      background: linear-gradient(83deg, $ColorSecondary 3%, rgba($ColorWhite, 0.3) 93%);
+    }
+
+    @media (min-width: $width4K) {
+      &::after {
+        background: linear-gradient(180deg, $ColorSecondary 0%, rgba(255, 70, 167, 0.3) 100%);
+      }
+    }
 
     .features__slide-number {
       color: $ColorWhite;
@@ -61,6 +144,67 @@
       filter: grayscale(0);
     }
   }
+
+  @media (max-width: $widthDesktopWide - 1) {
+    width: 271px;
+    height: 176px;
+    padding-right: 16px;
+    padding-left: 16px;
+
+    &::before {
+      top: 8px;
+      right: 8px;
+      width: 111px;
+      height: 102px;
+    }
+  }
+
+  @media (max-height: 899px) and (min-width: $widthDesktopWide) and (max-width: $widthFHD - 1) {
+    height: 220px;
+    padding-top: 20px;
+  }
+
+  @media (min-width: $widthFHD) {
+    width: 271px;
+    height: 176px;
+    margin-right: 18px;
+    padding-right: 16px;
+    padding-left: 16px;
+
+    &::before {
+      top: 8px;
+      right: 8px;
+      width: 111px;
+      height: 102px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    width: 373px;
+    height: 277px;
+    margin-right: 28px;
+    padding-right: 22px;
+    padding-left: 22px;
+
+    &::before {
+      top: 16px;
+      right: 19px;
+      width: 153px;
+      height: 141px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      width: 186px;
+      height: 171px;
+      background: $ColorPrimary300;
+      mask-image: url("../img/features_mask_big.svg");
+      z-index: 1;
+    }
+  }
 }
 
 .features__slide-number {
@@ -70,10 +214,14 @@
   color: $fontColorLightGrey;
   line-height: 43px;
   opacity: 0.5;
-  margin: 28px 0 0 22px;
   transition:
     color 0.3s,
     opacity 0.3s;
+
+  @media (max-width: $widthDesktopWide - 1), (min-width: $widthFHD) and (max-width: $width4K - 1) {
+    font-size: $fontTextHuge;
+    line-height: $lineHeightPopup;
+  }
 }
 
 .features__slide-title {
@@ -83,30 +231,65 @@
   color: $fontColorDarkGrey;
   line-height: $lineHeightMedium;
   text-transform: uppercase;
-  margin: 11px 0 41px 22px;
+  margin: 11px 0 41px 0;
   transition: color 0.3s;
+
+  @media (max-width: $widthDesktopWide - 1), (min-width: $widthFHD) {
+    width: 60%;
+    margin-top: 5px;
+    margin-bottom: 9px;
+    font-size: $fontTextNav;
+    line-height: $lineHeightButton;
+  }
+
+  @media (min-width: $width4K) {
+    width: 250px;
+    margin-top: 11px;
+    margin-bottom: 41px;
+    font-size: $fontTextSmall * 1.5;
+    line-height: 1.2;
+  }
 }
 
 .features__slide-text {
-  display: inline-block;
-  width: 212px;
+  // Truncating multiple line text trick
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  // --------------
+  width: 250px;
   font-size: $fontTextSmall;
   font-weight: $fontLight;
   color: $fontColorGrey;
   line-height: $lineHeightSmall;
-  margin: 0 0 44px 22px;
+  margin: 0 0 44px 0;
 
-  @media (min-width: $width2K) {
+  @media (max-width: $widthDesktopWide - 1), (min-width: $widthFHD) {
+    width: 100%;
+    font-size: $fontTextNav;
+    line-height: $lineHeightNav_Footer;
+  }
+
+  @media (min-width: $width4K) {
     width: 65%;
-    font-size: $fontTextRegular;
-    line-height: 1.2;
+    font-size: $fontTextMedium;
+    line-height: $lineHeightSmall;
   }
 }
 
 .features__slide-image {
   position: absolute;
-  top: 12px;
-  right: 23px;
+  top: 39px;
+  right: 53px;
   filter: grayscale(1);
   transition: filter 0.3s;
+  z-index: 3;
+
+  @media (max-width: $widthDesktopWide - 1), (min-width: $widthFHD) and (max-width: $width4K - 1) {
+    top: 28px;
+    right: 30px;
+    width: 68px;
+    height: 62px;
+  }
 }

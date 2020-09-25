@@ -74,6 +74,11 @@
     color: $ColorSecondary;
     outline: none;
   }
+
+  @media (min-width: $width4K) {
+    font-size: $fontTextNav_Footer * 1.5;
+    line-height: 1.2;
+  }
 }
 
 .footer__bottom {
@@ -89,4 +94,9 @@
   line-height: $lineHeightNav_Footer;
   font-weight: $fontRegular;
   margin: 0;
+
+  @media (min-width: $width4K) {
+    font-size: $fontTextNav_Footer * 1.5;
+    line-height: 1.2;
+  }
 }

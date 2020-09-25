@@ -7,10 +7,16 @@
   width: 745px;
   height: 487px;
   background-color: $ColorWhite;
+  transform: translate(-50%, -50%);
 
   &--shown {
     display: flex;
-    animation: 0.3s both zoom-in;
+    animation: 0.3s both fade-in;
+  }
+
+  @media (min-width: $width4K) {
+    width: 1118px;
+    height: 730px;
   }
 }
 

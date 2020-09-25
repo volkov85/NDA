@@ -6,10 +6,19 @@
 
 .partnership__wrapper {
   box-sizing: border-box;
-  width: 685px;
+  width: 700px;
   min-height: 810px;
   margin-left: auto;
-  padding: 93px 85px 52px 15px;
+  padding: 93px 85px 52px 30px;
+
+  @media (min-width: $widthFHD) {
+    width: 877px;
+  }
+
+  @media (min-width: $width4K) {
+    width: 1595px;
+    padding-left: 60px;
+  }
 }
 
 .partnership__title {
@@ -30,20 +39,24 @@
     height: 4px;
     background-color: $ColorWhite;
   }
-}
 
-.partnership__text {
-  width: 470px;
-  margin: 0;
-  margin-bottom: 40px;
-  font-weight: $fontMedium;
-  font-size: $fontTextSmall;
-  line-height: $lineHeightLarge;
-  color: $ColorWhite;
+  @media (min-width: $width4K) {
+    font-size: $fontHeadersH2 * 1.5;
+
+    &::before {
+      top: -25px;
+      width: 200px;
+      height: 6px;
+    }
+  }
 }
 
 .partnership__form {
   width: 572px;
+
+  @media (min-width: $widthFHD) {
+    width: 100%;
+  }
 }
 
 .partnership__form-variants {
@@ -84,6 +97,11 @@
   color: $ColorPrimary300;
   text-transform: uppercase;
   transition: color 0.3s;
+
+  @media (min-width: $width4K) {
+    font-size: $fontTextMedium * 1.2;
+    line-height: 1.2;
+  }
 }
 
 .partnership__form-variant-desc {
@@ -107,6 +125,11 @@
     border-radius: 1px;
     transition: width 0.3s;
   }
+
+  @media (min-width: $width4K) {
+    font-size: $fontTextNav * 1.2;
+    line-height: 1.2;
+  }
 }
 
 .partnership__form-stage {
@@ -122,6 +145,10 @@
   grid-template-columns: repeat(2, 270px);
   gap: 36px 32px;
   margin-bottom: 16px;
+
+  @media (min-width: $widthFHD) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .partnership__form-field {
@@ -167,6 +194,16 @@
     }
   }
 
+  [type="tel"] {
+    padding-left: 100px;
+    transition: padding-left 0.3s;
+
+    &.filled,
+    &:focus {
+      padding-left: 15px;
+    }
+  }
+
   textarea {
     height: 110px;
   }
@@ -186,6 +223,42 @@
   &--wide {
     grid-column: 1 / 3;
   }
+
+  @media (min-width: $width4K) {
+    min-height: 75px;
+    font-size: $fontTextSmall * 1.5;
+    line-height: 1.2;
+
+    input,
+    textarea {
+      padding: 24px 20px;
+
+      &.filled,
+      &:focus {
+        + span {
+          transform: translateY(-20px) scale(0.8);
+        }
+      }
+    }
+
+    [type="tel"] {
+      padding-left: 140px;
+
+      &.filled,
+      &:focus {
+        padding-left: 20px;
+      }
+    }
+
+    textarea {
+      height: 180px;
+    }
+
+    span {
+      top: 24px;
+      left: 20px;
+    }
+  }
 }
 
 .partnership__form-row {
@@ -198,6 +271,11 @@
     font-size: $fontTextSmall;
     line-height: $lineHeightNav_Footer;
     color: $ColorSecondary;
+
+    @media (min-width: $width4K) {
+      font-size: $fontTextSmall * 1.3;
+      line-height: 1.2;
+    }
   }
 }
 
@@ -268,6 +346,31 @@
   &:focus-within {
     color: $ColorPrimary100;
   }
+
+  @media (min-width: $width4K) {
+    padding-left: 32px;
+    font-size: $fontTextSmall * 1.5;
+    line-height: 1.2;
+
+    input {
+      width: 21px;
+      height: 21px;
+    }
+
+    span {
+      &::before {
+        top: 2px;
+        width: 21px;
+        height: 21px;
+      }
+
+      &::after {
+        top: 7px;
+        width: 11px;
+        height: 11px;
+      }
+    }
+  }
 }
 
 .partnership__form-privacy {
@@ -330,6 +433,30 @@
   &:focus-within {
     color: $ColorPrimary100;
   }
+
+  @media (min-width: $width4K) {
+    font-size: $fontTextSmall * 1.5;
+    line-height: 1.2;
+
+    input {
+      width: 21px;
+      height: 21px;
+    }
+
+    span {
+      &::before {
+        top: 2px;
+        width: 21px;
+        height: 21px;
+      }
+
+      &::after {
+        top: 7px;
+        width: 11px;
+        height: 11px;
+      }
+    }
+  }
 }
 
 .partnership__form-buttons {
@@ -338,6 +465,11 @@
   align-items: center;
   width: 470px;
   margin-top: -13px;
+
+  @media (min-width: $width4K) {
+    width: 520px;
+    margin-top: 0;
+  }
 }
 
 .partnership__form-back {
@@ -375,5 +507,17 @@
   &:focus {
     color: $ColorPrimary100;
     outline: none;
+  }
+
+  @media (min-width: $width4K) {
+    padding-left: 40px;
+    font-size: $fontTextButton * 1.5;
+    line-height: 1.2;
+
+    &::before {
+      top: 12px;
+      width: 27px;
+      height: 12px;
+    }
   }
 }

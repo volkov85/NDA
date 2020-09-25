@@ -19,17 +19,22 @@ let heroSwiper = new Swiper(`.hero__wrapper`, {
 let featuresSwiper = new Swiper(`.features__wrapper`, {
   speed: 1000,
   loop: true,
-  slidesPerView: 3,
+  slidesPerView: 2,
   spaceBetween: 28,
-  centeredSlides: true,
   autoplay: {
-    delay: 5000,
+    delay: 5000
   },
   breakpoints: {
+    1600: {
+      slidesPerView: 3
+    },
+    1920: {
+      slidesPerView: 3,
+      spaceBetween: 18
+    },
     3840: {
-      slidesPerView: 4,
-      spaceBetween: 88,
-      centeredSlides: false
+      slidesPerView: 5,
+      spaceBetween: 28
     }
   },
   pagination: {
@@ -50,6 +55,14 @@ let servicesSwiper = new Swiper(`.services__wrapper`, {
   slidesPerView: 3,
   slidesPerColumn: 2,
   spaceBetween: 30,
+  breakpoints: {
+    1920: {
+      spaceBetween: 42
+    },
+    3840: {
+      slidesPerView: 4
+    }
+  },
   pagination: {
     el: `.services__pagination`,
     clickable: true,
@@ -72,22 +85,34 @@ let fullpage = new fullpage(`#fullpage`, {
   scrollOverflow: true,
   afterRender() {
     // Появление соц.иконок и стрелок слайдера
-    let heroSocials = document.querySelector(`.hero__social`);
+    // let heroSocials = document.querySelector(`.hero__social`);
     let heroSliderControls = document.querySelector(`.hero__slider-control`);
 
-    heroSocials.classList.add(`hero__social--shown`);
+    // heroSocials.classList.add(`hero__social--shown`);
     heroSliderControls.classList.add(`hero__slider-control--shown`);
   },
   onLeave(origin, destination) {
     if (destination.isFirst) {
-      header.classList.remove(`header--small`);
-      header.classList.remove(`header--dark`);
+      header.classList.remove(`header--hidden`);
     } else {
-      header.classList.add(`header--small`);
-      header.classList.add(`header--dark`);
+      header.classList.add(`header--hidden`);
     }
   }
 });
+
+/**
+ * Добавление параллакса в блоке hero
+ */
+let heroParallaxScenes = document.querySelectorAll(`.hero__slide-image`);
+
+for (let i = 0; i < heroParallaxScenes.length; i++) {
+  let heroParallax = new Parallax(heroParallaxScenes[i], {
+    relativeInput: true,
+    hoverOnly: true,
+    inputElement: heroParallaxScenes[i].parentNode.parentNode,
+    pointerEvents: true
+  });
+}
 
 /**
  * Оживление формы
@@ -103,6 +128,14 @@ for (let i = 0; i < partnershipInputs.length; i++) {
     }
   });
 }
+
+/**
+ * Добавление маски для телефона в форме
+ */
+let phoneInputMask = IMask(document.querySelector(`.partnership__form-field [type=tel]`), {
+  mask: `+{7} (000)000-00-00`,
+  lazy: false
+});
 
 /**
  * Оживление FAQ
@@ -151,6 +184,18 @@ cookiesBtn.addEventListener(`click`, (evt) => {
   evt.preventDefault();
   cookies.remove();
 });
+
+// if (!document.cookie.split(`; `).find((row) => row.startsWith(`isCookiesAccepted`))) {
+//   cookies.style.display = `block`;
+
+//   let cookiesBtn = cookies.querySelector(`.button`);
+
+//   cookiesBtn.addEventListener(`click`, (evt) => {
+//     evt.preventDefault();
+//     cookies.removeAttribute(`style`);
+//     document.cookie = `isCookiesAccepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+//   });
+// }
 
 /**
  * Скрытие элемента (удаляем класс &--shown)

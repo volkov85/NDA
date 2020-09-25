@@ -8,6 +8,7 @@ $ColorSecondary100: #ff0098;
 $ColorSecondary200: #920f68;
 $ColorSecondary300: #df3d93;
 $ColorSecondary400: #c83398;
+$ColorSecondary500: #df3f93;
 
 $ColorWhite: #ffffff;
 $ColorBlack: #000000;
@@ -17,7 +18,9 @@ $colors: ("grey": $ColorPrimary, "pink": $ColorSecondary);
 $widthMobile: 320px;
 $widthTablet: 768px;
 $widthDesktop: 1440px;
-$width2K: 2000px;
+$widthDesktopWide: 1600px;
+$widthFHD: 1920px;
+$width2K: 2048px;
 $width4K: 3840px;
 
 $retina-dpi: 144dpi;

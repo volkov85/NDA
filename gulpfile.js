@@ -79,7 +79,9 @@ function jslibs() {
   return src([
     `node_modules/swiper/swiper-bundle.min.{js,js.map}`,
     `node_modules/fullpage.js/dist/fullpage.min.{js,js.map}`,
-    `node_modules/fullpage.js/vendors/scrolloverflow.min.{js,js.map}`
+    `node_modules/fullpage.js/vendors/scrolloverflow.min.{js,js.map}`,
+    `node_modules/parallax-js/dist/parallax.min.{js,js.map}`,
+    `node_modules/imask/dist/imask.min.{js,js.map}`
   ])
     .pipe(dest(`build/js/vendors`));
 }

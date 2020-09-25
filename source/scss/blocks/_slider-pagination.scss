@@ -22,4 +22,9 @@
     background-color: $ColorSecondary;
     outline: none;
   }
+
+  @media (min-width: $width4K) {
+    width: 32px;
+    height: 12px;
+  }
 }

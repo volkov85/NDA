@@ -9,6 +9,10 @@
     transform 0.3s;
   pointer-events: none;
 
+  &--hidden {
+    transform: translateY(-100%);
+  }
+
   &--dark {
     background-color: $ColorPrimary200;
   }
@@ -18,17 +22,29 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-top: 32px;
+  padding-top: 14px;
   padding-bottom: 30px;
 
-  @media (min-width: $width2K) {
+  .header--small {
+    padding-top: 30px;
+  }
+
+  @media (min-width: $widthFHD) {
     padding-top: 28px;
     padding-bottom: 28px;
+
+    .header--small {
+      padding-top: 28px;
+    }
   }
 
   @media (min-width: $width4K) {
     padding-top: 61px;
     padding-bottom: 61px;
+
+    .header--small {
+      padding-top: 61px;
+    }
   }
 }
 
@@ -41,7 +57,7 @@
     width: 116px;
     transition: width 0.3s;
 
-    @media (min-width: $width2K) {
+    @media (min-width: $widthFHD) {
       width: 94px;
     }
 
@@ -54,7 +70,7 @@
     img {
       width: 61px;
 
-      @media (min-width: $width2K) {
+      @media (min-width: $widthFHD) {
         width: 94px;
       }
     }
@@ -62,7 +78,7 @@
 }
 
 .header__menu {
-  margin-top: 22px;
+  margin-top: 40px;
   margin-right: 60px;
   margin-left: 20px;
   transition: margin-top 0.3s;
@@ -72,7 +88,7 @@
     margin-top: 19px;
   }
 
-  @media (min-width: $width2K) {
+  @media (min-width: $widthFHD) {
     margin-top: 34px;
 
     .header--small & {
@@ -130,15 +146,29 @@
     }
   }
 
-  @media (min-width: $width2K) {
+  @media (min-width: $widthFHD) {
     font-size: $fontTextMedium;
     line-height: $lineHeightButton;
+  }
+
+  @media (min-width: $width4K) {
+    font-size: $fontTextMedium * 1.5;
+    line-height: 1.2;
+
+    &--active,
+    &:hover,
+    &:focus {
+      &::before {
+        width: 48px;
+        height: 2px;
+      }
+    }
   }
 }
 
 .header__lang {
   display: flex;
-  margin-top: 25px;
+  margin-top: 43px;
   transition: margin-top 0.3s;
   pointer-events: auto;
 
@@ -146,7 +176,7 @@
     margin-top: 20px;
   }
 
-  @media (min-width: $width2K) {
+  @media (min-width: $widthFHD) {
     margin-top: 30px;
 
     .header--small & {
@@ -177,7 +207,7 @@
       color 0.3s,
       width 0.3s;
 
-    @media (min-width: $width2K) {
+    @media (min-width: $widthFHD) {
       height: 2px;
     }
   }
@@ -197,8 +227,12 @@
     }
   }
 
-  @media (min-width: $width2K) {
+  @media (min-width: $widthFHD) {
     font-size: $fontTextLarge;
     line-height: 1.2;
+  }
+
+  @media (min-width: $width4K) {
+    font-size: $fontTextLarge * 1.5;
   }
 }

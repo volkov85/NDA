@@ -3,8 +3,8 @@
   box-sizing: border-box;
   min-width: 270px;
   max-width: 345px;
-  min-height: 65px;
-  padding: 22px 15px;
+  min-height: 55px;
+  padding: 12px 15px;
   font-weight: $fontSemiBold;
   font-size: $fontTextButton;
   line-height: $lineHeightButton;
@@ -16,16 +16,39 @@
   background: linear-gradient(270deg, $ColorSecondary100, $ColorSecondary400) $ColorSecondary100;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 10px 15px rgba($ColorSecondary, 0.3);
   cursor: pointer;
-  transition:
-    box-shadow 0.3s,
-    transform 0.3s;
+  transition: box-shadow 0.3s;
 
-  &:hover,
-  &:focus {
-    box-shadow: 2px 12px 15px rgba($ColorSecondary, 0.4);
+  &--cookies {
+    padding: 6px 15px;
+    min-width: 240px;
+    min-height: 45px;
+  }
+
+  &--contact {
+    padding-top: 16px;
+  }
+
+  &:hover {
     outline: none;
-    transform: translate(-2px, -2px);
+    background: linear-gradient(90deg, $ColorSecondary100 0.15%, $ColorSecondary400 100%);
+    box-shadow: 0 4px 15px rgba(223, 63, 147, 0.5);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background: linear-gradient(90deg, $ColorSecondary100 0.15%, $ColorSecondary400 100%);
+    box-shadow: 0 5px 0 rgba(167, 26, 100, 0.5), 0 5px 15px $ColorSecondary500;
+  }
+
+  @media (min-width: $width4K) {
+    min-width: 320px;
+    max-width: 380px;
+    min-height: 76px;
+    font-size: $fontTextButton * 1.5;
+    line-height: 1.2;
   }
 }
