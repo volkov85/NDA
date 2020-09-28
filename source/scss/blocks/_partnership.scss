@@ -7,9 +7,9 @@
 .partnership__wrapper {
   box-sizing: border-box;
   width: 700px;
-  min-height: 810px;
+  min-height: 700px;
   margin-left: auto;
-  padding: 93px 85px 52px 30px;
+  padding: 4px 85px 4px 30px;
 
   @media (min-width: $widthFHD) {
     width: 877px;
@@ -18,6 +18,7 @@
   @media (min-width: $width4K) {
     width: 1595px;
     padding-left: 60px;
+    min-height: 900px;
   }
 }
 
@@ -25,6 +26,7 @@
   position: relative;
   display: block;
   margin-bottom: 45px;
+  padding-top: 24px;
   font-weight: $fontBold;
   font-size: $fontHeadersH2;
   line-height: 1.2;
@@ -33,7 +35,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: -24px;
+    top: 0;
     left: 0;
     width: 124px;
     height: 4px;
@@ -44,7 +46,6 @@
     font-size: $fontHeadersH2 * 1.5;
 
     &::before {
-      top: -25px;
       width: 200px;
       height: 6px;
     }
@@ -68,12 +69,15 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  cursor: pointer;
 
   &:not(:last-child) {
     margin-right: 115px;
   }
 
   &--active {
+    transition: all 0.3s;
+
     .partnership__form-variant-title {
       color: $ColorSecondary;
     }
@@ -137,6 +141,7 @@
 
   &--active {
     display: block;
+    animation: 1s both fade-in;
   }
 }
 
@@ -145,6 +150,10 @@
   grid-template-columns: repeat(2, 270px);
   gap: 36px 32px;
   margin-bottom: 16px;
+
+  @media (max-height: 683px) {
+    row-gap: calc((100vh - 555px) / 3);
+  }
 
   @media (min-width: $widthFHD) {
     grid-template-columns: repeat(2, 1fr);

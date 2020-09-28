@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/vendors/fullpage.min.css">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
-  <body class="page">
+  <body class="page page--index">
     <header class="header">
       <div class="container">
         <div class="header__wrapper">
@@ -27,7 +27,7 @@
                 <a href="#" class="header__menu-link">Сервисы</a>
               </li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Партнеры</a>
+                <a href="partners.html" class="header__menu-link">Партнеры</a>
               </li>
               <li class="header__menu-item">
                 <a href="#" class="header__menu-link">Истории успеха</a>
@@ -368,16 +368,16 @@
               <b class="partnership__title">Стать партнером</b>
               <form action="#" method="post" class="partnership__form">
                 <div class="partnership__form-variants">
-                  <div class="partnership__form-variant partnership__form-variant--active">
+                  <div class="partnership__form-variant partnership__form-variant--active" id="haveMusic">
                     <p class="partnership__form-variant-title">У меня есть музыка</p>
-                    <p class="partnership__form-variant-desc">и я хочу ее продвать</p>
+                    <p class="partnership__form-variant-desc">и я хочу ее продавать</p>
                   </div>
-                  <div class="partnership__form-variant">
+                  <div class="partnership__form-variant" id="needMusic">
                     <p class="partnership__form-variant-title">Мне нужна музыка</p>
                     <p class="partnership__form-variant-desc">и я хочу ее использовать</p>
                   </div>
                 </div>
-                <div class="partnership__form-stage partnership__form-stage--active">
+                <div class="partnership__form-stage partnership__form-stage--active" id="firstPartnerForm">
                   <div class="partnership__form-fields">
                     <label class="partnership__form-field">
                       <input type="text" name="userName" required>
@@ -417,10 +417,10 @@
                     <span>Соглашаюсь с правилами обработки персональных данных</span>
                   </label>
                   <div class="partnership__form-buttons">
-                    <button class="button" type="button">Далее</button>
+                    <button class="button" type="button" id="nextBtn">Далее</button>
                   </div>
                 </div>
-                <div class="partnership__form-stage">
+                <div class="partnership__form-stage" id="secondPartnerForm">
                   <div class="partnership__form-fields">
                     <label class="partnership__form-field">
                       <input type="text" name="year">
@@ -465,7 +465,7 @@
                     <span>Соглашаюсь с правилами обработки персональных данных</span>
                   </label>
                   <div class="partnership__form-buttons">
-                    <button class="partnership__form-back" type="button">Назад</button>
+                    <button class="partnership__form-back" type="button" id="prevBtn">Назад</button>
                     <button class="button" type="submit">Отправить</button>
                   </div>
                 </div>
@@ -487,6 +487,14 @@
                 <dd class="faq__qa-answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</dd>
                 <dt class="faq__qa-question">
                   <a href="#">Через сколько я увижу свой трек на площадках?</a>
+                </dt>
+                <dd class="faq__qa-answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</dd>
+                <dt class="faq__qa-question">
+                  <a href="#">Сколько будет стоить услуги компании?</a>
+                </dt>
+                <dd class="faq__qa-answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</dd>
+                <dt class="faq__qa-question">
+                  <a href="#">Сколько будет стоить услуги компании?</a>
                 </dt>
                 <dd class="faq__qa-answer">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</dd>
                 <dt class="faq__qa-question">

@@ -1,12 +1,24 @@
 .services {
   margin-top: 120px;
   margin-bottom: 100px;
+
+  .container {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  @media (max-height: 719px) {
+    .slider-pagination {
+      display: none;
+    }
+  }
 }
 
 .services__title {
   position: relative;
   margin: 0;
   margin-bottom: 35px;
+  padding-top: 16px;
   font-weight: $fontBold;
   font-size: $fontHeadersH2;
   line-height: 1.2;
@@ -14,7 +26,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: -16px;
+    top: 0;
     left: 0;
     width: 124px;
     height: 4px;
@@ -22,10 +34,10 @@
   }
 
   @media (min-width: $width4K) {
+    padding-top: 25px;
     font-size: $fontHeadersH2 * 1.5;
 
     &::before {
-      top: -25px;
       width: 200px;
       height: 6px;
     }
@@ -36,6 +48,11 @@
   display: flex;
   height: 592px;
   margin-bottom: 30px;
+
+  @media (max-height: 719px) {
+    height: calc(100vh - 92px);
+    margin-bottom: 0;
+  }
 
   @media (min-width: $widthFHD) {
     height: 760px;
@@ -76,6 +93,10 @@
     .services__slide-title {
       color: $ColorPrimary;
     }
+  }
+
+  @media (max-height: 684px) {
+    height: calc((100vh - 92px - 30px) / 2);
   }
 
   @media (min-width: $widthFHD) {

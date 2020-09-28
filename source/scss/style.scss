@@ -40,6 +40,9 @@
 // Подключаем стили блока контактов
 @import "blocks/contacts";
 
+// Подключаем стили блока партнёров
+@import "blocks/partners", "blocks/labels";
+
 // Подключаем стили всплывающих окон
 @import "blocks/popup", "blocks/qa-answer", "blocks/partner";
 

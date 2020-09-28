@@ -2,6 +2,11 @@
   margin-top: 107px;
   margin-bottom: 80px;
 
+  .container {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
   @media (min-width: $widthFHD) and (max-width: $width4K - 1) {
     .container {
       max-width: 1720px;
@@ -13,6 +18,7 @@
   position: relative;
   margin: 0;
   margin-bottom: 31px;
+  padding-top: 16px;
   font-weight: $fontBold;
   font-size: $fontHeadersH2;
   line-height: 1.2;
@@ -20,7 +26,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: -16px;
+    top: 0;
     left: 0;
     width: 124px;
     height: 4px;
@@ -28,10 +34,10 @@
   }
 
   @media (min-width: $width4K) {
+    padding-top: 25px;
     font-size: $fontHeadersH2 * 1.5;
 
     &::before {
-      top: -25px;
       width: 200px;
       height: 6px;
     }
@@ -42,6 +48,10 @@
   display: grid;
   grid-template-rows: repeat(2, 312px);
   grid-template-columns: 285px 297px 302px 285px;
+
+  @media (max-height: 712px) {
+    grid-template-rows: repeat(2, calc((100vh - 88px) / 2));
+  }
 
   @media (min-width: $widthFHD) {
     grid-template-rows: repeat(2, 400px);
@@ -123,6 +133,10 @@
   min-height: 156px;
   padding: 24px 13px 25px 15px;
 
+  @media (max-height: 712px) {
+    min-height: calc((100vh - 88px) / 4);
+  }
+
   @media (min-width: $widthFHD) {
     padding: 28px 15px 32px;
   }
@@ -179,6 +193,13 @@
   line-height: $lineHeightSmall;
   color: $ColorPrimary100;
   transition: color 0.3s;
+
+  @media (max-height: 712px) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
 
   @media (min-width: $widthFHD) {
     font-size: $fontTextReview;

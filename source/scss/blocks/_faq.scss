@@ -6,8 +6,8 @@
 .faq__wrapper {
   box-sizing: border-box;
   width: 557px;
-  min-height: 810px;
-  padding: 93px 30px 73px 31px;
+  min-height: 700px;
+  padding: 4px 30px 4px 31px;
 
   @media (min-width: $widthFHD) {
     width: 707px;
@@ -17,6 +17,7 @@
   @media (min-width: $width4K) {
     width: 1425px;
     padding-right: 60px;
+    min-height: 900px;
   }
 }
 
@@ -24,6 +25,7 @@
   position: relative;
   margin: 0;
   margin-bottom: 43px;
+  padding-top: 24px;
   font-weight: $fontBold;
   font-size: $fontHeadersH2;
   line-height: 1.2;
@@ -32,7 +34,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: -24px;
+    top: 0;
     left: 0;
     width: 124px;
     height: 4px;
@@ -43,7 +45,6 @@
     font-size: $fontHeadersH2 * 1.5;
 
     &::before {
-      top: -25px;
       width: 200px;
       height: 6px;
     }
@@ -67,7 +68,11 @@
   display: flex;
   flex-direction: column;
   width: 469px;
-  margin-bottom: 106px;
+  margin-bottom: 50px;
+
+  @media (max-height: 683px) {
+    margin-bottom: calc(100vh - 548px);
+  }
 
   @media (min-width: $widthFHD) {
     width: 100%;
@@ -84,7 +89,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: 35px;
+    top: 25px;
     right: 28px;
     width: 11px;
     height: 12px;
@@ -94,9 +99,13 @@
 
   a {
     display: block;
-    padding: 30px 50px 33px 0;
+    padding: 20px 50px 23px 0;
     color: inherit;
     transition: color 0.3s;
+
+    @media (min-width: $width4K) {
+      padding: 30px 50px 33px 0;
+    }
 
     &:hover,
     &:focus {

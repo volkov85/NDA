@@ -1,84 +1,8 @@
-/**
- * Добавление слайдера блока hero
- */
-let heroSwiper = new Swiper(`.hero__wrapper`, {
-  loop: true,
-  effect: `fade`,
-  fadeEffect: {
-    crossFade: true
-  },
-  navigation: {
-    nextEl: `.hero__slider-button--right`,
-    prevEl: `.hero__slider-button--left`
-  }
-});
-
-/**
- * Добавление слайдера блока features
- */
-let featuresSwiper = new Swiper(`.features__wrapper`, {
-  speed: 1000,
-  loop: true,
-  slidesPerView: 2,
-  spaceBetween: 28,
-  autoplay: {
-    delay: 5000
-  },
-  breakpoints: {
-    1600: {
-      slidesPerView: 3
-    },
-    1920: {
-      slidesPerView: 3,
-      spaceBetween: 18
-    },
-    3840: {
-      slidesPerView: 5,
-      spaceBetween: 28
-    }
-  },
-  pagination: {
-    el: `.features__pagination`,
-    clickable: true,
-    renderBullet(index, className) {
-      return `<button class="${className}" type="button"><span class="visually-hidden">К слайду ${index + 1}</span></button>`;
-    },
-    bulletClass: `slider-pagination__button`,
-    bulletActiveClass: `slider-pagination__button--active`
-  }
-});
-
-/**
- * Добавление слайдера блока services
- */
-let servicesSwiper = new Swiper(`.services__wrapper`, {
-  slidesPerView: 3,
-  slidesPerColumn: 2,
-  spaceBetween: 30,
-  breakpoints: {
-    1920: {
-      spaceBetween: 42
-    },
-    3840: {
-      slidesPerView: 4
-    }
-  },
-  pagination: {
-    el: `.services__pagination`,
-    clickable: true,
-    renderBullet(index, className) {
-      return `<button class="${className}" type="button"><span class="visually-hidden">К слайду ${index + 1}</span></button>`;
-    },
-    bulletClass: `slider-pagination__button`,
-    bulletActiveClass: `slider-pagination__button--active`
-  }
-});
+let header = document.querySelector(`.header`);
 
 /**
  * Добавление полностраничной прокрутки
  */
-let header = document.querySelector(`.header`);
-
 let fullpage = new fullpage(`#fullpage`, {
   licenseKey: `YOUR_KEY_HERE`,
   recordHistory: false,
@@ -101,16 +25,162 @@ let fullpage = new fullpage(`#fullpage`, {
 });
 
 /**
- * Добавление параллакса в блоке hero
+ * Закрытие попапов по клику на overlay
  */
-let heroParallaxScenes = document.querySelectorAll(`.hero__slide-image`);
+let overlay = document.querySelector(`.overlay`);
 
-for (let i = 0; i < heroParallaxScenes.length; i++) {
-  let heroParallax = new Parallax(heroParallaxScenes[i], {
-    relativeInput: true,
-    hoverOnly: true,
-    inputElement: heroParallaxScenes[i].parentNode.parentNode,
-    pointerEvents: true
+overlay.addEventListener(`click`, () => {
+  let shownPopup = document.querySelector(`.popup--shown`);
+
+  removeAnimationClassShown(shownPopup, `popup--shown`);
+  overlay.classList.remove(`overlay--shown`);
+});
+
+if (document.querySelector(`.page--index`)) {
+  /**
+   * Добавление слайдера блока hero
+   */
+  let heroSwiper = new Swiper(`.hero__wrapper`, {
+    loop: true,
+    effect: `fade`,
+    fadeEffect: {
+      crossFade: true
+    },
+    navigation: {
+      nextEl: `.hero__slider-button--right`,
+      prevEl: `.hero__slider-button--left`
+    }
+  });
+
+  /**
+   * Добавление слайдера блока features
+   */
+  let featuresSwiper = new Swiper(`.features__wrapper`, {
+    speed: 1000,
+    loop: true,
+    slidesPerView: 2,
+    spaceBetween: 28,
+    autoplay: {
+      delay: 5000
+    },
+    breakpoints: {
+      1600: {
+        slidesPerView: 3
+      },
+      1920: {
+        slidesPerView: 3,
+        spaceBetween: 18
+      },
+      3840: {
+        slidesPerView: 5,
+        spaceBetween: 28
+      }
+    },
+    pagination: {
+      el: `.features__pagination`,
+      clickable: true,
+      renderBullet(index, className) {
+        return `<button class="${className}" type="button"><span class="visually-hidden">К слайду ${index + 1}</span></button>`;
+      },
+      bulletClass: `slider-pagination__button`,
+      bulletActiveClass: `slider-pagination__button--active`
+    }
+  });
+
+  /**
+   * Добавление слайдера блока services
+   */
+  let servicesSwiper = new Swiper(`.services__wrapper`, {
+    slidesPerView: 3,
+    slidesPerColumn: 2,
+    spaceBetween: 30,
+    breakpoints: {
+      1920: {
+        spaceBetween: 42
+      },
+      3840: {
+        slidesPerView: 4
+      }
+    },
+    pagination: {
+      el: `.services__pagination`,
+      clickable: true,
+      renderBullet(index, className) {
+        return `<button class="${className}" type="button"><span class="visually-hidden">К слайду ${index + 1}</span></button>`;
+      },
+      bulletClass: `slider-pagination__button`,
+      bulletActiveClass: `slider-pagination__button--active`
+    }
+  });
+
+  /**
+   * Добавление параллакса в блоке hero
+   */
+  let heroParallaxScenes = document.querySelectorAll(`.hero__slide-image`);
+
+  for (let i = 0; i < heroParallaxScenes.length; i++) {
+    let heroParallax = new Parallax(heroParallaxScenes[i], {
+      relativeInput: true,
+      hoverOnly: true,
+      inputElement: heroParallaxScenes[i].parentNode.parentNode,
+      pointerEvents: true
+    });
+  }
+
+  /**
+   * Оживление FAQ
+   */
+  let faqQuestions = document.querySelectorAll(`.faq__qa-question`);
+  let faqAnswers = document.querySelectorAll(`.faq__qa-answer`);
+
+  let faqPopup = document.querySelector(`.popup--qa-answer`);
+  let faqPopupClose = faqPopup.querySelector(`.popup__close`);
+  let faqPopupQuestion = faqPopup.querySelector(`.qa-answer__title`);
+  let faqPopupAnswer = faqPopup.querySelector(`.qa-answer__text`);
+
+  for (let i = 0; i < faqQuestions.length; i++) {
+    faqQuestions[i].firstChild.addEventListener(`click`, (evt) => {
+      evt.preventDefault();
+
+      faqPopupQuestion.textContent = faqQuestions[i].firstChild.textContent;
+      faqPopupAnswer.textContent = faqAnswers[i].textContent;
+
+      faqPopup.classList.add(`popup--shown`);
+      overlay.classList.add(`overlay--shown`);
+    });
+  }
+
+  faqPopupClose.addEventListener(`click`, (evt) => {
+    evt.preventDefault();
+    removeAnimationClassShown(faqPopup, `popup--shown`);
+    overlay.classList.remove(`overlay--shown`);
+  });
+}
+
+if (document.querySelector(`.page--inner`)) {
+  /**
+   * Оживление шапки на внутренних страницах
+   */
+  window.addEventListener(`scroll`, () => {
+    if (window.pageYOffset > 0) {
+      header.classList.add(`header--small`);
+    } else {
+      header.classList.remove(`header--small`);
+    }
+  });
+
+  /**
+   * Добавление слайдера блока labels
+   */
+  let labelsSwiper = new Swiper(`.labels__slider-wrapper`, {
+    loop: true,
+    loopedSlides: 9,
+    slidesPerView: `auto`,
+    spaceBetween: 61,
+    navigation: {
+      nextEl: `.labels__slider-button--right`,
+      prevEl: `.labels__slider-button--left`
+    }
   });
 }
 
@@ -119,60 +189,29 @@ for (let i = 0; i < heroParallaxScenes.length; i++) {
  */
 let partnershipInputs = document.querySelectorAll(`.partnership__form-field`);
 
-for (let i = 0; i < partnershipInputs.length; i++) {
-  partnershipInputs[i].firstChild.addEventListener(`input`, () => {
-    if (partnershipInputs[i].firstChild.value) {
-      partnershipInputs[i].firstChild.classList.add(`filled`);
-    } else {
-      partnershipInputs[i].firstChild.classList.remove(`filled`);
-    }
-  });
+if (partnershipInputs.length) {
+  for (let i = 0; i < partnershipInputs.length; i++) {
+    partnershipInputs[i].firstChild.addEventListener(`input`, () => {
+      if (partnershipInputs[i].firstChild.value) {
+        partnershipInputs[i].firstChild.classList.add(`filled`);
+      } else {
+        partnershipInputs[i].firstChild.classList.remove(`filled`);
+      }
+    });
+  }
 }
 
 /**
  * Добавление маски для телефона в форме
  */
-let phoneInputMask = IMask(document.querySelector(`.partnership__form-field [type=tel]`), {
-  mask: `+{7} (000)000-00-00`,
-  lazy: false
-});
+let phoneInput = document.querySelector(`.partnership__form-field [type=tel]`);
 
-/**
- * Оживление FAQ
- */
-let faqQuestions = document.querySelectorAll(`.faq__qa-question`);
-let faqAnswers = document.querySelectorAll(`.faq__qa-answer`);
-
-let faqPopup = document.querySelector(`.popup--qa-answer`);
-let faqPopupClose = faqPopup.querySelector(`.popup__close`);
-let faqPopupQuestion = faqPopup.querySelector(`.qa-answer__title`);
-let faqPopupAnswer = faqPopup.querySelector(`.qa-answer__text`);
-let overlay = document.querySelector(`.overlay`);
-
-for (let i = 0; i < faqQuestions.length; i++) {
-  faqQuestions[i].firstChild.addEventListener(`click`, (evt) => {
-    evt.preventDefault();
-
-    faqPopupQuestion.textContent = faqQuestions[i].firstChild.textContent;
-    faqPopupAnswer.textContent = faqAnswers[i].textContent;
-
-    faqPopup.classList.add(`popup--shown`);
-    overlay.classList.add(`overlay--shown`);
+if (phoneInput) {
+  let phoneInputMask = IMask(phoneInput, {
+    mask: `+{7} (000)000-00-00`,
+    lazy: false
   });
 }
-
-faqPopupClose.addEventListener(`click`, (evt) => {
-  evt.preventDefault();
-  removeAnimationClassShown(faqPopup, `popup--shown`);
-  overlay.classList.remove(`overlay--shown`);
-});
-
-overlay.addEventListener(`click`, () => {
-  let shownPopup = document.querySelector(`.popup--shown`);
-
-  removeAnimationClassShown(shownPopup, `popup--shown`);
-  overlay.classList.remove(`overlay--shown`);
-});
 
 /**
  * Закрытие панели cookies
@@ -217,4 +256,48 @@ function resetCSSAnimation(el, cls) {
   el.classList.remove(cls);
   void el.offsetWidth;
   el.classList.add(cls);
+}
+
+/**
+ * Открытие дополнительных полей формы
+ */
+let nextBtn = document.querySelector('#nextBtn');
+let prevBtn = document.querySelector('#prevBtn');
+let firstPartnerForm = document.querySelector('#firstPartnerForm');
+let secondPartnerForm = document.querySelector('#secondPartnerForm');
+
+if (nextBtn) {
+  nextBtn.addEventListener('click', function (evt) {
+    firstPartnerForm.classList.remove('partnership__form-stage--active');
+    secondPartnerForm.classList.add('partnership__form-stage--active');
+  });
+}
+if (prevBtn) {
+  prevBtn.addEventListener('click', function (evt) {
+    secondPartnerForm.classList.remove('partnership__form-stage--active');
+    firstPartnerForm.classList.add('partnership__form-stage--active');
+  });
+}
+
+/**
+ * Переключение активного заголовка формы
+ */
+let haveMusicBtn = document.querySelector('#haveMusic');
+let needMusicBtn = document.querySelector('#needMusic');
+
+if (haveMusicBtn) {
+  haveMusicBtn.addEventListener('click', function () {
+    if (!haveMusicBtn.classList.contains('partnership__form-variant--active')) {
+      haveMusicBtn.classList.add('partnership__form-variant--active');
+      needMusicBtn.classList.remove('partnership__form-variant--active');
+    }
+  });
+}
+if (needMusicBtn) {
+  needMusicBtn.addEventListener('click', function () {
+    if (!needMusicBtn.classList.contains('partnership__form-variant--active')) {
+      needMusicBtn.classList.add('partnership__form-variant--active');
+      haveMusicBtn.classList.remove('partnership__form-variant--active');
+    }
+  });
 }

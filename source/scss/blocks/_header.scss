@@ -16,6 +16,11 @@
   &--dark {
     background-color: $ColorPrimary200;
   }
+
+  .page--inner & {
+    position: sticky;
+    background-color: $ColorWhite;
+  }
 }
 
 .header__wrapper {
