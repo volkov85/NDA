@@ -1,5 +1,21 @@
 .labels {
   margin-top: -30px;
+
+  @media (min-width: $widthFHD) {
+    margin-top: 20px;
+
+    .container {
+      max-width: 1770px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    margin-top: 100px;
+
+    .container {
+      max-width: 3370px;
+    }
+  }
 }
 
 .labels__title {
@@ -10,7 +26,7 @@
   line-height: 1.2;
 
   @media (min-width: $width4K) {
-    font-size: $fontHeadersH2 * 1.5;
+    font-size: $fontHeadersH2_4K;
   }
 }
 
@@ -19,6 +35,18 @@
   margin-bottom: 28px;
   padding-right: 100px;
   padding-left: 100px;
+
+  @media (min-width: $widthFHD) {
+    margin-bottom: 45px;
+    padding-right: 105px;
+    padding-left: 105px;
+  }
+
+  @media (min-width: $width4K) {
+    margin-bottom: 125px;
+    padding-right: 240px;
+    padding-left: 240px;
+  }
 }
 
 .labels__slide-list {
@@ -30,8 +58,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: auto;
-  max-width: 80px;
+  width: 80px;
+  max-height: 64px;
   transition: filter 0.5s;
   filter: grayscale(1);
 
@@ -44,6 +72,15 @@
     outline: none;
     filter: grayscale(0);
   }
+
+  @media (min-width: $width4K) {
+    width: 184px;
+    max-height: 146px;
+
+    img {
+      width: auto;
+    }
+  }
 }
 
 .labels__slider-control {
@@ -55,6 +92,16 @@
   display: flex;
   justify-content: space-between;
   pointer-events: none;
+
+  @media (min-width: $widthFHD) {
+    top: 26px;
+  }
+
+  @media (min-width: $width4K) {
+    top: 60px;
+    right: 57px;
+    left: 57px;
+  }
 }
 
 .labels__slider-button {
@@ -79,8 +126,8 @@
   }
 
   @media (min-width: $width4K) {
-    width: 60px;
-    height: 18px;
+    width: 75px;
+    height: 24px;
   }
 }
 
@@ -88,13 +135,29 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
+
+  @media (min-width: $width4K) {
+    margin-bottom: 87px;
+  }
 }
 
 .labels__artists {
   display: grid;
   grid-template-columns: 285px 297px 304px 285px;
   grid-auto-rows: 269px;
+  align-self: center;
   margin-bottom: 12px;
+
+  @media (min-width: $widthFHD) {
+    grid-template-columns: repeat(2, 285px 297px 304px);
+    margin-bottom: 22px;
+  }
+
+  @media (min-width: $width4K) {
+    grid-template-columns: repeat(2, 542px 565px 579px);
+    grid-auto-rows: 553px;
+    margin-bottom: 74px;
+  }
 }
 
 .labels__artist {
@@ -135,6 +198,10 @@
       }
     }
   }
+
+  @media (min-width: $width4K) {
+    padding: 37px 26px;
+  }
 }
 
 .labels__artist-name {
@@ -146,6 +213,10 @@
   font-size: $fontTextHuge;
   line-height: 1.2;
   color: $ColorWhite;
+
+  @media (min-width: $width4K) {
+    font-size: $fontHeadersH1;
+  }
 }
 
 .labels__artist-image {
@@ -154,6 +225,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     transition: filter 0.3s;
     filter: none;
   }
@@ -166,6 +238,10 @@
   font-size: $fontTextMedium;
   line-height: $lineHeightHuge;
   color: $ColorSecondary;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
 
   &::before {
     content: "";
@@ -185,5 +261,9 @@
     &::before {
       width: 100%;
     }
+  }
+
+  @media (min-width: $width4K) {
+    font-size: $fontHeadersH1;
   }
 }

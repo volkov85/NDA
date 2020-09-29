@@ -174,12 +174,61 @@ if (document.querySelector(`.page--inner`)) {
    */
   let labelsSwiper = new Swiper(`.labels__slider-wrapper`, {
     loop: true,
-    loopedSlides: 9,
-    slidesPerView: `auto`,
-    spaceBetween: 61,
+    slidesPerView: 9,
+    spaceBetween: 31,
+    breakpoints: {
+      1920: {
+        slidesPerView: 15,
+        spaceBetween: 25
+      },
+      3840: {
+        slidesPerView: 12,
+        spaceBetween: 62
+      }
+    },
     navigation: {
       nextEl: `.labels__slider-button--right`,
       prevEl: `.labels__slider-button--left`
+    }
+  });
+
+  /**
+   * Добавление слайдера блока о компании
+   */
+  let about = document.querySelector(`.about`);
+  let aboutSwiper = new Swiper(`.about__wrapper`, {
+    loop: true,
+    effect: `fade`,
+    fadeEffect: {
+      crossFade: true
+    },
+    navigation: {
+      nextEl: `.about__slider-button--right`,
+      prevEl: `.about__slider-button--left`
+    },
+    pagination: {
+      el: `.about__slider-pagination`,
+      type: `fraction`,
+      formatFractionCurrent(num) {
+        return `0${num}`.slice(-2);
+      },
+      formatFractionTotal(num) {
+        return `0${num}`.slice(-2);
+      },
+      renderFraction(currentClass, totalClass) {
+        return `<span class="${currentClass}"></span> / <span class="${totalClass}"></span>`;
+      },
+      currentClass: `about__slider-pagination-current`,
+      totalClass: `about__slider-pagination-total`
+    },
+    on: {
+      slideChange(swiper) {
+        if (swiper.slides[swiper.activeIndex].classList.contains(`about__slide--dark`)) {
+          about.classList.add(`about--dark`);
+        } else {
+          about.classList.remove(`about--dark`);
+        }
+      }
     }
   });
 }

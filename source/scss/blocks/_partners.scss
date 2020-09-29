@@ -1,6 +1,10 @@
 .partners {
   .columns {
     grid-template-columns: 1fr calc(50% + 85px);
+
+    @media (min-width: $widthFHD) {
+      grid-template-columns: 1fr calc(50% + 43px);
+    }
   }
 }
 
@@ -13,6 +17,19 @@
   width: 532px;
   margin-left: auto;
   padding: 48px 32px 70px 30px;
+
+  @media (min-width: $widthFHD) {
+    width: 870px;
+    padding-right: 90px;
+    padding-bottom: 50px;
+  }
+
+  @media (min-width: $width4K) {
+    width: 1640px;
+    padding-top: 140px;
+    padding-bottom: 70px;
+    padding-left: 60px;
+  }
 }
 
 .partners__title {
@@ -34,13 +51,18 @@
     background-color: $ColorSecondary;
   }
 
+  @media (min-width: $widthFHD) {
+    margin-bottom: 40px;
+  }
+
   @media (min-width: $width4K) {
+    margin-bottom: 70px;
     padding-top: 25px;
-    font-size: $fontHeadersH2 * 1.5;
+    font-size: $fontHeadersH2_4K;
 
     &::before {
-      width: 200px;
-      height: 6px;
+      width: 360px;
+      height: 9px;
     }
   }
 }
@@ -51,6 +73,17 @@
   font-size: $fontTextXLarge;
   line-height: $lineHeightHuge;
   color: $ColorPrimary300;
+
+  @media (min-width: $widthFHD) {
+    font-size: $fontHeadersPopup;
+    line-height: $lineHeightH2;
+  }
+
+  @media (min-width: $width4K) {
+    font-weight: $fontSemiBold;
+    font-size: $fontTextXLarge4K;
+    line-height: $lineHeightHuge4K;
+  }
 }
 
 .partners__col-right {
@@ -61,12 +94,38 @@
     background-image: url("../img/partners_bg@2x.png");
     background-size: 1777px;
   }
+
+  @media (min-width: $widthFHD) {
+    background-position-x: 100px;
+  }
+
+  @media (min-width: $width4K) {
+    background-image: url("../img/partners_bg-4k@1x.png");
+    background-position: 400px -1500px;
+    background-size: 3227px;
+
+    @media (min-resolution: 144dpi) {
+      background-image: url("../img/partners_bg-4k@2x.png");
+    }
+  }
 }
 
 .partners__col-right-wrapper {
   box-sizing: border-box;
-  width: 562px;
+  width: 698px;
   padding: 131px 30px 70px 32px;
+
+  @media (min-width: $widthFHD) {
+    width: 960px;
+    padding-top: 106px;
+    padding-bottom: 50px;
+    padding-left: 40px;
+  }
+
+  @media (min-width: $width4K) {
+    width: 1845px;
+    padding: 230px 60px 70px 100px;
+  }
 }
 
 .partners__text-small {
@@ -75,4 +134,16 @@
   font-size: $fontTextMedium;
   line-height: $lineHeightPopup;
   color: $ColorWhite;
+
+  @media (min-width: $widthFHD) {
+    font-weight: $fontRegular;
+    font-size: $fontTextLarge;
+    line-height: 1.8;
+  }
+
+  @media (min-width: $width4K) {
+    font-weight: $fontMedium;
+    font-size: $fontTextMedium4K;
+    line-height: 1.5;
+  }
 }

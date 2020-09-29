@@ -10,11 +10,19 @@
     max-width: 1524px;
     padding-right: 30px;
     padding-left: 30px;
+
+    .page--inner & {
+      max-width: 1770px;
+    }
   }
 
   @media (min-width: $width4K) {
     max-width: 2900px;
     padding-right: 60px;
     padding-left: 60px;
+
+    .page--inner & {
+      max-width: 3370px;
+    }
   }
 }

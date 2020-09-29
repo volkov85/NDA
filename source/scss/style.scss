@@ -43,6 +43,9 @@
 // Подключаем стили блока партнёров
 @import "blocks/partners", "blocks/labels";
 
+// Подключаем стили блока о компании
+@import "blocks/about";
+
 // Подключаем стили всплывающих окон
 @import "blocks/popup", "blocks/qa-answer", "blocks/partner";
 
