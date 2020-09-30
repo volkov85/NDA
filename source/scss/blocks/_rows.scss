@@ -1,10 +1,6 @@
 .rows {
   display: grid;
-  grid-template-rows: 1fr 200px;
+  grid-template-rows: 1fr auto;
   height: 100%;
   background-color: $ColorWhite;
-
-  @media (min-width: $width4K) {
-    grid-template-rows: 1fr 230px;
-  }
 }

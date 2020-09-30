@@ -1,0 +1,171 @@
+.artists {
+  margin-bottom: 30px;
+
+  @media (min-width: $widthFHD) {
+    .container {
+      max-width: 1770px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    margin-bottom: 87px;
+
+    .container {
+      max-width: 3370px;
+    }
+  }
+}
+
+.artists__title {
+  margin: 0;
+  margin-bottom: 15px;
+  font-weight: $fontBold;
+  font-size: $fontTextHuge;
+  line-height: 1.2;
+
+  @media (min-width: $widthFHD) {
+    font-size: $fontHeadersH2;
+  }
+
+  @media (min-width: $width4K) {
+    margin-bottom: 25px;
+    font-size: $fontHeadersH2_4K;
+  }
+}
+
+.artists__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.artists__list {
+  display: grid;
+  grid-template-columns: 285px 297px 304px 285px;
+  grid-auto-rows: 198px;
+  align-self: center;
+  margin-bottom: 12px;
+
+  @media (min-width: $widthFHD) {
+    grid-template-columns: repeat(2, 285px 297px 304px);
+    grid-auto-rows: 242px;
+    margin-bottom: 22px;
+  }
+
+  @media (min-width: $width4K) {
+    grid-template-columns: repeat(2, 542px 565px 579px);
+    grid-auto-rows: 553px;
+    margin-bottom: 50px;
+  }
+}
+
+.artists__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+  padding: 14px 18px;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-image: linear-gradient(31deg, $ColorSecondary200 16%, transparent 120%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &::before {
+      opacity: 1;
+    }
+
+    .artists__image {
+      img {
+        filter: grayscale(1);
+      }
+    }
+  }
+
+  @media (min-width: $width4K) {
+    padding: 37px 26px;
+  }
+}
+
+.artists__name {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  margin-top: auto;
+  font-weight: $fontBold;
+  font-size: $fontTextHuge;
+  line-height: 1.2;
+  color: $ColorWhite;
+
+  @media (min-width: $width4K) {
+    font-size: $fontHeadersH1;
+  }
+}
+
+.artists__image {
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: filter 0.3s;
+    filter: none;
+  }
+}
+
+.artists__load-more {
+  position: relative;
+  align-self: flex-end;
+  font-weight: $fontSemiBold;
+  font-size: $fontTextSmall;
+  line-height: 1.4;
+  color: $ColorSecondary;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $ColorSecondary;
+    transition: width 0.3s;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &::before {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    font-size: $fontTextRegular;
+  }
+
+  @media (min-width: $width4K) {
+    font-size: $fontHeadersH1;
+  }
+}

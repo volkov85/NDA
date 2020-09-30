@@ -1,6 +1,14 @@
 .footer {
   background-color: $ColorPrimary200;
   padding: 36px 0;
+
+  @media (min-width: $widthFHD) {
+    padding: 26px 0 45px;
+  }
+
+  @media (min-width: $width4K) {
+    padding: 60px 0;
+  }
 }
 
 .footer__top {
@@ -10,18 +18,45 @@
   border-bottom: 1px solid $ColorPrimary300;
 }
 
-.footer__logo span {
-  display: inline-block;
-  font-weight: $fontSemiBold;
-  font-size: $fontTextNav_Footer;
-  color: $fontColorWhite;
-  width: 100px;
-  margin: auto 33px;
-}
-
 .footer__logo {
   display: flex;
-  min-height: 60px;
+
+  img {
+    display: block;
+    width: 65px;
+  }
+
+  span {
+    display: inline-block;
+    width: 100px;
+    margin: auto 33px;
+    font-weight: $fontSemiBold;
+    font-size: $fontTextNav_Footer;
+    color: $fontColorWhite;
+  }
+
+  @media (min-width: $widthFHD) {
+    img {
+      width: 86px;
+    }
+
+    span {
+      font-size: $fontTextMedium;
+      line-height: 28px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    img {
+      width: 158px;
+    }
+
+    span {
+      margin-left: 64px;
+      font-size: 30px;
+      line-height: $lineHeightHuge;
+    }
+  }
 }
 
 .footer__menu {
@@ -35,10 +70,22 @@
 }
 
 .footer__menu-item {
-  margin: 0 30px 5px 30px;
+  margin: 0 30px 5px;
 
   &:last-child {
     margin-right: 0;
+  }
+
+  .page--inner & {
+    @media (min-width: $widthFHD) {
+      margin-right: 50px;
+      margin-left: 50px;
+    }
+
+    @media (min-width: $width4K) {
+      margin-right: 110px;
+      margin-left: 110px;
+    }
   }
 }
 
@@ -49,25 +96,6 @@
   color: $fontColorGrey;
   transition: color 0.3s;
 
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: $ColorSecondary;
-    transition:
-      color 0.3s,
-      width 0.3s;
-  }
-
-  &--active {
-    &::before {
-      width: 24px;
-    }
-  }
-
   &--active,
   &:hover,
   &:focus {
@@ -75,9 +103,113 @@
     outline: none;
   }
 
+  @media (min-width: $widthFHD) {
+    font-size: $fontTextLarge;
+    line-height: $lineHeightLarge;
+  }
+
   @media (min-width: $width4K) {
-    font-size: $fontTextNav_Footer * 1.5;
+    font-size: $fontHeadersAboutH1;
+    line-height: $lineHeightHuge;
+  }
+}
+
+.footer__middle {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 7px;
+
+  @media (min-width: $widthFHD) {
+    padding-top: 36px;
+    padding-bottom: 0;
+  }
+
+  @media (min-width: $width4K) {
+    padding-top: 70px;
+  }
+}
+
+.footer__social {
+  display: flex;
+  justify-content: space-between;
+  width: 170px;
+
+  @media (min-width: $widthFHD) {
+    width: 220px;
+  }
+
+  @media (min-width: $width4K) {
+    width: 375px;
+  }
+}
+
+.footer__soial-link {
+  width: 25px;
+  height: 25px;
+  background: center / contain no-repeat;
+  transition: filter 0.3s;
+
+  @each $icon in fb, ig, vk, yt {
+    &--#{$icon} {
+      background-image: url("../img/icon-social-#{$icon}.svg");
+    }
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    filter: grayscale(1) brightness(0.8);
+  }
+
+  @media (min-width: $widthFHD) {
+    width: 35px;
+    height: 35px;
+  }
+
+  @media (min-width: $width4K) {
+    width: 53px;
+    height: 53px;
+  }
+}
+
+.footer__link-ask {
+  position: relative;
+  font-size: $fontTextNav_Footer;
+  line-height: $lineHeightNav_Footer;
+  color: $fontColorPink;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 244px;
+    height: 1px;
+    background-color: $ColorSecondary;
+    transform: translateX(calc(-100% - 25px));
+  }
+
+  @media (min-width: $widthFHD) {
+    font-weight: $fontBold;
+    font-size: $fontTextMedium;
+    line-height: $lineHeightLarge;
+
+    &::before {
+      bottom: 18px;
+      height: 3px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    font-size: 30px;
     line-height: 1.2;
+
+    &::before {
+      bottom: 22px;
+      width: 463px;
+      transform: translateX(calc(-100% - 60px));
+    }
   }
 }
 
@@ -85,18 +217,31 @@
   display: flex;
   justify-content: space-between;
   padding-top: 24px;
+
+  @media (min-width: $widthFHD) {
+    padding-top: 36px;
+  }
+
+  @media (min-width: $width4K) {
+    padding-top: 70px;
+  }
 }
 
 .footer__bottom-link,
 .footer__bottom-copyright {
-  color: $fontColorWhite;
+  margin: 0;
+  font-weight: $fontRegular;
   font-size: $fontTextNav_Footer;
   line-height: $lineHeightNav_Footer;
-  font-weight: $fontRegular;
-  margin: 0;
+  color: $fontColorWhite;
+
+  @media (min-width: $widthFHD) {
+    font-size: $fontTextMedium;
+    line-height: $lineHeightButton;
+  }
 
   @media (min-width: $width4K) {
-    font-size: $fontTextNav_Footer * 1.5;
-    line-height: 1.2;
+    font-size: 35px;
+    line-height: $lineHeightH2;
   }
 }

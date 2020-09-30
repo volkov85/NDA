@@ -1,10 +1,20 @@
 .partners {
+  margin-bottom: 10px;
+
   .columns {
     grid-template-columns: 1fr calc(50% + 85px);
+  }
 
-    @media (min-width: $widthFHD) {
+  @media (min-width: $widthFHD) {
+    margin-bottom: 15px;
+
+    .columns {
       grid-template-columns: 1fr calc(50% + 43px);
     }
+  }
+
+  @media (min-width: $width4K) {
+    margin-bottom: 60px;
   }
 }
 
@@ -16,12 +26,12 @@
   box-sizing: border-box;
   width: 532px;
   margin-left: auto;
-  padding: 48px 32px 70px 30px;
+  padding: 50px 30px 40px 30px;
 
   @media (min-width: $widthFHD) {
     width: 870px;
-    padding-right: 90px;
-    padding-bottom: 50px;
+    padding-right: 30px;
+    padding-bottom: 10px;
   }
 
   @media (min-width: $width4K) {
@@ -35,10 +45,10 @@
 .partners__title {
   position: relative;
   margin: 0;
-  margin-bottom: 31px;
+  margin-bottom: 23px;
   padding-top: 16px;
   font-weight: $fontBold;
-  font-size: $fontHeadersH2;
+  font-size: $fontTextHuge;
   line-height: 1.2;
 
   &::before {
@@ -52,11 +62,12 @@
   }
 
   @media (min-width: $widthFHD) {
-    margin-bottom: 40px;
+    margin-bottom: 21px;
+    font-size: $fontHeadersH2;
   }
 
   @media (min-width: $width4K) {
-    margin-bottom: 70px;
+    margin-bottom: 45px;
     padding-top: 25px;
     font-size: $fontHeadersH2_4K;
 
@@ -69,26 +80,26 @@
 
 .partners__text {
   margin: 0;
-  font-weight: $fontBold;
-  font-size: $fontTextXLarge;
-  line-height: $lineHeightHuge;
+  font-weight: $fontSemiBold;
+  font-size: $fontTextMedium;
+  line-height: 28px;
   color: $ColorPrimary300;
 
   @media (min-width: $widthFHD) {
-    font-size: $fontHeadersPopup;
-    line-height: $lineHeightH2;
+    font-weight: $fontBold;
+    line-height: $lineHeightPopup;
   }
 
   @media (min-width: $width4K) {
     font-weight: $fontSemiBold;
-    font-size: $fontTextXLarge4K;
-    line-height: $lineHeightHuge4K;
+    font-size: $fontHeadersH1;
+    line-height: 1.75;
   }
 }
 
 .partners__col-right {
   display: flex;
-  background: url("../img/partners_bg@1x.png") -190px -835px no-repeat $ColorPrimary200;
+  background: url("../img/partners_bg@1x.png") -180px -570px no-repeat $ColorPrimary200;
 
   @media (min-resolution: 144dpi) {
     background-image: url("../img/partners_bg@2x.png");
@@ -96,12 +107,12 @@
   }
 
   @media (min-width: $widthFHD) {
-    background-position-x: 100px;
+    background-position-x: -80px;
   }
 
   @media (min-width: $width4K) {
     background-image: url("../img/partners_bg-4k@1x.png");
-    background-position: 400px -1500px;
+    background-position: 100px -1470px;
     background-size: 3227px;
 
     @media (min-resolution: 144dpi) {
@@ -113,37 +124,34 @@
 .partners__col-right-wrapper {
   box-sizing: border-box;
   width: 698px;
-  padding: 131px 30px 70px 32px;
+  padding: 80px 30px 40px 32px;
 
   @media (min-width: $widthFHD) {
     width: 960px;
     padding-top: 106px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     padding-left: 40px;
   }
 
   @media (min-width: $width4K) {
     width: 1845px;
-    padding: 230px 60px 70px 100px;
+    padding: 150px 60px 70px 100px;
   }
 }
 
 .partners__text-small {
   margin: 0;
   font-weight: $fontMedium;
-  font-size: $fontTextMedium;
   line-height: $lineHeightPopup;
   color: $ColorWhite;
 
   @media (min-width: $widthFHD) {
-    font-weight: $fontRegular;
-    font-size: $fontTextLarge;
-    line-height: 1.8;
+    font-size: $fontTextSmall;
+    line-height: 24px;
   }
 
   @media (min-width: $width4K) {
-    font-weight: $fontMedium;
-    font-size: $fontTextMedium4K;
-    line-height: 1.5;
+    font-size: 38px;
+    line-height: $lineHeightH1;
   }
 }

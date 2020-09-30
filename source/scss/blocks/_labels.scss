@@ -1,8 +1,8 @@
 .labels {
-  margin-top: -30px;
+  margin-bottom: 25px;
 
   @media (min-width: $widthFHD) {
-    margin-top: 20px;
+    margin-bottom: 30px;
 
     .container {
       max-width: 1770px;
@@ -10,7 +10,7 @@
   }
 
   @media (min-width: $width4K) {
-    margin-top: 100px;
+    margin-bottom: 80px;
 
     .container {
       max-width: 3370px;
@@ -20,30 +20,33 @@
 
 .labels__title {
   margin: 0;
-  margin-bottom: 31px;
+  margin-bottom: 8px;
   font-weight: $fontBold;
-  font-size: $fontHeadersH2;
+  font-size: $fontTextHuge;
   line-height: 1.2;
 
+  @media (min-width: $widthFHD) {
+    margin-bottom: 13px;
+    font-size: $fontHeadersH2;
+  }
+
   @media (min-width: $width4K) {
+    margin-bottom: 24px;
     font-size: $fontHeadersH2_4K;
   }
 }
 
 .labels__slider {
   position: relative;
-  margin-bottom: 28px;
   padding-right: 100px;
   padding-left: 100px;
 
   @media (min-width: $widthFHD) {
-    margin-bottom: 45px;
     padding-right: 105px;
     padding-left: 105px;
   }
 
   @media (min-width: $width4K) {
-    margin-bottom: 125px;
     padding-right: 240px;
     padding-left: 240px;
   }
@@ -85,7 +88,7 @@
 
 .labels__slider-control {
   position: absolute;
-  top: 18px;
+  top: 15px;
   right: 0;
   left: 0;
   z-index: 1;
@@ -93,26 +96,20 @@
   justify-content: space-between;
   pointer-events: none;
 
-  @media (min-width: $widthFHD) {
-    top: 26px;
-  }
-
   @media (min-width: $width4K) {
-    top: 60px;
-    right: 57px;
-    left: 57px;
+    top: 50px;
   }
 }
 
 .labels__slider-button {
-  width: 40px;
-  height: 12px;
+  width: 52px;
+  height: 37px;
   padding: 0;
-  background: url("../img/icon-arrow.svg") center / contain no-repeat;
+  background: url("../img/icon-arrow-white.svg") center / 24px no-repeat $fontColorLightGrey;
   border: none;
+  border-radius: 10px;
   cursor: pointer;
-  filter: grayscale(1) brightness(2.5);
-  transition: filter 0.3s;
+  transition: background-color 0.3s;
   pointer-events: auto;
 
   &--left {
@@ -122,148 +119,12 @@
   &:hover,
   &:focus {
     outline: none;
-    filter: none;
-  }
-
-  @media (min-width: $width4K) {
-    width: 75px;
-    height: 24px;
-  }
-}
-
-.labels__artists-wrapper {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 30px;
-
-  @media (min-width: $width4K) {
-    margin-bottom: 87px;
-  }
-}
-
-.labels__artists {
-  display: grid;
-  grid-template-columns: 285px 297px 304px 285px;
-  grid-auto-rows: 269px;
-  align-self: center;
-  margin-bottom: 12px;
-
-  @media (min-width: $widthFHD) {
-    grid-template-columns: repeat(2, 285px 297px 304px);
-    margin-bottom: 22px;
-  }
-
-  @media (min-width: $width4K) {
-    grid-template-columns: repeat(2, 542px 565px 579px);
-    grid-auto-rows: 553px;
-    margin-bottom: 74px;
-  }
-}
-
-.labels__artist {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  width: 100%;
-  min-height: 100%;
-  padding: 14px 18px;
-  overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    background-image: linear-gradient(31deg, $ColorSecondary200 16%, transparent 120%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-  }
-
-  &:hover,
-  &:focus {
-    outline: none;
-
-    &::before {
-      opacity: 1;
-    }
-
-    .labels__artist-image {
-      img {
-        filter: grayscale(1);
-      }
-    }
-  }
-
-  @media (min-width: $width4K) {
-    padding: 37px 26px;
-  }
-}
-
-.labels__artist-name {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  margin-top: auto;
-  font-weight: $fontBold;
-  font-size: $fontTextHuge;
-  line-height: 1.2;
-  color: $ColorWhite;
-
-  @media (min-width: $width4K) {
-    font-size: $fontHeadersH1;
-  }
-}
-
-.labels__artist-image {
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: filter 0.3s;
-    filter: none;
-  }
-}
-
-.labels__load-more {
-  position: relative;
-  align-self: flex-end;
-  font-weight: $fontSemiBold;
-  font-size: $fontTextMedium;
-  line-height: $lineHeightHuge;
-  color: $ColorSecondary;
-  cursor: pointer;
-  border: none;
-  background: none;
-  padding: 0;
-
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
     background-color: $ColorSecondary;
-    transition: width 0.3s;
-  }
-
-  &:hover,
-  &:focus {
-    outline: none;
-
-    &::before {
-      width: 100%;
-    }
   }
 
   @media (min-width: $width4K) {
-    font-size: $fontHeadersH1;
+    width: 89px;
+    height: 63px;
+    background-size: 41px;
   }
 }
