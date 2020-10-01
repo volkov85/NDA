@@ -22,17 +22,19 @@
   margin: 0;
   margin-bottom: 8px;
   font-weight: $fontBold;
-  font-size: $fontTextHuge;
-  line-height: 1.2;
+  font-size: $fontTitleSmall;
+  line-height: $lineHeightTitleSmall;
 
   @media (min-width: $widthFHD) {
     margin-bottom: 13px;
-    font-size: $fontHeadersH2;
+    font-size: $fontTitleRegular;
+    line-height: $lineHeightTitleRegular;
   }
 
   @media (min-width: $width4K) {
     margin-bottom: 24px;
-    font-size: $fontHeadersH2_4K;
+    font-size: $fontTitleSmall4K;
+    line-height: $lineHeightTitleRegular4K;
   }
 }
 
@@ -55,6 +57,10 @@
 .labels__slide-list {
   display: flex;
   align-items: center;
+
+  &--linear {
+    transition-timing-function: linear !important;
+  }
 }
 
 .labels__slide {

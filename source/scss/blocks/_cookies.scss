@@ -4,6 +4,7 @@
   bottom: 0;
   left: 0;
   z-index: 1;
+  display: none;
   background-color: $ColorWhite;
 }
 
@@ -17,11 +18,11 @@
 .cookies__text {
   margin: 0;
   font-weight: $fontSemiBold;
-  font-size: $fontTextLarge;
-  line-height: 1.2;
+  font-size: $fontTextHuge;
+  line-height: $lineHeightNormal;
   color: $ColorSecondary;
 
   @media (min-width: $width4K) {
-    font-size: $fontTextXLarge * 1.4;
+    font-size: $fontTextSmall4K;
   }
 }

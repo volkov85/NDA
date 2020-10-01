@@ -1,0 +1,227 @@
+.feedback {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 50px 33px 43px;
+
+  .button {
+    min-width: 200px;
+    max-width: 200px;
+  }
+}
+
+.feedback__title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 40px;
+  padding-top: 16px;
+  font-weight: $fontSemiBold;
+  font-size: $fontTitleRegular;
+  line-height: $lineHeightTitleRegular;
+  color: $ColorSecondary;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 124px;
+    height: 4px;
+    background-color: $ColorPrimary300;
+  }
+
+  @media (min-width: $width4K) {
+    padding-top: 25px;
+    font-size: $fontTitleSmall4K;
+    line-height: $lineHeightTitleRegular4K;
+
+    &::before {
+      width: 360px;
+      height: 9px;
+    }
+  }
+}
+
+.feedback__form {
+  display: flex;
+  flex-direction: column;
+  width: 637px;
+}
+
+.feedback__form-fields {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.feedback__form-field {
+  position: relative;
+  min-height: 54px;
+  font-weight: $fontMedium;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightSmall;
+  color: $ColorPrimary300;
+
+  input,
+  textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 17px 35px;
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 1px solid $fontColorLightGrey;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+
+    &.filled,
+    &:hover,
+    &:focus {
+      border-color: $ColorSecondary;
+
+      + span {
+        color: $ColorSecondary;
+      }
+    }
+
+    &.filled,
+    &:focus {
+      outline: none;
+
+      + span {
+        transform: translateY(-15px) scale(0.8);
+      }
+    }
+  }
+
+  textarea {
+    height: 107px;
+  }
+
+  span {
+    position: absolute;
+    top: 17px;
+    left: 35px;
+    transform-origin: left;
+    transition:
+      color 0.3s,
+      transform 0.3s;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  @media (min-width: $width4K) {
+    min-height: 75px;
+    font-size: $fontTextLarge;
+    line-height: $lineHeightNormal;
+
+    input,
+    textarea {
+      padding: 24px 20px;
+
+      &.filled,
+      &:focus {
+        + span {
+          transform: translateY(-20px) scale(0.8);
+        }
+      }
+    }
+
+    textarea {
+      height: 180px;
+    }
+
+    span {
+      top: 24px;
+      left: 20px;
+    }
+  }
+}
+
+.feedback__form-privacy {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 45px;
+  padding-left: 32px;
+  font-weight: $fontMedium;
+  font-size: $fontTextRegular;
+  line-height: $fontTextMedium;
+  color: $ColorPrimary300;
+  transition: color 0.3s;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    z-index: 5;
+    width: 18px;
+    height: 18px;
+    opacity: 0;
+    cursor: pointer;
+
+    &:checked + span {
+      &::after {
+        transform: none;
+      }
+    }
+  }
+
+  span {
+    &::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: 0;
+      box-sizing: border-box;
+      width: 18px;
+      height: 18px;
+      border: 1px solid $ColorSecondary;
+      border-radius: 5px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 5px;
+      width: 9px;
+      height: 9px;
+      background: url("../img/icon-check.svg") center / contain no-repeat;
+      transform: scale(0);
+      transition: transform 0.3s;
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+    color: $ColorPrimary100;
+  }
+
+  @media (min-width: $width4K) {
+    font-size: $fontTextLarge;
+    line-height: $lineHeightNormal;
+
+    input {
+      width: 21px;
+      height: 21px;
+    }
+
+    span {
+      &::before {
+        top: 2px;
+        width: 21px;
+        height: 21px;
+      }
+
+      &::after {
+        top: 7px;
+        width: 11px;
+        height: 11px;
+      }
+    }
+  }
+}

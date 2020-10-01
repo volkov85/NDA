@@ -59,8 +59,8 @@
   margin-bottom: 31px;
   padding-top: 16px;
   font-weight: $fontBold;
-  font-size: $fontHeadersH2;
-  line-height: 1.2;
+  font-size: $fontTitleRegular;
+  line-height: $lineHeightTitleRegular;
 
   &::before {
     content: "";
@@ -90,7 +90,8 @@
   @media (min-width: $width4K) {
     margin-bottom: 100px;
     padding-top: 25px;
-    font-size: $fontHeadersH2_4K;
+    font-size: $fontTitleSmall4K;
+    line-height: $lineHeightTitleRegular4K;
 
     &::before {
       width: 360px;
@@ -173,16 +174,18 @@
   display: block;
   margin-bottom: 10px;
   font-weight: $fontBold;
-  font-size: $fontTextXLarge;
-  line-height: 1.2;
+  font-size: $fontTitleTiny;
+  line-height: $lineHeightTitleTiny;
   color: $ColorSecondary;
 
   @media (min-width: $widthFHD) {
-    font-size: $fontHeadersH2;
+    font-size: $fontTitleRegular;
+    line-height: $lineHeightTitleRegular;
   }
 
   @media (min-width: $width4K) {
-    font-size: $fontTextHuge4K;
+    font-size: $fontTitleRegular4K;
+    line-height: $lineHeightTitleMedium4K;
   }
 }
 
@@ -190,7 +193,7 @@
   margin: 0;
   font-weight: $fontMedium;
   font-size: $fontTextLarge;
-  line-height: 1.2;
+  line-height: $lineHeightXLarge;
 
   .page--index &,
   .contacts--dark & {
@@ -209,13 +212,13 @@
   }
 
   @media (min-width: $widthFHD) {
-    font-size: $fontTextHuge;
-    line-height: 1.4;
+    font-size: $fontTitleTiny;
+    line-height: $lineHeightTitleRegular;
   }
 
   @media (min-width: $width4K) {
-    font-size: $fontTextLarge4K;
-    line-height: 1.23;
+    font-size: $fontTextHuge4K;
+    line-height: $lineHeightLarge4K;
   }
 }
 
@@ -276,8 +279,8 @@
   position: relative;
   display: inline-block;
   font-weight: $fontSemiBold;
-  font-size: $fontTextHuge;
-  line-height: 1.2;
+  font-size: $fontTitleSmall;
+  line-height: $lineHeightTitleSmall;
   text-align: center;
   color: $ColorSecondary;
   text-transform: uppercase;
@@ -313,7 +316,8 @@
   }
 
   @media (min-width: $width4K) {
-    font-size: 68px;
+    font-size: $fontTitleMedium4K;
+    line-height: $lineHeightTitleLarge4K;
 
     &::before {
       height: 3px;

@@ -9,8 +9,8 @@
   margin-bottom: 17px;
   padding-right: 150px;
   font-weight: $fontSemiBold;
-  font-size: $fontHeadersH2;
-  line-height: $lineHeightH2;
+  font-size: $fontTitleRegular;
+  line-height: $lineHeightTitleMedium;
   text-transform: uppercase;
 }
 
@@ -52,8 +52,8 @@
   margin: 0;
   margin-bottom: 12px;
   font-weight: $fontMedium;
-  font-size: $fontTextNav;
-  line-height: $lineHeightNav;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightTiny;
   color: $ColorPrimary300;
   text-transform: uppercase;
   transition: color 0.3s;
@@ -63,8 +63,8 @@
   position: relative;
   margin: 0;
   font-weight: $fontMedium;
-  font-size: $fontTextSmall;
-  line-height: $lineHeightSmall;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightRegular;
   color: $ColorPrimary300;
   text-transform: uppercase;
   transition: color 0.3s;
@@ -97,8 +97,8 @@
 .partner__form-field {
   position: relative;
   font-weight: $fontMedium;
-  font-size: $fontTextSmall;
-  line-height: $lineHeightSmall;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightRegular;
   color: $ColorPrimary300;
 
   input {
@@ -151,8 +151,8 @@
   margin-bottom: 20px;
   padding-left: 32px;
   font-weight: $fontMedium;
-  font-size: $fontTextSmall;
-  line-height: $lineHeightSmall;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightRegular;
   color: $ColorPrimary300;
   transition: color 0.3s;
   cursor: pointer;

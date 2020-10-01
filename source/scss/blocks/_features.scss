@@ -48,7 +48,7 @@
   margin: 0;
   margin-bottom: 30px;
   font-weight: $fontBold;
-  font-size: $fontHeadersH2;
+  font-size: $fontTitleRegular;
   line-height: 1.2;
 
   &::before {
@@ -66,7 +66,7 @@
   }
 
   @media (min-width: $width4K) {
-    font-size: $fontHeadersH2 * 1.5;
+    font-size: $fontTitleRegular * 1.5;
 
     &::before {
       top: -25px;
@@ -209,7 +209,7 @@
 
 .features__slide-number {
   display: inline-block;
-  font-size: $fontHeadersH4;
+  font-size: $fontTitleLarge;
   font-weight: $fontSemiBold;
   color: $fontColorLightGrey;
   line-height: 43px;
@@ -219,17 +219,17 @@
     opacity 0.3s;
 
   @media (max-width: $widthDesktopWide - 1), (min-width: $widthFHD) and (max-width: $width4K - 1) {
-    font-size: $fontTextHuge;
-    line-height: $lineHeightPopup;
+    font-size: $fontTitleSmall;
+    line-height: $lineHeightHuge;
   }
 }
 
 .features__slide-title {
   width: 165px;
-  font-size: $fontTextSmall;
+  font-size: $fontTextRegular;
   font-weight: $fontBold;
   color: $fontColorDarkGrey;
-  line-height: $lineHeightMedium;
+  line-height: $lineHeightSubtitleLarge;
   text-transform: uppercase;
   margin: 11px 0 41px 0;
   transition: color 0.3s;
@@ -238,15 +238,15 @@
     width: 60%;
     margin-top: 5px;
     margin-bottom: 9px;
-    font-size: $fontTextNav;
-    line-height: $lineHeightButton;
+    font-size: $fontTextSmall;
+    line-height: $lineHeightMedium;
   }
 
   @media (min-width: $width4K) {
     width: 250px;
     margin-top: 11px;
     margin-bottom: 41px;
-    font-size: $fontTextSmall * 1.5;
+    font-size: $fontTextRegular * 1.5;
     line-height: 1.2;
   }
 }
@@ -259,22 +259,22 @@
   overflow: hidden;
   // --------------
   width: 250px;
-  font-size: $fontTextSmall;
+  font-size: $fontTextRegular;
   font-weight: $fontLight;
   color: $fontColorGrey;
-  line-height: $lineHeightSmall;
+  line-height: $lineHeightRegular;
   margin: 0 0 44px 0;
 
   @media (max-width: $widthDesktopWide - 1), (min-width: $widthFHD) {
     width: 100%;
-    font-size: $fontTextNav;
-    line-height: $lineHeightNav_Footer;
+    font-size: $fontTextSmall;
+    line-height: $lineHeightSmall;
   }
 
   @media (min-width: $width4K) {
     width: 65%;
-    font-size: $fontTextMedium;
-    line-height: $lineHeightSmall;
+    font-size: $fontTextLarge;
+    line-height: $lineHeightRegular;
   }
 }
 

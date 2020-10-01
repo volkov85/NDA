@@ -39,7 +39,7 @@
                 <a href="#" class="header__menu-link">Новости</a>
               </li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Контакты</a>
+                <a href="contacts.html" class="header__menu-link">Контакты</a>
               </li>
             </ul>
           </nav>
@@ -366,110 +366,206 @@
           <div class="partnership">
             <div class="partnership__wrapper">
               <b class="partnership__title">Стать партнером</b>
-              <form action="#" method="post" class="partnership__form">
+              <div class="partnership__form-wrapper">
                 <div class="partnership__form-variants">
-                  <div class="partnership__form-variant partnership__form-variant--active" id="haveMusic">
+                  <button type="button" class="partnership__form-variant partnership__form-variant--active">
                     <p class="partnership__form-variant-title">У меня есть музыка</p>
                     <p class="partnership__form-variant-desc">и я хочу ее продавать</p>
-                  </div>
-                  <div class="partnership__form-variant" id="needMusic">
+                  </button>
+                  <button type="button" class="partnership__form-variant">
                     <p class="partnership__form-variant-title">Мне нужна музыка</p>
                     <p class="partnership__form-variant-desc">и я хочу ее использовать</p>
-                  </div>
+                  </button>
                 </div>
-                <div class="partnership__form-stage partnership__form-stage--active" id="firstPartnerForm">
-                  <div class="partnership__form-fields">
-                    <label class="partnership__form-field">
-                      <input type="text" name="userName" required>
-                      <span>Ваше имя или контактное лицо*</span>
-                    </label>
-                    <label class="partnership__form-field">
-                      <input type="text" name="partnerName">
-                      <span>Название партнера</span>
-                    </label>
-                    <label class="partnership__form-field">
-                      <input type="text" name="labelName" required>
-                      <span>Название лейбла/Арстиста*</span>
-                    </label>
-                    <label class="partnership__form-field">
-                      <input type="text" name="city">
-                      <span>Город</span>
-                    </label>
-                    <label class="partnership__form-field">
-                      <input type="text" name="country">
-                      <span>Страна</span>
-                    </label>
-                    <label class="partnership__form-field">
-                      <input type="url" name="link">
-                      <span>Ссылка на сайт/соцсети</span>
-                    </label>
-                    <label class="partnership__form-field">
-                      <input type="tel" name="phone" required>
-                      <span>Телефон*</span>
-                    </label>
-                    <label class="partnership__form-field">
-                      <input type="email" name="email" required>
-                      <span>Email*</span>
-                    </label>
-                  </div>
-                  <label class="partnership__form-privacy">
-                    <input type="checkbox" name="privacy" required>
-                    <span>Соглашаюсь с правилами обработки персональных данных</span>
-                  </label>
-                  <div class="partnership__form-buttons">
-                    <button class="button" type="button" id="nextBtn">Далее</button>
-                  </div>
-                </div>
-                <div class="partnership__form-stage" id="secondPartnerForm">
-                  <div class="partnership__form-fields">
-                    <label class="partnership__form-field">
-                      <input type="text" name="year">
-                      <span>Год основания лейбла</span>
-                    </label>
-                    <label class="partnership__form-field">
-                      <input type="url" name="soundcloud">
-                      <span>Ваш профиль Sound Cloud</span>
-                    </label>
-                    <label class="partnership__form-field">
-                      <input type="url" name="youtube">
-                      <span>Ваш канал YouTube</span>
-                    </label>
-                    <label class="partnership__form-field">
-                      <input type="url" name="facebook">
-                      <span>Ваш профиль Facebook</span>
-                    </label>
-                    <label class="partnership__form-field partnership__form-field--wide">
-                      <textarea name="otherInfo"></textarea>
-                      <span>Любая другая важная информация о вас и вашем лейбле</span>
-                    </label>
-                  </div>
-                  <div class="partnership__form-row">
-                    <p>Как вы о нас узнали</p>
-                    <div class="partnership__form-checkbox-wrapper">
-                      <label class="partnership__form-checkbox">
-                        <input type="checkbox" name="howYouKnow" value="partner">
-                        <span>Через делового партнера</span>
+                <form action="#" method="post" class="partnership__form partnership__form--have-music partnership__form--shown">
+                  <div class="partnership__form-stage partnership__form-stage--first partnership__form-stage--active">
+                    <div class="partnership__form-fields">
+                      <label class="partnership__form-field">
+                        <input type="text" name="userName" required>
+                        <span>Ваше имя или контактное лицо*</span>
                       </label>
-                      <label class="partnership__form-checkbox">
-                        <input type="checkbox" name="howYouKnow" value="ya-goo">
-                        <span>Яндекс/Google</span>
+                      <label class="partnership__form-field">
+                        <input type="text" name="partnerName">
+                        <span>Название партнера</span>
                       </label>
-                      <label class="partnership__form-checkbox">
-                        <input type="checkbox" name="howYouKnow" value="other">
-                        <span>Другое</span>
+                      <label class="partnership__form-field">
+                        <input type="text" name="labelName" required>
+                        <span>Название лейбла/Арстиста*</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="text" name="city">
+                        <span>Город</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="text" name="country">
+                        <span>Страна</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="url" name="link">
+                        <span>Ссылка на сайт/соцсети</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="tel" name="phone" required>
+                        <span>Телефон*</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="email" name="email" required>
+                        <span>Email*</span>
                       </label>
                     </div>
+                    <label class="partnership__form-privacy">
+                      <input type="checkbox" name="privacy" required>
+                      <span>Соглашаюсь с правилами обработки персональных данных</span>
+                    </label>
+                    <div class="partnership__form-buttons">
+                      <button class="button partnership__form-button-next" type="button">Далее</button>
+                    </div>
                   </div>
-                  <label class="partnership__form-privacy">
-                    <input type="checkbox" name="privacy" required>
-                    <span>Соглашаюсь с правилами обработки персональных данных</span>
-                  </label>
-                  <div class="partnership__form-buttons">
-                    <button class="partnership__form-back" type="button" id="prevBtn">Назад</button>
-                    <button class="button" type="submit">Отправить</button>
+                  <div class="partnership__form-stage partnership__form-stage--second">
+                    <div class="partnership__form-fields">
+                      <label class="partnership__form-field">
+                        <input type="text" name="year">
+                        <span>Год основания лейбла</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="url" name="soundcloud">
+                        <span>Ваш профиль Sound Cloud</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="url" name="youtube">
+                        <span>Ваш канал YouTube</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="url" name="facebook">
+                        <span>Ваш профиль Facebook</span>
+                      </label>
+                      <label class="partnership__form-field partnership__form-field--wide">
+                        <textarea name="otherInfo"></textarea>
+                        <span>Любая другая важная информация о вас и вашем лейбле</span>
+                      </label>
+                    </div>
+                    <div class="partnership__form-row">
+                      <p>Как вы о нас узнали</p>
+                      <div class="partnership__form-checkbox-wrapper">
+                        <label class="partnership__form-checkbox">
+                          <input type="checkbox" name="howYouKnow" value="partner">
+                          <span>Через делового партнера</span>
+                        </label>
+                        <label class="partnership__form-checkbox">
+                          <input type="checkbox" name="howYouKnow" value="ya-goo">
+                          <span>Яндекс/Google</span>
+                        </label>
+                        <label class="partnership__form-checkbox">
+                          <input type="checkbox" name="howYouKnow" value="other">
+                          <span>Другое</span>
+                        </label>
+                      </div>
+                    </div>
+                    <label class="partnership__form-privacy">
+                      <input type="checkbox" name="privacy" required>
+                      <span>Соглашаюсь с правилами обработки персональных данных</span>
+                    </label>
+                    <div class="partnership__form-buttons">
+                      <button class="partnership__form-button-prev" type="button">Назад</button>
+                      <button class="button" type="submit">Отправить</button>
+                    </div>
                   </div>
-                </div>
-              </form>
+                </form>
+                <form action="#" method="post" class="partnership__form partnership__form--need-music">
+                  <div class="partnership__form-stage partnership__form-stage--first partnership__form-stage--active">
+                    <div class="partnership__form-fields">
+                      <label class="partnership__form-field">
+                        <input type="text" name="userName" required>
+                        <span>Ваше имя или контактное лицо*</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="text" name="partnerName">
+                        <span>Название партнера</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="text" name="labelName" required>
+                        <span>Название лейбла/Арстиста*</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="text" name="city">
+                        <span>Город</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="text" name="country">
+                        <span>Страна</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="url" name="link">
+                        <span>Ссылка на сайт/соцсети</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="tel" name="phone" required>
+                        <span>Телефон*</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="email" name="email" required>
+                        <span>Email*</span>
+                      </label>
+                    </div>
+                    <label class="partnership__form-privacy">
+                      <input type="checkbox" name="privacy" required>
+                      <span>Соглашаюсь с правилами обработки персональных данных</span>
+                    </label>
+                    <div class="partnership__form-buttons">
+                      <button class="button partnership__form-button-next" type="button">Далее</button>
+                    </div>
+                  </div>
+                  <div class="partnership__form-stage partnership__form-stage--second">
+                    <div class="partnership__form-fields">
+                      <label class="partnership__form-field">
+                        <input type="text" name="year">
+                        <span>Год основания лейбла</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="url" name="soundcloud">
+                        <span>Ваш профиль Sound Cloud</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="url" name="youtube">
+                        <span>Ваш канал YouTube</span>
+                      </label>
+                      <label class="partnership__form-field">
+                        <input type="url" name="facebook">
+                        <span>Ваш профиль Facebook</span>
+                      </label>
+                      <label class="partnership__form-field partnership__form-field--wide">
+                        <textarea name="otherInfo"></textarea>
+                        <span>Любая другая важная информация о вас и вашем лейбле</span>
+                      </label>
+                    </div>
+                    <div class="partnership__form-row">
+                      <p>Как вы о нас узнали</p>
+                      <div class="partnership__form-checkbox-wrapper">
+                        <label class="partnership__form-checkbox">
+                          <input type="checkbox" name="howYouKnow" value="partner">
+                          <span>Через делового партнера</span>
+                        </label>
+                        <label class="partnership__form-checkbox">
+                          <input type="checkbox" name="howYouKnow" value="ya-goo">
+                          <span>Яндекс/Google</span>
+                        </label>
+                        <label class="partnership__form-checkbox">
+                          <input type="checkbox" name="howYouKnow" value="other">
+                          <span>Другое</span>
+                        </label>
+                      </div>
+                    </div>
+                    <label class="partnership__form-privacy">
+                      <input type="checkbox" name="privacy" required>
+                      <span>Соглашаюсь с правилами обработки персональных данных</span>
+                    </label>
+                    <div class="partnership__form-buttons">
+                      <button class="partnership__form-button-prev" type="button">Назад</button>
+                      <button class="button" type="submit">Отправить</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
           <div class="faq">
@@ -522,10 +618,10 @@
                   </div>
                   <div class="contacts__block">
                     <b class="contacts__label">Адрес</b>
-                    <p class="contacts__text">Россия, 115432, г. Москва, Проектируемый проезд 4062, д. 6, стр.16</p>
+                    <p class="contacts__text">Россия, 115432, г.&nbsp;Москва, Проектируемый проезд 4062, д.&nbsp;6, стр.16</p>
                   </div>
                   <div class="contacts__block">
-                    <b class="contacts__label">Соц.сети</b>
+                    <b class="contacts__label">Follow us</b>
                     <div class="contacts__socials">
                       <a href="#" class="contacts__socials-link contacts__socials-link--fb" target="_blank">
                         <span class="visually-hidden">Мы на Facebook</span>
@@ -580,14 +676,14 @@
                       <a href="#" class="footer__menu-link">FAQ</a>
                     </li>
                     <li class="footer__menu-item">
-                      <a href="#" class="footer__menu-link">Контакты</a>
+                      <a href="contacts.html" class="footer__menu-link">Контакты</a>
                     </li>
                   </ul>
                 </nav>
               </div>
               <div class="footer__bottom">
                 <p class="footer__bottom-copyright">Copyright 2020. Все права защищены</p>
-                <a href="#" class="footer__bottom-link">Политика конфиденциальности</a>
+                <a href="politics.html" class="footer__bottom-link">Политика конфиденциальности</a>
                 <a href="#" class="footer__bottom-link">Разработка сайта - maggregator.com</a>
               </div>
             </div>
@@ -601,6 +697,68 @@
           <h2 class="qa-answer__title">Сколько будет стоить услуги компании?</h2>
           <p class="qa-answer__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
           <button class="button" type="button">Задать вопрос</button>
+        </div>
+      </div>
+      <button class="popup__close" type="button">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+    </section>
+    <section class="popup popup--feedback">
+      <div class="popup__wrapper">
+        <div class="feedback">
+          <h2 class="feedback__title">Связаться с нами</h2>
+          <form action="#" method="post" class="feedback__form">
+            <div class="feedback__form-fields">
+              <label class="feedback__form-field">
+                <input type="text" name="userName" required>
+                <span>Ваше имя*</span>
+              </label>
+              <label class="feedback__form-field">
+                <input type="email" name="email">
+                <span>E-mail</span>
+              </label>
+              <label class="feedback__form-field">
+                <textarea name="message"></textarea>
+                <span>Ваше сообщение</span>
+              </label>
+            </div>
+            <label class="feedback__form-privacy">
+              <input type="checkbox" name="privacy" required>
+              <span>Соглашаюсь с правилами обработки персональных данных</span>
+            </label>
+            <button class="button" type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+      <button class="popup__close" type="button">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+    </section>
+    <section class="popup popup--question">
+      <div class="popup__wrapper">
+        <div class="feedback">
+          <h2 class="feedback__title">Задать вопрос</h2>
+          <form action="#" method="post" class="feedback__form">
+            <div class="feedback__form-fields">
+              <label class="feedback__form-field">
+                <input type="text" name="userName" required>
+                <span>Ваше имя*</span>
+              </label>
+              <label class="feedback__form-field">
+                <input type="tel" name="phone">
+                <span>Номер телефона</span>
+              </label>
+              <label class="feedback__form-field">
+                <textarea name="message"></textarea>
+                <span>Ваш вопрос</span>
+              </label>
+            </div>
+            <label class="feedback__form-privacy">
+              <input type="checkbox" name="privacy" required>
+              <span>Соглашаюсь с правилами обработки персональных данных</span>
+            </label>
+            <button class="button" type="submit">Отправить</button>
+          </form>
         </div>
       </div>
       <button class="popup__close" type="button">

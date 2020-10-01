@@ -47,7 +47,13 @@
 @import "blocks/about";
 
 // Подключаем стили всплывающих окон
-@import "blocks/popup", "blocks/qa-answer", "blocks/partner";
+@import "blocks/popup", "blocks/qa-answer", "blocks/feedback", "blocks/partner";
 
 // Подключаем стили блока footer
 @import "blocks/footer";
+
+// Подключаем стили страницы 404
+@import "blocks/page-404";
+
+// Подключаем стили страницы Politics
+@import "blocks/politics";

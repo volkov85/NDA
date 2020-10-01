@@ -14,6 +14,28 @@
     animation: 0.3s both fade-in;
   }
 
+  &--feedback,
+  &--question {
+    width: 970px;
+    height: 554px;
+    background-image: url("../img/popup_feedback-bg@1x.png");
+    background-position: top -420px right -960px;
+    background-size: 1833px;
+    background-repeat: no-repeat;
+  }
+
+  &--feedback {
+    background-position: top -280px right -805px;
+    background-size: 1357px;
+  }
+
+  @media (min-resolution: 144dpi) {
+    &--feedback,
+    &--question {
+      background-image: url("../img/popup_feedback-bg@2x.png");
+    }
+  }
+
   @media (min-width: $width4K) {
     width: 1118px;
     height: 730px;
@@ -36,6 +58,7 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  appearance: none;
 
   &::before,
   &::after {
@@ -55,6 +78,11 @@
 
   &::after {
     transform: rotate(45deg);
+  }
+
+  .popup--feedback &,
+  .popup--question & {
+    top: 50px;
   }
 
   &:hover,

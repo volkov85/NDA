@@ -32,9 +32,38 @@ let overlay = document.querySelector(`.overlay`);
 overlay.addEventListener(`click`, () => {
   let shownPopup = document.querySelector(`.popup--shown`);
 
-  removeAnimationClassShown(shownPopup, `popup--shown`);
-  overlay.classList.remove(`overlay--shown`);
+  closePopup(shownPopup, `popup--shown`);
 });
+
+/**
+ * Оживление модального окна вопроса
+ */
+let askQuestionBtn = document.querySelector(`.contacts__block-link-ask`);
+let askQuestionFooterBtn = document.querySelector(`.footer__link-ask`);
+
+if (askQuestionBtn || askQuestionFooterBtn) {
+  let questionPopup = document.querySelector(`.popup--question`);
+  let questionPopupClose = questionPopup.querySelector(`.popup__close`);
+
+  if (askQuestionBtn) {
+    askQuestionBtn.addEventListener(`click`, (evt) => {
+      evt.preventDefault();
+      showPopup(questionPopup, `popup--shown`);
+    });
+  }
+
+  if (askQuestionFooterBtn) {
+    askQuestionFooterBtn.addEventListener(`click`, (evt) => {
+      evt.preventDefault();
+      showPopup(questionPopup, `popup--shown`);
+    });
+  }
+
+  questionPopupClose.addEventListener(`click`, (evt) => {
+    evt.preventDefault();
+    closePopup(questionPopup, `popup--shown`);
+  });
+}
 
 if (document.querySelector(`.page--index`)) {
   /**
@@ -128,6 +157,54 @@ if (document.querySelector(`.page--index`)) {
   }
 
   /**
+   * Оживление формы блока partnership
+   */
+  let partnershipFormVariantBtns = document.querySelectorAll(`.partnership__form-variant`);
+  let partnershipFormVariantBtnActive = document.querySelector(`.partnership__form-variant--active`);
+  let partnershipForms = document.querySelectorAll(`.partnership__form`);
+  let partnershipFormShown = document.querySelector(`.partnership__form--shown`);
+
+  let partnershipFormNextBtns = document.querySelectorAll(`.partnership__form-button-next`);
+  let partnershipFormPrevBtns = document.querySelectorAll(`.partnership__form-button-prev`);
+  let partnershipFormFirstStages = document.querySelectorAll(`.partnership__form-stage--first`);
+  let partnershipFormSecondStages = document.querySelectorAll(`.partnership__form-stage--second`);
+
+  for (let i = 0; i < partnershipForms.length; i++) {
+    /**
+     * Переключение между формами покупателя и продавца
+     */
+    partnershipFormVariantBtns[i].addEventListener(`click`, (evt) => {
+      evt.preventDefault();
+
+      partnershipFormVariantBtnActive.classList.remove(`partnership__form-variant--active`);
+      partnershipFormShown.classList.remove(`partnership__form--shown`);
+
+      partnershipFormVariantBtns[i].classList.add(`partnership__form-variant--active`);
+      partnershipFormVariantBtnActive = partnershipFormVariantBtns[i];
+
+      partnershipForms[i].classList.add(`partnership__form--shown`);
+      partnershipFormShown = partnershipForms[i];
+    });
+
+    /**
+     * Переключение между первым и вторым шагом формы
+     */
+    partnershipFormNextBtns[i].addEventListener(`click`, (evt) => {
+      evt.preventDefault();
+
+      partnershipFormFirstStages[i].classList.remove(`partnership__form-stage--active`);
+      partnershipFormSecondStages[i].classList.add(`partnership__form-stage--active`);
+    });
+
+    partnershipFormPrevBtns[i].addEventListener(`click`, (evt) => {
+      evt.preventDefault();
+
+      partnershipFormSecondStages[i].classList.remove(`partnership__form-stage--active`);
+      partnershipFormFirstStages[i].classList.add(`partnership__form-stage--active`);
+    });
+  }
+
+  /**
    * Оживление FAQ
    */
   let faqQuestions = document.querySelectorAll(`.faq__qa-question`);
@@ -145,15 +222,30 @@ if (document.querySelector(`.page--index`)) {
       faqPopupQuestion.textContent = faqQuestions[i].firstChild.textContent;
       faqPopupAnswer.textContent = faqAnswers[i].textContent;
 
-      faqPopup.classList.add(`popup--shown`);
-      overlay.classList.add(`overlay--shown`);
+      showPopup(faqPopup, `popup--shown`);
     });
   }
 
   faqPopupClose.addEventListener(`click`, (evt) => {
     evt.preventDefault();
-    removeAnimationClassShown(faqPopup, `popup--shown`);
-    overlay.classList.remove(`overlay--shown`);
+    closePopup(faqPopup, `popup--shown`);
+  });
+
+  /**
+   * Оживление модального окна обратной связи
+   */
+  let feedbackBtn = document.querySelector(`.button--contact`);
+  let feedbackPopup = document.querySelector(`.popup--feedback`);
+  let feedbackPopupClose = feedbackPopup.querySelector(`.popup__close`);
+
+  feedbackBtn.addEventListener(`click`, (evt) => {
+    evt.preventDefault();
+    showPopup(feedbackPopup, `popup--shown`);
+  });
+
+  feedbackPopupClose.addEventListener(`click`, (evt) => {
+    evt.preventDefault();
+    closePopup(feedbackPopup, `popup--shown`);
   });
 }
 
@@ -161,13 +253,13 @@ if (document.querySelector(`.page--inner`)) {
   /**
    * Оживление шапки на внутренних страницах
    */
-  window.addEventListener(`scroll`, () => {
-    if (window.pageYOffset > 0) {
-      header.classList.add(`header--small`);
-    } else {
-      header.classList.remove(`header--small`);
-    }
-  });
+  // window.addEventListener(`scroll`, () => {
+  //   if (window.pageYOffset > 0) {
+  //     header.classList.add(`header--small`);
+  //   } else {
+  //     header.classList.remove(`header--small`);
+  //   }
+  // });
 
   /**
    * Добавление слайдера блока labels
@@ -176,6 +268,11 @@ if (document.querySelector(`.page--inner`)) {
     loop: true,
     slidesPerView: 9,
     spaceBetween: 31,
+    speed: 3000,
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false
+    },
     breakpoints: {
       1920: {
         slidesPerView: 15,
@@ -191,6 +288,29 @@ if (document.querySelector(`.page--inner`)) {
       prevEl: `.labels__slider-button--left`
     }
   });
+
+  if (labelsSwiper.el) {
+    let labelsSwiperTimer;
+    let labelsSwiperNavClickEventHandler = () => {
+      if (labelsSwiperTimer) {
+        window.clearTimeout(labelsSwiperTimer);
+      }
+
+      labelsSwiper.wrapperEl.classList.remove(`labels__slide-list--linear`);
+      labelsSwiper.autoplay.stop();
+      labelsSwiper.params.speed = 300;
+
+      labelsSwiperTimer = window.setTimeout(() => {
+        labelsSwiper.wrapperEl.classList.add(`labels__slide-list--linear`);
+        labelsSwiper.autoplay.start();
+        labelsSwiper.params.speed = 3000;
+      }, 5000);
+    };
+
+    labelsSwiper.navigation.nextEl.addEventListener(`click`, labelsSwiperNavClickEventHandler);
+
+    labelsSwiper.navigation.prevEl.addEventListener(`click`, labelsSwiperNavClickEventHandler);
+  }
 
   /**
    * Добавление слайдера блока о компании
@@ -234,17 +354,17 @@ if (document.querySelector(`.page--inner`)) {
 }
 
 /**
- * Оживление формы
+ * Оживление полей ввода форм
  */
-let partnershipInputs = document.querySelectorAll(`.partnership__form-field`);
+let formFields = document.querySelectorAll(`[class$=__form-field]`);
 
-if (partnershipInputs.length) {
-  for (let i = 0; i < partnershipInputs.length; i++) {
-    partnershipInputs[i].firstChild.addEventListener(`input`, () => {
-      if (partnershipInputs[i].firstChild.value) {
-        partnershipInputs[i].firstChild.classList.add(`filled`);
+if (formFields.length) {
+  for (let i = 0; i < formFields.length; i++) {
+    formFields[i].firstChild.addEventListener(`input`, () => {
+      if (formFields[i].firstChild.value) {
+        formFields[i].firstChild.classList.add(`filled`);
       } else {
-        partnershipInputs[i].firstChild.classList.remove(`filled`);
+        formFields[i].firstChild.classList.remove(`filled`);
       }
     });
   }
@@ -266,24 +386,20 @@ if (phoneInput) {
  * Закрытие панели cookies
  */
 let cookies = document.querySelector(`.cookies`);
-let cookiesBtn = cookies.querySelector(`.button`);
 
-cookiesBtn.addEventListener(`click`, (evt) => {
-  evt.preventDefault();
-  cookies.remove();
-});
+if (cookies) {
+  if (!document.cookie.split(`; `).find((row) => row.startsWith(`isCookiesAccepted`))) {
+    cookies.style.display = `block`;
 
-// if (!document.cookie.split(`; `).find((row) => row.startsWith(`isCookiesAccepted`))) {
-//   cookies.style.display = `block`;
+    let cookiesBtn = cookies.querySelector(`.button`);
 
-//   let cookiesBtn = cookies.querySelector(`.button`);
-
-//   cookiesBtn.addEventListener(`click`, (evt) => {
-//     evt.preventDefault();
-//     cookies.removeAttribute(`style`);
-//     document.cookie = `isCookiesAccepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
-//   });
-// }
+    cookiesBtn.addEventListener(`click`, (evt) => {
+      evt.preventDefault();
+      cookies.removeAttribute(`style`);
+      document.cookie = `isCookiesAccepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+    });
+  }
+}
 
 /**
  * Скрытие элемента (удаляем класс &--shown)
@@ -299,54 +415,26 @@ function removeAnimationClassShown(el, cls) {
 }
 
 /**
+ * Появление модального окна
+ */
+function showPopup(el, cls) {
+  el.classList.add(cls);
+  overlay.classList.add(`overlay--shown`);
+}
+
+/**
+ * Закрытие модального окна
+ */
+function closePopup(el, cls) {
+  removeAnimationClassShown(el, cls);
+  overlay.classList.remove(`overlay--shown`);
+}
+
+/**
  * Сброс CSS-анимации
  */
 function resetCSSAnimation(el, cls) {
   el.classList.remove(cls);
   void el.offsetWidth;
   el.classList.add(cls);
-}
-
-/**
- * Открытие дополнительных полей формы
- */
-let nextBtn = document.querySelector('#nextBtn');
-let prevBtn = document.querySelector('#prevBtn');
-let firstPartnerForm = document.querySelector('#firstPartnerForm');
-let secondPartnerForm = document.querySelector('#secondPartnerForm');
-
-if (nextBtn) {
-  nextBtn.addEventListener('click', function (evt) {
-    firstPartnerForm.classList.remove('partnership__form-stage--active');
-    secondPartnerForm.classList.add('partnership__form-stage--active');
-  });
-}
-if (prevBtn) {
-  prevBtn.addEventListener('click', function (evt) {
-    secondPartnerForm.classList.remove('partnership__form-stage--active');
-    firstPartnerForm.classList.add('partnership__form-stage--active');
-  });
-}
-
-/**
- * Переключение активного заголовка формы
- */
-let haveMusicBtn = document.querySelector('#haveMusic');
-let needMusicBtn = document.querySelector('#needMusic');
-
-if (haveMusicBtn) {
-  haveMusicBtn.addEventListener('click', function () {
-    if (!haveMusicBtn.classList.contains('partnership__form-variant--active')) {
-      haveMusicBtn.classList.add('partnership__form-variant--active');
-      needMusicBtn.classList.remove('partnership__form-variant--active');
-    }
-  });
-}
-if (needMusicBtn) {
-  needMusicBtn.addEventListener('click', function () {
-    if (!needMusicBtn.classList.contains('partnership__form-variant--active')) {
-      needMusicBtn.classList.add('partnership__form-variant--active');
-      haveMusicBtn.classList.remove('partnership__form-variant--active');
-    }
-  });
 }

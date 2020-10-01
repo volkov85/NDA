@@ -1,0 +1,96 @@
+.page-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background:
+    url("../img/page-404_bg-01@1x.png") bottom -880px left -900px no-repeat,
+    url("../img/page-404_bg-02@1x.png") right -990px top -900px no-repeat,
+    linear-gradient(100deg, $ColorPrimary400 15%, $fontColorHeaders 97%);
+
+  @media (min-resolution: 144dpi) {
+    background-image:
+      url("../img/page-404_bg-01@2x.png"),
+      url("../img/page-404_bg-02@2x.png"),
+      linear-gradient(100deg, $ColorPrimary400 15%, $fontColorHeaders 97%);
+    background-size:
+      1736px,
+      1904px,
+      auto;
+  }
+}
+
+.page-404__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.page-404__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+
+  &::before,
+  &::after {
+    content: "4";
+    font-weight: $fontBold;
+    font-size: $fontTitle404;
+    line-height: $lineHeightNormal;
+    color: $ColorSecondary;
+  }
+
+  &::before {
+    margin-right: 10px;
+  }
+
+  &::after {
+    margin-left: -10px;
+  }
+
+  img {
+    display: block;
+  }
+}
+
+.page-404__message {
+  margin-bottom: 40px;
+}
+
+.page-404__title {
+  margin: 0;
+  margin-bottom: 12px;
+  font-weight: $fontBold;
+  font-size: $fontTitleRegular4K;
+  line-height: $lineHeightNormal;
+  text-align: center;
+  color: $ColorSecondary;
+  text-transform: uppercase;
+}
+
+.page-404__text {
+  margin: 0;
+  font-weight: $fontBold;
+  font-size: $fontTitleSmall;
+  line-height: $lineHeightNormal;
+  text-align: center;
+  color: $ColorSecondary;
+}
+
+.page-404__return-link {
+  font-weight: $fontSemiBold;
+  font-size: $fontTextLarge;
+  line-height: $lineHeightMedium;
+  text-align: center;
+  color: $ColorWhite;
+  transition: color 0.3s;
+
+  &:hover,
+  &:focus {
+    color: $ColorSecondary;
+    outline: none;
+  }
+}

@@ -48,8 +48,8 @@
   margin-bottom: 23px;
   padding-top: 16px;
   font-weight: $fontBold;
-  font-size: $fontTextHuge;
-  line-height: 1.2;
+  font-size: $fontTitleSmall;
+  line-height: $lineHeightTitleSmall;
 
   &::before {
     content: "";
@@ -63,13 +63,15 @@
 
   @media (min-width: $widthFHD) {
     margin-bottom: 21px;
-    font-size: $fontHeadersH2;
+    font-size: $fontTitleRegular;
+    line-height: $lineHeightTitleRegular;
   }
 
   @media (min-width: $width4K) {
     margin-bottom: 45px;
     padding-top: 25px;
-    font-size: $fontHeadersH2_4K;
+    font-size: $fontTitleSmall4K;
+    line-height: $lineHeightTitleRegular4K;
 
     &::before {
       width: 360px;
@@ -81,19 +83,19 @@
 .partners__text {
   margin: 0;
   font-weight: $fontSemiBold;
-  font-size: $fontTextMedium;
-  line-height: 28px;
+  font-size: $fontTextLarge;
+  line-height: $fontTitleRegular;
   color: $ColorPrimary300;
 
   @media (min-width: $widthFHD) {
     font-weight: $fontBold;
-    line-height: $lineHeightPopup;
+    line-height: $lineHeightHuge;
   }
 
   @media (min-width: $width4K) {
     font-weight: $fontSemiBold;
-    font-size: $fontHeadersH1;
-    line-height: 1.75;
+    font-size: $fontTitleHuge;
+    line-height: $lineHeightXLarge4K;
   }
 }
 
@@ -142,16 +144,16 @@
 .partners__text-small {
   margin: 0;
   font-weight: $fontMedium;
-  line-height: $lineHeightPopup;
+  line-height: $lineHeightHuge;
   color: $ColorWhite;
 
   @media (min-width: $widthFHD) {
-    font-size: $fontTextSmall;
-    line-height: 24px;
+    font-size: $fontTextRegular;
+    line-height: $lineHeightLarge;
   }
 
   @media (min-width: $width4K) {
-    font-size: 38px;
-    line-height: $lineHeightH1;
+    font-size: $fontTextMedium4K;
+    line-height: $lineHeightTitleHuge;
   }
 }

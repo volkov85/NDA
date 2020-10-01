@@ -20,16 +20,18 @@
   margin: 0;
   margin-bottom: 15px;
   font-weight: $fontBold;
-  font-size: $fontTextHuge;
-  line-height: 1.2;
+  font-size: $fontTitleSmall;
+  line-height: $lineHeightTitleSmall;
 
   @media (min-width: $widthFHD) {
-    font-size: $fontHeadersH2;
+    font-size: $fontTitleRegular;
+    line-height: $lineHeightTitleRegular;
   }
 
   @media (min-width: $width4K) {
     margin-bottom: 25px;
-    font-size: $fontHeadersH2_4K;
+    font-size: $fontTitleSmall4K;
+    line-height: $lineHeightTitleRegular4K;
   }
 }
 
@@ -108,12 +110,22 @@
   margin: 0;
   margin-top: auto;
   font-weight: $fontBold;
-  font-size: $fontTextHuge;
-  line-height: 1.2;
+  font-size: $fontTitleSmall;
+  line-height: $lineHeightTitleSmall;
   color: $ColorWhite;
 
+  .item[style] & {
+    animation: 0.5s 0.5s both move-right;
+  }
+
+  .item[style*="display: inline-block"] &,
+  .item[style*="display: none"] & {
+    animation: none;
+  }
+
   @media (min-width: $width4K) {
-    font-size: $fontHeadersH1;
+    font-size: $fontTitleHuge;
+    line-height: $lineHeightNormal;
   }
 }
 
@@ -133,8 +145,8 @@
   position: relative;
   align-self: flex-end;
   font-weight: $fontSemiBold;
-  font-size: $fontTextSmall;
-  line-height: 1.4;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightRegular;
   color: $ColorSecondary;
   cursor: pointer;
   border: none;
@@ -162,10 +174,12 @@
   }
 
   @media (min-width: $widthFHD) {
-    font-size: $fontTextRegular;
+    font-size: $fontTextMedium;
+    line-height: $lineHeightMedium;
   }
 
   @media (min-width: $width4K) {
-    font-size: $fontHeadersH1;
+    font-size: $fontTitleHuge;
+    line-height: $lineHeightTitleLarge;
   }
 }

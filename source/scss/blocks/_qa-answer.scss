@@ -12,7 +12,7 @@
   margin-bottom: 32px;
   padding-left: 30px;
   font-weight: $fontMedium;
-  font-size: $fontHeadersPopup;
+  font-size: $fontTitleTiny;
   line-height: 1.2;
   color: $ColorSecondary;
 
@@ -28,7 +28,7 @@
   }
 
   @media (min-width: $width4K) {
-    font-size: $fontHeadersPopup * 1.3;
+    font-size: $fontTitleTiny * 1.3;
   }
 }
 
@@ -36,11 +36,11 @@
   margin: 0;
   margin-bottom: auto;
   font-weight: $fontMedium;
-  font-size: $fontTextMedium;
-  line-height: $lineHeightPopup;
+  font-size: $fontTextLarge;
+  line-height: $lineHeightHuge;
 
   @media (min-width: $width4K) {
-    font-size: $fontTextMedium * 1.5;
+    font-size: $fontTextLarge * 1.5;
     line-height: 1.6;
   }
 }

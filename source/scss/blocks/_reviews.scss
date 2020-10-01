@@ -20,7 +20,7 @@
   margin-bottom: 31px;
   padding-top: 16px;
   font-weight: $fontBold;
-  font-size: $fontHeadersH2;
+  font-size: $fontTitleRegular;
   line-height: 1.2;
 
   &::before {
@@ -35,7 +35,7 @@
 
   @media (min-width: $width4K) {
     padding-top: 25px;
-    font-size: $fontHeadersH2 * 1.5;
+    font-size: $fontTitleRegular * 1.5;
 
     &::before {
       width: 200px;
@@ -151,8 +151,8 @@
   margin: 0;
   margin-bottom: 8px;
   font-weight: $fontBold;
-  font-size: $fontTextSmall;
-  line-height: $lineHeightSmall;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightRegular;
   color: $ColorSecondary;
   text-transform: uppercase;
   transition: color 0.3s;
@@ -169,7 +169,7 @@
   }
 
   @media (min-width: $widthFHD) {
-    font-size: $fontTextLarge;
+    font-size: $fontTextHuge;
     line-height: 1.2;
 
     &::before {
@@ -189,8 +189,8 @@
 .reviews__card-text {
   margin: 0;
   font-weight: $fontMedium;
-  font-size: $fontTextNav;
-  line-height: $lineHeightSmall;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightRegular;
   color: $ColorPrimary100;
   transition: color 0.3s;
 
@@ -202,12 +202,12 @@
   }
 
   @media (min-width: $widthFHD) {
-    font-size: $fontTextReview;
+    font-size: $fontTextSmall2K;
     line-height: 1.6;
   }
 
   @media (min-width: $width4K) {
-    font-size: $fontTextNav * 2;
+    font-size: $fontTextSmall * 2;
     line-height: 1.2;
   }
 }
@@ -218,7 +218,7 @@
   left: 15px;
   font-weight: $fontMedium;
   font-size: $fontTextTiny;
-  line-height: $fontTextMedium;
+  line-height: $fontTextLarge;
   color: $ColorSecondary;
 
   &:hover,
@@ -229,7 +229,7 @@
 
   @media (min-width: $widthFHD) {
     bottom: 15px;
-    font-size: $fontTextNav;
+    font-size: $fontTextSmall;
   }
 
   @media (min-width: $width4K) {

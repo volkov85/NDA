@@ -18,7 +18,7 @@
   }
 
   .page--inner & {
-    position: sticky;
+    position: relative;
     background-color: $ColorWhite;
   }
 }
@@ -30,16 +30,23 @@
   padding-top: 14px;
   padding-bottom: 30px;
 
-  .header--small {
+  .page--inner & {
+    padding-bottom: 14px;
+  }
+
+  .header--small & {
     padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   @media (min-width: $widthFHD) {
     padding-top: 28px;
     padding-bottom: 28px;
 
-    .header--small {
+    .page--inner &,
+    .header--small & {
       padding-top: 28px;
+      padding-bottom: 28px;
     }
   }
 
@@ -47,8 +54,10 @@
     padding-top: 61px;
     padding-bottom: 61px;
 
-    .header--small {
+    .page--inner &,
+    .header--small & {
       padding-top: 61px;
+      padding-bottom: 61px;
     }
   }
 }
@@ -62,21 +71,31 @@
     width: 116px;
     transition: width 0.3s;
 
-    @media (min-width: $widthFHD) {
-      width: 94px;
+    .page--inner & {
+      width: 85%;
     }
 
-    @media (min-width: $width4K) {
-      width: 116px;
+    .header--small & {
+      width: 61px;
     }
   }
 
-  .header--small & {
+  @media (min-width: $widthFHD) {
     img {
-      width: 61px;
+      width: 94px;
 
-      @media (min-width: $widthFHD) {
+      .header--small & {
         width: 94px;
+      }
+    }
+  }
+
+  @media (min-width: $width4K) {
+    img {
+      width: 116px;
+
+      .page--inner & {
+        width: 116px;
       }
     }
   }
@@ -89,6 +108,10 @@
   transition: margin-top 0.3s;
   pointer-events: auto;
 
+  .page--inner & {
+    margin-top: 31px;
+  }
+
   .header--small & {
     margin-top: 19px;
   }
@@ -96,6 +119,7 @@
   @media (min-width: $widthFHD) {
     margin-top: 34px;
 
+    .page--inner &,
     .header--small & {
       margin-top: 34px;
     }
@@ -117,8 +141,8 @@
 .header__menu-link {
   position: relative;
   font-weight: $fontSemiBold;
-  font-size: $fontTextNav;
-  line-height: $lineHeightNav;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightTiny;
   color: inherit;
   text-transform: uppercase;
   transition: color 0.3s;
@@ -152,13 +176,13 @@
   }
 
   @media (min-width: $widthFHD) {
-    font-size: $fontTextMedium;
-    line-height: $lineHeightButton;
+    font-size: $fontTextLarge;
+    line-height: $lineHeightMedium;
   }
 
   @media (min-width: $width4K) {
-    font-size: $fontTextMedium * 1.5;
-    line-height: 1.2;
+    font-size: $fontTitleRegular;
+    line-height: $lineHeightNormal;
 
     &--active,
     &:hover,
@@ -177,6 +201,10 @@
   transition: margin-top 0.3s;
   pointer-events: auto;
 
+  .page--inner & {
+    margin-top: 33px;
+  }
+
   .header--small & {
     margin-top: 20px;
   }
@@ -184,6 +212,7 @@
   @media (min-width: $widthFHD) {
     margin-top: 30px;
 
+    .page--inner &,
     .header--small & {
       margin-top: 30px;
     }
@@ -193,8 +222,8 @@
 .header__lang-item {
   position: relative;
   margin-right: 16px;
-  font-size: $fontTextNav;
-  line-height: $lineHeightNav;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightTiny;
   color: $ColorPrimary300;
   text-transform: capitalize;
   transition: color 0.3s;
@@ -211,10 +240,6 @@
     transition:
       color 0.3s,
       width 0.3s;
-
-    @media (min-width: $widthFHD) {
-      height: 2px;
-    }
   }
 
   .header--dark & {
@@ -233,11 +258,15 @@
   }
 
   @media (min-width: $widthFHD) {
-    font-size: $fontTextLarge;
-    line-height: 1.2;
+    font-size: $fontTextHuge;
+    line-height: $lineHeightNormal;
+
+    &::before {
+      height: 2px;
+    }
   }
 
   @media (min-width: $width4K) {
-    font-size: $fontTextLarge * 1.5;
+    font-size: $fontTitleSmall;
   }
 }

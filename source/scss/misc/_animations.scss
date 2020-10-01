@@ -10,6 +10,16 @@
   }
 }
 
+@keyframes move-right {
+  from {
+    transform: translateX(-500%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 @keyframes zoom-in {
   from {
     transform: translate(-50%, -50%) scale(0);

@@ -57,8 +57,8 @@
   margin: 0;
   margin-bottom: 27px;
   font-weight: $fontBold;
-  font-size: $fontHeadersH1;
-  line-height: $lineHeightH1;
+  font-size: $fontTitleHuge;
+  line-height: $lineHeightTitleHuge;
   text-transform: uppercase;
 
   @media (max-height: 899px) {
@@ -67,7 +67,7 @@
   }
 
   @media (min-width: $width4K) {
-    font-size: $fontHeaders4KH1;
+    font-size: $fontTitleHuge4K;
     line-height: 1.2;
   }
 }
@@ -76,8 +76,8 @@
   width: 345px;
   margin: 0;
   font-weight: $fontMedium;
-  font-size: $fontHeadersH2;
-  line-height: $lineHeightH2;
+  font-size: $fontTitleRegular;
+  line-height: $lineHeightTitleMedium;
 
   @media (max-height: 899px) {
     width: calc(1vh * 38);
@@ -87,7 +87,7 @@
 
   @media (min-width: $width4K) {
     width: 500px;
-    font-size: $fontHeadersH2 * 1.5;
+    font-size: $fontTitleRegular * 1.5;
     line-height: 1.4;
   }
 }
@@ -264,8 +264,8 @@
     margin-top: 55px;
     margin-left: -18px;
     font-weight: $fontBold;
-    font-size: $fontTextNav;
-    line-height: $lineHeightNav;
+    font-size: $fontTextSmall;
+    line-height: $lineHeightTiny;
     color: $ColorPrimary200;
     text-transform: capitalize;
     transform: rotate(-90deg);
@@ -286,7 +286,7 @@
     span {
       margin-top: 65px;
       margin-left: -25px;
-      font-size: $fontTextNav * 1.5;
+      font-size: $fontTextSmall * 1.5;
       line-height: 1.2;
     }
   }

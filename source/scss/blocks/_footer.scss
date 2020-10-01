@@ -31,7 +31,7 @@
     width: 100px;
     margin: auto 33px;
     font-weight: $fontSemiBold;
-    font-size: $fontTextNav_Footer;
+    font-size: $fontTextRegular;
     color: $fontColorWhite;
   }
 
@@ -41,8 +41,8 @@
     }
 
     span {
-      font-size: $fontTextMedium;
-      line-height: 28px;
+      font-size: $fontTextLarge;
+      line-height: $lineHeightRegular2K;
     }
   }
 
@@ -53,8 +53,8 @@
 
     span {
       margin-left: 64px;
-      font-size: 30px;
-      line-height: $lineHeightHuge;
+      font-size: $fontTextSmall4K;
+      line-height: $lineHeightRegular4K;
     }
   }
 }
@@ -91,8 +91,8 @@
 
 .footer__menu-link {
   font-weight: $fontRegular;
-  font-size: $fontTextNav_Footer;
-  line-height: $lineHeightNav_Footer;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightSmall;
   color: $fontColorGrey;
   transition: color 0.3s;
 
@@ -104,13 +104,13 @@
   }
 
   @media (min-width: $widthFHD) {
-    font-size: $fontTextLarge;
-    line-height: $lineHeightLarge;
+    font-size: $fontTextHuge;
+    line-height: $lineHeightNormal;
   }
 
   @media (min-width: $width4K) {
-    font-size: $fontHeadersAboutH1;
-    line-height: $lineHeightHuge;
+    font-size: $fontTitleMedium;
+    line-height: $lineHeightSmall4K;
   }
 }
 
@@ -175,8 +175,8 @@
 
 .footer__link-ask {
   position: relative;
-  font-size: $fontTextNav_Footer;
-  line-height: $lineHeightNav_Footer;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightSmall;
   color: $fontColorPink;
 
   &::before {
@@ -184,30 +184,32 @@
     position: absolute;
     bottom: 10px;
     left: 0;
-    width: 244px;
+    width: 128px;
     height: 1px;
     background-color: $ColorSecondary;
     transform: translateX(calc(-100% - 25px));
+    pointer-events: none;
   }
 
   @media (min-width: $widthFHD) {
     font-weight: $fontBold;
-    font-size: $fontTextMedium;
-    line-height: $lineHeightLarge;
+    font-size: $fontTextLarge;
+    line-height: $lineHeightSmall2K;
 
     &::before {
       bottom: 18px;
+      width: 170px;
       height: 3px;
     }
   }
 
   @media (min-width: $width4K) {
-    font-size: 30px;
-    line-height: 1.2;
+    font-size: $fontTextSmall4K;
+    line-height: $lineHeightNormal;
 
     &::before {
       bottom: 22px;
-      width: 463px;
+      width: 360px;
       transform: translateX(calc(-100% - 60px));
     }
   }
@@ -231,17 +233,17 @@
 .footer__bottom-copyright {
   margin: 0;
   font-weight: $fontRegular;
-  font-size: $fontTextNav_Footer;
-  line-height: $lineHeightNav_Footer;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightSmall;
   color: $fontColorWhite;
 
   @media (min-width: $widthFHD) {
-    font-size: $fontTextMedium;
-    line-height: $lineHeightButton;
+    font-size: $fontTextLarge;
+    line-height: $lineHeightMedium;
   }
 
   @media (min-width: $width4K) {
-    font-size: 35px;
-    line-height: $lineHeightH2;
+    font-size: $fontTextRegular4K;
+    line-height: $lineHeightMedium4K;
   }
 }
