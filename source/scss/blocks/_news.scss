@@ -1,0 +1,339 @@
+.news {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  padding-top: 26px;
+  padding-bottom: 34px;
+
+  @media (min-width: $widthTablet) {
+    padding-top: 38px;
+    padding-bottom: 50px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    &.full-height {
+      justify-content: flex-start;
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @media (min-width: $width4K) {
+    padding-top: 140px;
+    padding-bottom: 200px;
+
+    .news-post + .news & {
+      padding-top: 100px;
+    }
+  }
+}
+
+.news__title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 20px;
+  font-weight: $fontBold;
+  font-size: $fontTextHuge;
+  line-height: $lineHeightTitleRegular;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 87px;
+    height: 2px;
+    background-color: $ColorSecondary;
+  }
+
+  .news-post + .news & {
+    padding-top: 0;
+
+    &::before {
+      content: none;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    margin-bottom: 38px;
+    padding-top: 16px;
+    font-size: $fontTitleRegular;
+
+    &::before {
+      width: 124px;
+      height: 4px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 31px;
+    padding-top: 24px;
+    line-height: $lineHeightTitleRegular;
+  }
+
+  @media (min-width: $widthFHD) {
+    margin-bottom: 47px;
+  }
+
+  @media (min-width: $width4K) {
+    margin-bottom: 63px;
+    padding-top: 25px;
+    font-size: $fontTitleSmall4K;
+    line-height: $lineHeightTitleRegular4K;
+
+    &::before {
+      width: 360px;
+      height: 9px;
+    }
+  }
+}
+
+.news__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 290px);
+  gap: 24px 30px;
+  justify-content: center;
+  align-items: flex-start;
+
+  @media (min-width: $widthTablet) {
+    grid-template-columns: repeat(auto-fill, 330px);
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    grid-template-columns: repeat(3, 370px);
+    gap: 24px 30px;
+    justify-content: initial;
+    align-items: initial;
+  }
+
+  @media (min-width: $widthFHD) {
+    grid-template-columns: repeat(4, 420px);
+    gap: 45px 30px;
+  }
+
+  @media (min-width: $width4K) {
+    grid-template-columns: repeat(4, 805px);
+    gap: 45px 50px;
+  }
+
+  @media (min-width: $widthDesktopSmall) and (max-width: $widthFHD - 1) {
+    @media (max-height: 770px) {
+      grid-template-columns: repeat(4, 275px);
+      gap: 25px 24px;
+    }
+  }
+}
+
+.news__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: $ColorWhite;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    z-index: -1;
+    background-color: $ColorWhite;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba($ColorSecondary, 0.25);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  a {
+    &:hover,
+    &:focus {
+      color: $ColorPrimary200;
+      outline: none;
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    min-height: 250px;
+
+    @media (max-width: $widthFHD - 1) {
+      @media (max-height: 770px) {
+        min-height: auto;
+      }
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    min-height: 289px;
+
+    &::before {
+      top: -17px;
+      bottom: -22px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    min-height: 700px;
+
+    &::before {
+      top: -24px;
+      right: -24px;
+      bottom: -24px;
+      left: -24px;
+    }
+  }
+}
+
+.news__card-image {
+  img {
+    display: block;
+    width: 290px;
+
+    @media (min-width: $widthTablet) {
+      width: 330px;
+    }
+
+    @media (min-width: $widthDesktopSmall) {
+      width: 370px;
+    }
+
+    @media (min-width: $widthFHD) {
+      width: 420px;
+    }
+
+    @media (min-width: $width4K) {
+      width: 805px;
+    }
+  }
+}
+
+.news__card-info {
+  flex-grow: 1;
+  padding-top: 8px;
+  padding-bottom: 17px;
+
+  @media (min-width: $widthFHD) {
+    padding-top: 14px;
+  }
+
+  @media (min-width: $width4K) {
+    padding-top: 30px;
+    padding-bottom: 38px;
+  }
+}
+
+.news__card-title {
+  // Truncating multiple line text trick
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  // --------------
+  margin: 0;
+  margin-bottom: 2px;
+  font-weight: $fontSemiBold;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightSubtitleLarge;
+  color: $fontColorHeaders;
+
+  @media (min-width: $widthTablet) {
+    font-size: $fontTextMedium;
+    line-height: $lineHeightRegular2K;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    font-size: $fontTextLarge;
+  }
+
+  @media (min-width: $widthDesktopSmall) and (max-width: $widthFHD - 1) {
+    @media (max-height: 770px) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    font-size: $fontTitleHuge;
+    line-height: $lineHeightTitleXLarge;
+  }
+}
+
+.news__date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  width: 100px;
+  height: 35px;
+  padding: 11px 10px;
+  font-size: $fontTextTiny;
+  line-height: $lineHeightNormal;
+  text-align: center;
+  color: $ColorWhite;
+  background-color: $ColorSecondary;
+  pointer-events: none;
+
+  @media (min-width: $widthFHD) {
+    width: 150px;
+    height: 54px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: $fontTextMedium;
+    line-height: $lineHeightSubtitleRegular;
+  }
+
+  @media (min-width: $width4K) {
+    width: 232px;
+    height: 96px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: $fontTitleRegular;
+    line-height: $lineHeightXHuge;
+  }
+}
+
+.news__card-link {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: $fontBold;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightNormal;
+  color: $ColorSecondary;
+  transition: color 0.3s;
+
+  @media (min-width: $widthFHD) {
+    font-weight: $fontSemiBold;
+  }
+
+  @media (min-width: $width4K) {
+    font-size: $fontTitleTiny;
+    line-height: $lineHeightXLarge;
+  }
+
+  // @media (min-width: $widthDesktopSmall) and (max-width: $widthFHD - 1) {
+  //   @media (max-height: 770px) {
+  //     // background-color: #ffffff;
+  //     color: #ffffff;
+  //     bottom: 4px;
+  //     left: 4px;
+  //     mix-blend-mode: difference;
+  //     font-weight: $fontMedium;
+  //   }
+  // }
+}

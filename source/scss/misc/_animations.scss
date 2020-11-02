@@ -20,6 +20,16 @@
   }
 }
 
+@keyframes menu-show {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 @keyframes zoom-in {
   from {
     transform: translate(-50%, -50%) scale(0);
@@ -37,5 +47,15 @@
 
   to {
     opacity: 1;
+  }
+}
+
+@keyframes accordeon {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
   }
 }

@@ -24,19 +24,19 @@
                 <a href="about.html" class="header__menu-link">О нас</a>
               </li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Сервисы</a>
+                <a href="services.html" class="header__menu-link">Сервисы</a>
               </li>
               <li class="header__menu-item">
                 <a href="partners.html" class="header__menu-link">Партнеры</a>
               </li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Истории успеха</a>
+                <a href="reviews.html" class="header__menu-link">Истории успеха</a>
               </li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Частые вопросы</a>
+                <a href="faq.html" class="header__menu-link">Частые вопросы</a>
               </li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Новости</a>
+                <a href="news.html" class="header__menu-link">Новости</a>
               </li>
               <li class="header__menu-item">
                 <a href="contacts.html" class="header__menu-link">Контакты</a>
@@ -47,14 +47,61 @@
             <a class="header__lang-item header__lang-item--active">Ru</a>
             <a href="#" class="header__lang-item">En</a>
           </div>
+          <button type="button" class="header__mobile-menu-toggle">
+            <span class="visually-hidden">Открыть меню</span>
+          </button>
         </div>
       </div>
     </header>
+    <div class="mobile-menu">
+      <div class="mobile-menu__wrapper">
+        <div class="mobile-menu__top">
+          <a class="mobile-menu__logo">
+            <picture>
+              <source srcset="img/logo@1x.png 1x, img/logo@2x.png 2x">
+              <img src="img/logo@1x.png" alt="Логотип Национального Цифрового Агрегатора" width="116" height="105">
+            </picture>
+          </a>
+          <button class="mobile-menu__close" type="button">
+            <span class="visually-hidden">Закрыть меню</span>
+          </button>
+        </div>
+        <nav class="mobile-menu__nav">
+          <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+              <a href="about.html" class="mobile-menu__link">О нас</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="services.html" class="mobile-menu__link">Сервисы</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="partners.html" class="mobile-menu__link">Партнеры</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="reviews.html" class="mobile-menu__link">Истории успеха</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="faq.html" class="mobile-menu__link">Частые вопросы</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="news.html" class="mobile-menu__link">Новости</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="contacts.html" class="mobile-menu__link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="mobile-menu__lang">
+          <a class="mobile-menu__lang-item mobile-menu__lang-item--active">Ru</a>
+          <a href="#" class="mobile-menu__lang-item">En</a>
+        </div>
+      </div>
+    </div>
     <main>
       <section class="politics">
         <div class="container">
           <h2 class="politics__title">Политика конфиденциальности</h2>
-          <p class="politics__text">Редакция от «___» 2020 г.</p>
+          <!-- <p class="politics__text">Редакция от «___» 2020 г.</p> -->
           <h3 class="politics__small-title">Общие положения</h3>
           <p class="politics__text">Настоящая Политика конфиденциальности Общества с ограниченной ответственностью «Национальный Цифровой Агрегатор » (далее – Компания, ООО «НЦА») разработана для сайта Компании в сети Интернет по адресу: <a class="politics__link" href="https://maggregator.com">https://maggregator.com</a> (далее — Политика конфиденциальности) и действует в отношении всей информации, включая персональные данные Пользователей сайта  согласно положениям Федерального закона от 27.07.2006 N 152-ФЗ "О персональных данных " ( далее – ФЗ №152) и применимыми международными стандартами в области обработки и защиты персональных данных (далее - Персональная информация), которую ООО «НЦА» получает о Пользователе во время использования им Сайта.</p>
           <p class="politics__text">Настоящая Политика определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных в ООО «НЦА» с целью защиты прав и свобод Пользователя, при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни.</p>
@@ -69,8 +116,8 @@
                       <span>Персональные данные, которые пользователь (Субъект обработки персональных данных) предоставляет свободно, своей волей и в своем интересе при направлении электронной заявки о сотрудничестве с ООО «НЦА» и регистрации (создании учётной записи), а также в процессе использования Сайта.</span>
                       <p>Персональная информация Пользователя (персональные данные), обработку которых осуществляет Компания при обработке заявок Пользователей:</p>
                       <ul class="politics__marked-list">
-                        <li>мобильный телефон Пользователя;</li>
-                        <li>адрес электронной почты (е-mail) Пользователя.</li>
+                        <li class="politics__marked-list-item">мобильный телефон Пользователя;</li>
+                        <li class="politics__marked-list-item">адрес электронной почты (е-mail) Пользователя.</li>
                       </ul>
                     </li>
                     <li>
@@ -89,18 +136,18 @@
                 <ol class="politics__first-list">
                   <li>Обработка персональных данных Пользователей осуществляется для предоставления сервисов НЦА, информация о которых доступна на Сайте, а именно в целях:
                     <ul class="politics__marked-list">
-                      <li>получения и рассмотрение заявок на сотрудничество с ООО «НЦА» через форму на Сайте.</li>
-                      <li>создания учетной записи Пользователя для доступа к персонализированным сервисам Компании;</li>
-                      <li>авторизации (идентификации) Пользователя;</li>
-                      <li>заключения и/или исполнения договоров, заключенных между Пользователем и Компанией;</li>
-                      <li>установления с Пользователем обратной связи, включая направление уведомлений, запросов, обработку заявок и запросов Пользователя;</li>
-                      <li>улучшения качества работы сервисов Компании и Сайта;</li>
-                      <li>предоставления Пользователю эффективной клиентской поддержки;</li>
-                      <li>улучшения и повышения стабильности работы Сайта, удобства их использования, а также для разработки новых сервисов, путем получения Компанией отзывов Пользователя о действующих сервисах;</li>
-                      <li>информирования Пользователя о проводимых мероприятиях и акциях в соответствии с ч.1 ст. 18 Федерального закона о рекламе;</li>
-                      <li>проведения статистических и иных исследований на основе персональных данных Пользователей;</li>
-                      <li>в маркетинговых целях и в целях продвижения товаров, работ, услуг на рынке путем осуществления прямых контактов с потенциальными потребителями с помощью средств связи;</li>
-                      <li>предоставления иной информации, непосредственно связанную с выполнением обязательств Компании в рамках Пользовательского соглашения и настоящей Политики.</li>
+                      <li class="politics__marked-list-item">получения и рассмотрение заявок на сотрудничество с ООО «НЦА» через форму на Сайте.</li>
+                      <li class="politics__marked-list-item">создания учетной записи Пользователя для доступа к персонализированным сервисам Компании;</li>
+                      <li class="politics__marked-list-item">авторизации (идентификации) Пользователя;</li>
+                      <li class="politics__marked-list-item">заключения и/или исполнения договоров, заключенных между Пользователем и Компанией;</li>
+                      <li class="politics__marked-list-item">установления с Пользователем обратной связи, включая направление уведомлений, запросов, обработку заявок и запросов Пользователя;</li>
+                      <li class="politics__marked-list-item">улучшения качества работы сервисов Компании и Сайта;</li>
+                      <li class="politics__marked-list-item">предоставления Пользователю эффективной клиентской поддержки;</li>
+                      <li class="politics__marked-list-item">улучшения и повышения стабильности работы Сайта, удобства их использования, а также для разработки новых сервисов, путем получения Компанией отзывов Пользователя о действующих сервисах;</li>
+                      <li class="politics__marked-list-item">информирования Пользователя о проводимых мероприятиях и акциях в соответствии с ч.1 ст. 18 Федерального закона о рекламе;</li>
+                      <li class="politics__marked-list-item">проведения статистических и иных исследований на основе персональных данных Пользователей;</li>
+                      <li class="politics__marked-list-item">в маркетинговых целях и в целях продвижения товаров, работ, услуг на рынке путем осуществления прямых контактов с потенциальными потребителями с помощью средств связи;</li>
+                      <li class="politics__marked-list-item">предоставления иной информации, непосредственно связанную с выполнением обязательств Компании в рамках Пользовательского соглашения и настоящей Политики.</li>
                     </ul>
                   </li>
                 </ol>
@@ -147,9 +194,9 @@
             <h3 class="politics__small-title politics__small-title--cookie">Цели использования файлов cookie</h3>
             <p class="politics__text">Компания использует файлы cookie для:</p>
             <ul class="politics__marked-list">
-              <li>упрощения и повышения эффективности использования Сайта были и учета предпочтения Пользователя.</li>
-              <li>получения информации о том, как Пользователь попал на Сайт (например, по гиперссылке от партнеров Компании). Информация может быть передана с Сайта в веб-браузер Пользователя и наоборот.</li>
-              <li>сбора статистических данных, обнаружения и защиты от мошенничества и других угроз для обеспечения безопасности пользователей Сайтом.</li>
+              <li class="politics__marked-list-item">упрощения и повышения эффективности использования Сайта были и учета предпочтения Пользователя.</li>
+              <li class="politics__marked-list-item">получения информации о том, как Пользователь попал на Сайт (например, по гиперссылке от партнеров Компании). Информация может быть передана с Сайта в веб-браузер Пользователя и наоборот.</li>
+              <li class="politics__marked-list-item">сбора статистических данных, обнаружения и защиты от мошенничества и других угроз для обеспечения безопасности пользователей Сайтом.</li>
             </ul>
             <h3 class="politics__small-title politics__small-title--cookie">Как Пользователю запретить использование файлов cookie (удалить файлы cookie)</h3>
             <p class="politics__text">Большинство веб-браузеров настроены на автоматическое использование файлов cookie. Пользователь может самостоятельно изменить настройки своего веб-браузера, а также при уведомлении перед отправкой и получением файлов cookie.  Пользователь может полностью заблокировать использование файлов cookie веб-браузером.</p>
@@ -174,19 +221,19 @@
                 <a href="about.html" class="footer__menu-link">О компании</a>
               </li>
               <li class="footer__menu-item">
-                <a href="#" class="footer__menu-link">Сервисы</a>
+                <a href="services.html" class="footer__menu-link">Сервисы</a>
               </li>
               <li class="footer__menu-item">
                 <a href="partners.html" class="footer__menu-link">Партнеры</a>
               </li>
               <li class="footer__menu-item">
-                <a href="#" class="footer__menu-link">Истории успеха</a>
+                <a href="reviews.html" class="footer__menu-link">Истории успеха</a>
               </li>
               <li class="footer__menu-item">
-                <a href="#" class="footer__menu-link">Новости</a>
+                <a href="news.html" class="footer__menu-link">Новости</a>
               </li>
               <li class="footer__menu-item">
-                <a href="#" class="footer__menu-link">FAQ</a>
+                <a href="faq.html" class="footer__menu-link">FAQ</a>
               </li>
               <li class="footer__menu-item">
                 <a href="contacts.html" class="footer__menu-link">Контакты</a>
@@ -196,16 +243,16 @@
         </div>
         <div class="footer__middle">
           <div class="footer__social">
-            <a href="#" class="footer__soial-link footer__soial-link--fb" target="_blank">
+            <a href="#" class="footer__social-link footer__social-link--fb" target="_blank">
               <span class="visually-hidden">Мы на Facebook</span>
             </a>
-            <a href="#" class="footer__soial-link footer__soial-link--ig" target="_blank">
+            <a href="#" class="footer__social-link footer__social-link--ig" target="_blank">
               <span class="visually-hidden">Мы в Instagram</span>
             </a>
-            <a href="#" class="footer__soial-link footer__soial-link--vk" target="_blank">
+            <a href="#" class="footer__social-link footer__social-link--vk" target="_blank">
               <span class="visually-hidden">Мы во ВКонтакте</span>
             </a>
-            <a href="#" class="footer__soial-link footer__soial-link--yt" target="_blank">
+            <a href="#" class="footer__social-link footer__social-link--yt" target="_blank">
               <span class="visually-hidden">Мы на YouTube</span>
             </a>
           </div>

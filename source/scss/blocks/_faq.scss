@@ -1,138 +1,548 @@
 .faq {
-  display: flex;
-  align-items: center;
+  padding-bottom: 57px;
+
+  .page--inner & {
+    padding-top: 26px;
+    padding-bottom: 30px;
+  }
+
+  @media (min-width: $widthTablet) {
+    padding-bottom: 87px;
+
+    .page--inner & {
+      padding-top: 38px;
+      padding-bottom: 35px;
+
+      @media (max-width: $widthDesktopSmall - 1) {
+        background: url("../img/faq_bg-tablet@1x.png") top -290px right -380px / 838px no-repeat;
+
+        @media (min-resolution: 144dpi) {
+          background-image: url("../img/faq_bg-tablet@2x.png");
+        }
+      }
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    display: flex;
+    align-items: center;
+    padding-bottom: 0;
+
+    .page--inner & {
+      padding-top: 50px;
+      padding-bottom: 30px;
+
+      .container {
+        position: relative;
+      }
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    .page--inner & {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    .page--inner & {
+      padding-top: 140px;
+      padding-bottom: 100px;
+    }
+  }
 }
 
 .faq__wrapper {
   box-sizing: border-box;
-  width: 557px;
-  min-height: 700px;
-  padding: 4px 30px 4px 31px;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  .page--inner & {
+    padding: 0;
+  }
+
+  @media (min-width: $widthTablet) {
+    padding-right: 39px;
+    padding-left: 39px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 557px;
+    min-height: 700px;
+    padding: 4px 30px 4px 31px;
+
+    .page--inner & {
+      width: auto;
+      min-height: initial;
+      padding: 0;
+    }
+  }
 
   @media (min-width: $widthFHD) {
-    width: 707px;
-    padding-left: 51px;
+    width: 710px;
+    padding: 0;
+    margin: auto;
   }
 
   @media (min-width: $width4K) {
-    width: 1425px;
+    width: 1800px;
     padding-right: 60px;
-    min-height: 900px;
+    min-height: 1462px;
   }
 }
 
 .faq__title {
   position: relative;
   margin: 0;
-  margin-bottom: 43px;
-  padding-top: 24px;
+  margin-bottom: 20px;
   font-weight: $fontBold;
-  font-size: $fontTitleRegular;
-  line-height: 1.2;
-  color: $ColorPrimary300;
+  font-size: $fontTextHuge;
+  line-height: $lineHeightTitleRegular;
+
+  .page--inner & {
+    margin-bottom: 10px;
+  }
 
   &::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 124px;
-    height: 4px;
+    width: 87px;
+    height: 2px;
     background-color: $ColorSecondary;
   }
 
-  @media (min-width: $width4K) {
-    font-size: $fontTitleRegular * 1.5;
+  @media (min-width: $widthTablet) {
+    margin-bottom: 30px;
+    padding-top: 16px;
+    font-size: $fontTitleRegular;
 
     &::before {
-      width: 200px;
-      height: 6px;
+      width: 124px;
+      height: 4px;
+    }
+
+    .page--inner & {
+      margin-bottom: 50px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 43px;
+    padding-top: 24px;
+    line-height: $lineHeightTitleRegular;
+
+    .page--inner & {
+      margin-bottom: 50px;
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    .page--inner & {
+      margin-bottom: 45px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    padding-top: 25px;
+    font-size: $fontTitleSmall4K;
+    line-height: $lineHeightTitleRegular4K;
+    margin-bottom: 150px;
+
+    &::before {
+      width: 360px;
+      height: 9px;
+    }
+
+    .page--inner & {
+      margin-bottom: 148px;
     }
   }
 }
 
 .faq__text {
   margin: 0;
-  margin-bottom: 28px;
+  margin-bottom: 10px;
   font-weight: $fontMedium;
   font-size: $fontTextMedium;
-  line-height: 1.5;
+  line-height: $lineHeightLarge;
   color: $ColorPrimary300;
 
+  @media (min-width: $widthTablet) {
+    margin-bottom: 20px;
+    font-size: $fontTextHuge;
+    line-height: $lineHeightHuge;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 28px;
+    font-size: $fontTextMedium;
+    line-height: $lineHeightLarge;
+  }
+
   @media (min-width: $width4K) {
-    font-size: $fontTextMedium * 1.3;
+    font-size: $fontTextRegular4K;
+    line-height: $lineHeightRegular4K;
   }
 }
 
 .faq__qa-list {
   display: flex;
   flex-direction: column;
-  width: 469px;
-  margin-bottom: 50px;
+  width: 100%;
+  margin-bottom: 20px;
 
-  @media (max-height: 683px) {
-    margin-bottom: calc(100vh - 548px);
+  .page--inner & {
+    width: auto;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: $widthTablet) {
+    margin-bottom: 40px;
+
+    .page--inner & {
+      margin-bottom: 25px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 469px;
+    margin-bottom: 50px;
+
+    .page--inner & {
+      margin-bottom: 0;
+    }
+
+    @media (max-height: 683px) {
+      margin-bottom: Max(calc(100vh - 633px), 10px);
+    }
   }
 
   @media (min-width: $widthFHD) {
     width: 100%;
   }
+
+  @media (min-width: $width4K) {
+    margin-bottom: 100px;
+  }
+}
+
+.faq__qa-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $ColorSecondary;
+
+  .page--inner & {
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    transition:
+      padding-left 0.3s,
+      background-color 0.3s,
+      border-color 0.3s,
+      box-shadow 0.3s;
+
+    &:hover,
+    &:focus-within {
+      background-color: $ColorWhite;
+      box-shadow: 0 5px 10px rgba($ColorPrimary100, 0.25);
+    }
+
+    &--active {
+      background-color: $ColorWhite;
+      box-shadow: 0 5px 10px rgba($ColorSecondary, 0.17);
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    .page--inner & {
+      &--active {
+        padding-left: 17px;
+      }
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    .page--inner & {
+      margin-bottom: 10px;
+      background-color: $ColorWhite;
+
+      &--active {
+        padding-left: 0;
+      }
+    }
+  }
 }
 
 .faq__qa-question {
   position: relative;
+  display: block;
+  box-sizing: border-box;
+  padding: 18px 50px 18px 0;
   font-weight: $fontMedium;
   font-size: $fontTextLarge;
-  line-height: $lineHeightMedium;
-  border-bottom: 1px solid $ColorSecondary;
+  line-height: $lineHeightRegular2K;
+  color: inherit;
+  transition: color 0.3s;
 
   &::before {
     content: "";
     position: absolute;
-    top: 25px;
-    right: 28px;
+    top: 26px;
+    right: 14px;
     width: 11px;
     height: 12px;
     background-color: $ColorSecondary;
     border-radius: 2px;
+    transition: background-color 0.3s;
   }
 
-  a {
-    display: block;
-    padding: 20px 50px 23px 0;
-    color: inherit;
-    transition: color 0.3s;
+  .page--inner & {
+    padding: 15px 18px 15px 50px;
+    font-size: $fontTextMedium;
+    line-height: $lineHeightSubtitleRegular;
 
-    @media (min-width: $width4K) {
-      padding: 30px 50px 33px 0;
+    &::before {
+      content: none;
     }
 
-    &:hover,
-    &:focus {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 21px;
+      left: 14px;
+      width: 6px;
+      height: 6px;
+      border: solid $ColorSecondary;
+      border-width: 2px 2px 0 0;
+      transition:
+        border-color 0.3s,
+        transform 0.3s;
+      transform: rotate(45deg);
+    }
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    .page--index & {
       color: $ColorSecondary;
-      outline: none;
+    }
+
+    .page--inner & {
+      &::before {
+        background-color: $ColorPrimary300;
+      }
+
+      &::after {
+        border-color: $ColorPrimary200;
+      }
+    }
+  }
+
+  .faq__qa-item--active & {
+    .page--inner & {
+      font-weight: $fontSemiBold;
+      color: $ColorSecondary;
+
+      &::before {
+        background-color: transparent !important;
+      }
+
+      &::after {
+        transform: rotate(135deg);
+      }
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    padding: 30px 60px 30px 0;
+    line-height: $lineHeightMedium;
+
+    &::before {
+      top: 30px;
+      right: 37px;
+    }
+
+    .page--inner & {
+      padding: 22px 62px 24px;
+      font-weight: $fontSemiBold;
+      font-size: 26px;
+      line-height: $lineHeightHuge;
+
+      &::after {
+        top: 30px;
+        width: 10px;
+        height: 10px;
+        border-width: 3px 3px 0 0;
+      }
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    padding-top: 20px;
+    padding-right: 50px;
+    padding-bottom: 23px;
+
+    &::before {
+      top: 25px;
+      right: 28px;
+    }
+
+    .page--inner & {
+      padding: 22px 62px 24px;
+      font-weight: $fontMedium;
+      font-size: $fontTextHuge;
+      line-height: $lineHeightLarge;
+
+      &::before {
+        content: "";
+        top: 28px;
+        right: initial;
+        left: 18px;
+      }
+
+      &::after {
+        top: 31px;
+        right: 26px;
+        left: auto;
+        width: 8px;
+        height: 8px;
+        border-width: 2px 2px 0 0;
+      }
+    }
+
+    .faq__qa-item--active & {
+      .page--inner & {
+        font-weight: $fontMedium;
+      }
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    .page--inner & {
+      &::after {
+        right: 58px;
+      }
     }
   }
 
   @media (min-width: $width4K) {
-    font-size: $fontTextLarge * 1.5;
-    line-height: 1.2;
+    padding: 57px 0;
+    font-size: $fontTextRegular4K;
+    line-height: $lineHeightRegular4K;
 
     &::before {
-      top: 38px;
+      top: 68px;
+      width: 21px;
+      height: 23px;
+      right: 90px;
+    }
+
+    .page--inner & {
+      padding: 42px 118px 46px;
+      font-size: $fontTitleLarge;
+      line-height: $lineHeightLarge2K;
+
+      &::before {
+        top: 53px;
+        left: 34px;
+      }
+
+      &::after {
+        top: 54px;
+        right: 111px;
+        width: 16px;
+        height: 16px;
+        border-width: 4px 4px 0 0;
+      }
+    }
+
+    .faq__qa-item--active & {
+      .page--inner & {
+        font-weight: $fontBold;
+      }
     }
   }
 }
 
 .faq__qa-answer {
+  position: relative;
   display: none;
+  margin-bottom: 24px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-weight: $fontMedium;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightDouble;
+
+  .page--inner & {
+    transition: transform 0.3s;
+    transform-origin: top;
+
+    &--active {
+      display: block;
+      animation: 0.3s both accordeon;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    margin-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: $fontTextMedium;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-top: 15px;
+    margin-bottom: 24px;
+    padding-left: 64px;
+    line-height: $lineHeightRegular2K;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 38px;
+      width: 11px;
+      height: 12px;
+      background-color: $ColorSecondary;
+      border-radius: 2px;
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    font-size: $fontTextLarge;
+    line-height: $lineHeightHuge;
+  }
+
+  @media (min-width: $width4K) {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    padding-right: 118px;
+    padding-left: 118px;
+    font-size: $fontTextSmall4K;
+    line-height: $lineHeightHalf;
+
+    &::before {
+      top: 14px;
+      left: 55px;
+      width: 21px;
+      height: 23px;
+    }
+  }
 }
 
 .faq__link-all {
   position: relative;
   font-weight: $fontMedium;
-  font-size: $fontTextHuge;
-  line-height: 1.2;
+  font-size: $fontTextLarge;
+  line-height: $lineHeightMedium;
   color: $ColorSecondary;
 
   &::before {
@@ -155,11 +565,43 @@
     }
   }
 
+  @media (min-width: $widthTablet) {
+    font-size: $fontTextHuge;
+    line-height: $lineHeightNormal;
+  }
+
   @media (min-width: $width4K) {
-    font-size: $fontTextHuge * 1.5;
+    font-size: 46px;
+    line-height: 56px;
 
     &::before {
       height: 2px;
     }
+  }
+}
+
+.faq__link-ask {
+  min-width: 230px;
+
+  @media (min-width: $widthTablet) {
+    min-width: 240px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+
+  @media (min-width: $widthFHD) {
+    top: 0;
+    right: 30px;
+    min-width: 280px;
+  }
+
+  @media (min-width: $width4K) {
+    top: 40px;
+    right: 60px;
+    min-width: 516px;
   }
 }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/vendors/fullpage.min.css">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
-  <body class="page page--inner">
+  <body class="page page--inner page--partners">
     <header class="header">
       <div class="container">
         <div class="header__wrapper">
@@ -24,19 +24,19 @@
                 <a href="about.html" class="header__menu-link">О нас</a>
               </li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Сервисы</a>
+                <a href="services.html" class="header__menu-link">Сервисы</a>
               </li>
               <li class="header__menu-item">
                 <a href="partners.html" class="header__menu-link header__menu-link--active">Партнеры</a>
               </li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Истории успеха</a>
+                <a href="reviews.html" class="header__menu-link">Истории успеха</a>
               </li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Частые вопросы</a>
+                <a href="faq.html" class="header__menu-link">Частые вопросы</a>
               </li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Новости</a>
+                <a href="news.html" class="header__menu-link">Новости</a>
               </li>
               <li class="header__menu-item">
                 <a href="contacts.html" class="header__menu-link">Контакты</a>
@@ -47,10 +47,57 @@
             <a class="header__lang-item header__lang-item--active">Ru</a>
             <a href="#" class="header__lang-item">En</a>
           </div>
+          <button type="button" class="header__mobile-menu-toggle">
+            <span class="visually-hidden">Открыть меню</span>
+          </button>
         </div>
       </div>
     </header>
-    <main>
+    <div class="mobile-menu">
+      <div class="mobile-menu__wrapper">
+        <div class="mobile-menu__top">
+          <a class="mobile-menu__logo">
+            <picture>
+              <source srcset="img/logo@1x.png 1x, img/logo@2x.png 2x">
+              <img src="img/logo@1x.png" alt="Логотип Национального Цифрового Агрегатора" width="116" height="105">
+            </picture>
+          </a>
+          <button class="mobile-menu__close" type="button">
+            <span class="visually-hidden">Закрыть меню</span>
+          </button>
+        </div>
+        <nav class="mobile-menu__nav">
+          <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+              <a href="about.html" class="mobile-menu__link">О нас</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="services.html" class="mobile-menu__link">Сервисы</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="partners.html" class="mobile-menu__link mobile-menu__link--active">Партнеры</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="reviews.html" class="mobile-menu__link">Истории успеха</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="faq.html" class="mobile-menu__link">Частые вопросы</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="news.html" class="mobile-menu__link">Новости</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="contacts.html" class="mobile-menu__link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="mobile-menu__lang">
+          <a class="mobile-menu__lang-item mobile-menu__lang-item--active">Ru</a>
+          <a href="#" class="mobile-menu__lang-item">En</a>
+        </div>
+      </div>
+    </div>
+    <main class="full-height">
       <section class="partners">
         <div class="columns">
           <div class="partners__col-left">
@@ -72,105 +119,105 @@
           <div class="labels__slider">
             <div class="labels__slider-wrapper swiper-container">
               <div class="labels__slide-list labels__slide-list--linear swiper-wrapper">
-                <a href="#" class="labels__slide swiper-slide">
+                <a href="#" rel="nofollow noindex" class="labels__slide swiper-slide">
                   <picture>
                     <source srcset="img/labels_logo-01-4k@1x.png 1x, img/labels_logo-01-4k@2x.png 2x" media="(min-width: 3840px)">
                     <source srcset="img/labels_logo-01@1x.png 1x, img/labels_logo-01@2x.png 2x">
                     <img src="img/labels_logo-01@1x.png" alt="" width="80" height="48">
                   </picture>
                 </a>
-                <a href="#" class="labels__slide swiper-slide">
+                <a href="#" rel="nofollow noindex" class="labels__slide swiper-slide">
                   <picture>
                     <source srcset="img/labels_logo-02-4k@1x.png 1x, img/labels_logo-02-4k@2x.png 2x" media="(min-width: 3840px)">
                     <source srcset="img/labels_logo-02@1x.png 1x, img/labels_logo-02@2x.png 2x">
                     <img src="img/labels_logo-02@1x.png" alt="" width="52" height="52">
                   </picture>
                 </a>
-                <a href="#" class="labels__slide swiper-slide">
+                <a href="#" rel="nofollow noindex" class="labels__slide swiper-slide">
                   <picture>
                     <source srcset="img/labels_logo-03-4k@1x.png 1x, img/labels_logo-03-4k@2x.png 2x" media="(min-width: 3840px)">
                     <source srcset="img/labels_logo-03@1x.png 1x, img/labels_logo-03@2x.png 2x">
                     <img src="img/labels_logo-03@1x.png" alt="" width="48" height="48">
                   </picture>
                 </a>
-                <a href="#" class="labels__slide swiper-slide">
+                <a href="#" rel="nofollow noindex" class="labels__slide swiper-slide">
                   <picture>
                     <source srcset="img/labels_logo-04-4k@1x.png 1x, img/labels_logo-04-4k@2x.png 2x" media="(min-width: 3840px)">
                     <source srcset="img/labels_logo-04@1x.png 1x, img/labels_logo-04@2x.png 2x">
                     <img src="img/labels_logo-04@1x.png" alt="" width="51" height="51">
                   </picture>
                 </a>
-                <a href="#" class="labels__slide swiper-slide">
+                <a href="#" rel="nofollow noindex" class="labels__slide swiper-slide">
                   <picture>
                     <source srcset="img/labels_logo-05-4k@1x.png 1x, img/labels_logo-05-4k@2x.png 2x" media="(min-width: 3840px)">
                     <source srcset="img/labels_logo-05@1x.png 1x, img/labels_logo-05@2x.png 2x">
                     <img src="img/labels_logo-05@1x.png" alt="" width="52" height="64">
                   </picture>
                 </a>
-                <a href="#" class="labels__slide swiper-slide">
+                <a href="#" rel="nofollow noindex" class="labels__slide swiper-slide">
                   <picture>
                     <source srcset="img/labels_logo-06-4k@1x.png 1x, img/labels_logo-06-4k@2x.png 2x" media="(min-width: 3840px)">
                     <source srcset="img/labels_logo-06@1x.png 1x, img/labels_logo-06@2x.png 2x">
                     <img src="img/labels_logo-06@1x.png" alt="" width="50" height="37">
                   </picture>
                 </a>
-                <a href="#" class="labels__slide swiper-slide">
+                <a href="#" rel="nofollow noindex" class="labels__slide swiper-slide">
                   <picture>
                     <source srcset="img/labels_logo-07-4k@1x.png 1x, img/labels_logo-07-4k@2x.png 2x" media="(min-width: 3840px)">
                     <source srcset="img/labels_logo-07@1x.png 1x, img/labels_logo-07@2x.png 2x">
                     <img src="img/labels_logo-07@1x.png" alt="" width="31" height="31">
                   </picture>
                 </a>
-                <a href="#" class="labels__slide swiper-slide">
+                <a href="#" rel="nofollow noindex" class="labels__slide swiper-slide">
                   <picture>
                     <source srcset="img/labels_logo-08-4k@1x.png 1x, img/labels_logo-08-4k@2x.png 2x" media="(min-width: 3840px)">
                     <source srcset="img/labels_logo-08@1x.png 1x, img/labels_logo-08@2x.png 2x">
                     <img src="img/labels_logo-08@1x.png" alt="" width="48" height="57">
                   </picture>
                 </a>
-                <a href="#" class="labels__slide swiper-slide">
+                <a href="#" rel="nofollow noindex" class="labels__slide swiper-slide">
                   <picture>
                     <source srcset="img/labels_logo-09-4k@1x.png 1x, img/labels_logo-09-4k@2x.png 2x" media="(min-width: 3840px)">
                     <source srcset="img/labels_logo-09@1x.png 1x, img/labels_logo-09@2x.png 2x">
                     <img src="img/labels_logo-09@1x.png" alt="" width="60" height="30">
                   </picture>
                 </a>
-                <a href="#" class="labels__slide swiper-slide">
+                <a href="#" rel="nofollow noindex" class="labels__slide swiper-slide">
                   <picture>
                     <source srcset="img/labels_logo-05-4k@1x.png 1x, img/labels_logo-05-4k@2x.png 2x" media="(min-width: 3840px)">
                     <source srcset="img/labels_logo-05@1x.png 1x, img/labels_logo-05@2x.png 2x">
                     <img src="img/labels_logo-05@1x.png" alt="" width="52" height="64">
                   </picture>
                 </a>
-                <a href="#" class="labels__slide swiper-slide">
+                <a href="#" rel="nofollow noindex" class="labels__slide swiper-slide">
                   <picture>
                     <source srcset="img/labels_logo-06-4k@1x.png 1x, img/labels_logo-06-4k@2x.png 2x" media="(min-width: 3840px)">
                     <source srcset="img/labels_logo-06@1x.png 1x, img/labels_logo-06@2x.png 2x">
                     <img src="img/labels_logo-06@1x.png" alt="" width="50" height="37">
                   </picture>
                 </a>
-                <a href="#" class="labels__slide swiper-slide">
+                <a href="#" rel="nofollow noindex" class="labels__slide swiper-slide">
                   <picture>
                     <source srcset="img/labels_logo-07-4k@1x.png 1x, img/labels_logo-07-4k@2x.png 2x" media="(min-width: 3840px)">
                     <source srcset="img/labels_logo-07@1x.png 1x, img/labels_logo-07@2x.png 2x">
                     <img src="img/labels_logo-07@1x.png" alt="" width="31" height="31">
                   </picture>
                 </a>
-                <a href="#" class="labels__slide swiper-slide">
+                <a href="#" rel="nofollow noindex" class="labels__slide swiper-slide">
                   <picture>
                     <source srcset="img/labels_logo-08-4k@1x.png 1x, img/labels_logo-08-4k@2x.png 2x" media="(min-width: 3840px)">
                     <source srcset="img/labels_logo-08@1x.png 1x, img/labels_logo-08@2x.png 2x">
                     <img src="img/labels_logo-08@1x.png" alt="" width="48" height="57">
                   </picture>
                 </a>
-                <a href="#" class="labels__slide swiper-slide">
+                <a href="#" rel="nofollow noindex" class="labels__slide swiper-slide">
                   <picture>
                     <source srcset="img/labels_logo-09-4k@1x.png 1x, img/labels_logo-09-4k@2x.png 2x" media="(min-width: 3840px)">
                     <source srcset="img/labels_logo-09@1x.png 1x, img/labels_logo-09@2x.png 2x">
                     <img src="img/labels_logo-09@1x.png" alt="" width="60" height="30">
                   </picture>
                 </a>
-                <a href="#" class="labels__slide swiper-slide">
+                <a href="#" rel="nofollow noindex" class="labels__slide swiper-slide">
                   <picture>
                     <source srcset="img/labels_logo-07-4k@1x.png 1x, img/labels_logo-07-4k@2x.png 2x" media="(min-width: 3840px)">
                     <source srcset="img/labels_logo-07@1x.png 1x, img/labels_logo-07@2x.png 2x">
@@ -201,7 +248,7 @@
                     <source srcset="img/artists_card-01-4k@1x.jpg 1x, img/artists_card-01-4k@2x.jpg 2x" media="(min-width: 3840px)">
                     <source srcset="img/artists_card-01-2k@1x.jpg 1x, img/artists_card-01-2k@2x.jpg 2x" media="(min-width: 1920px)">
                     <source srcset="img/artists_card-01@1x.jpg 1x, img/artists_card-01@2x.jpg 2x">
-                    <img src="img/artists_card-01@1x.jpg" alt="Сергей Шнур" width="285" height="198">
+                    <img src="img/artists_card-01@1x.jpg" alt="Сергей Шнур" width="293" height="198">
                   </picture>
                   <p class="artists__name">Сергей Шнур</p>
                 </a>
@@ -212,7 +259,7 @@
                     <source srcset="img/artists_card-02-4k@1x.jpg 1x, img/artists_card-02-4k@2x.jpg 2x" media="(min-width: 3840px)">
                     <source srcset="img/artists_card-02-2k@1x.jpg 1x, img/artists_card-02-2k@2x.jpg 2x" media="(min-width: 1920px)">
                     <source srcset="img/artists_card-02@1x.jpg 1x, img/artists_card-02@2x.jpg 2x">
-                    <img src="img/artists_card-02@1x.jpg" alt="Swanky Tunes" width="297" height="198">
+                    <img src="img/artists_card-02@1x.jpg" alt="Swanky Tunes" width="293" height="198">
                   </picture>
                   <p class="artists__name">Swanky Tunes</p>
                 </a>
@@ -223,7 +270,7 @@
                     <source srcset="img/artists_card-03-4k@1x.jpg 1x, img/artists_card-03-4k@2x.jpg 2x" media="(min-width: 3840px)">
                     <source srcset="img/artists_card-03-2k@1x.jpg 1x, img/artists_card-03-2k@2x.jpg 2x" media="(min-width: 1920px)">
                     <source srcset="img/artists_card-03@1x.jpg 1x, img/artists_card-03@2x.jpg 2x">
-                    <img src="img/artists_card-03@1x.jpg" alt="Zivert" width="304" height="198">
+                    <img src="img/artists_card-03@1x.jpg" alt="Zivert" width="293" height="198">
                   </picture>
                   <p class="artists__name">Zivert</p>
                 </a>
@@ -234,7 +281,7 @@
                     <source srcset="img/artists_card-04-4k@1x.jpg 1x, img/artists_card-04-4k@2x.jpg 2x" media="(min-width: 3840px)">
                     <source srcset="img/artists_card-04-2k@1x.jpg 1x, img/artists_card-04-2k@2x.jpg 2x" media="(min-width: 1920px)">
                     <source srcset="img/artists_card-04@1x.jpg 1x, img/artists_card-04@2x.jpg 2x">
-                    <img src="img/artists_card-04@1x.jpg" alt="Feduk" width="285" height="198">
+                    <img src="img/artists_card-04@1x.jpg" alt="Feduk" width="293" height="198">
                   </picture>
                   <p class="artists__name">Feduk</p>
                 </a>
@@ -245,7 +292,7 @@
                     <source srcset="img/artists_card-02-4k@1x.jpg 1x, img/artists_card-02-4k@2x.jpg 2x" media="(min-width: 3840px)">
                     <source srcset="img/artists_card-02-2k@1x.jpg 1x, img/artists_card-02-2k@2x.jpg 2x" media="(min-width: 1920px)">
                     <source srcset="img/artists_card-02@1x.jpg 1x, img/artists_card-02@2x.jpg 2x">
-                    <img src="img/artists_card-02@1x.jpg" alt="Swanky Tunes" width="297" height="198">
+                    <img src="img/artists_card-02@1x.jpg" alt="Swanky Tunes" width="293" height="198">
                   </picture>
                   <p class="artists__name">Swanky Tunes</p>
                 </a>
@@ -256,7 +303,7 @@
                     <source srcset="img/artists_card-03-4k@1x.jpg 1x, img/artists_card-03-4k@2x.jpg 2x" media="(min-width: 3840px)">
                     <source srcset="img/artists_card-03-2k@1x.jpg 1x, img/artists_card-03-2k@2x.jpg 2x" media="(min-width: 1920px)">
                     <source srcset="img/artists_card-03@1x.jpg 1x, img/artists_card-03@2x.jpg 2x">
-                    <img src="img/artists_card-03@1x.jpg" alt="Zivert" width="304" height="198">
+                    <img src="img/artists_card-03@1x.jpg" alt="Zivert" width="293" height="198">
                   </picture>
                   <p class="artists__name">Zivert</p>
                 </a>
@@ -267,7 +314,7 @@
                     <source srcset="img/artists_card-03-4k@1x.jpg 1x, img/artists_card-03-4k@2x.jpg 2x" media="(min-width: 3840px)">
                     <source srcset="img/artists_card-03-2k@1x.jpg 1x, img/artists_card-03-2k@2x.jpg 2x" media="(min-width: 1920px)">
                     <source srcset="img/artists_card-03@1x.jpg 1x, img/artists_card-03@2x.jpg 2x">
-                    <img src="img/artists_card-03@1x.jpg" alt="Zivert" width="304" height="198">
+                    <img src="img/artists_card-03@1x.jpg" alt="Zivert" width="293" height="198">
                   </picture>
                   <p class="artists__name">Zivert</p>
                 </a>
@@ -278,7 +325,7 @@
                     <source srcset="img/artists_card-03-4k@1x.jpg 1x, img/artists_card-03-4k@2x.jpg 2x" media="(min-width: 3840px)">
                     <source srcset="img/artists_card-03-2k@1x.jpg 1x, img/artists_card-03-2k@2x.jpg 2x" media="(min-width: 1920px)">
                     <source srcset="img/artists_card-03@1x.jpg 1x, img/artists_card-03@2x.jpg 2x">
-                    <img src="img/artists_card-03@1x.jpg" alt="Zivert" width="304" height="198">
+                    <img src="img/artists_card-03@1x.jpg" alt="Zivert" width="293" height="198">
                   </picture>
                   <p class="artists__name">Zivert</p>
                 </a>
@@ -289,7 +336,7 @@
                     <source srcset="img/artists_card-03-4k@1x.jpg 1x, img/artists_card-03-4k@2x.jpg 2x" media="(min-width: 3840px)">
                     <source srcset="img/artists_card-03-2k@1x.jpg 1x, img/artists_card-03-2k@2x.jpg 2x" media="(min-width: 1920px)">
                     <source srcset="img/artists_card-03@1x.jpg 1x, img/artists_card-03@2x.jpg 2x">
-                    <img src="img/artists_card-03@1x.jpg" alt="Zivert" width="304" height="198">
+                    <img src="img/artists_card-03@1x.jpg" alt="Zivert" width="293" height="198">
                   </picture>
                   <p class="artists__name">Zivert</p>
                 </a>
@@ -300,7 +347,7 @@
                     <source srcset="img/artists_card-03-4k@1x.jpg 1x, img/artists_card-03-4k@2x.jpg 2x" media="(min-width: 3840px)">
                     <source srcset="img/artists_card-03-2k@1x.jpg 1x, img/artists_card-03-2k@2x.jpg 2x" media="(min-width: 1920px)">
                     <source srcset="img/artists_card-03@1x.jpg 1x, img/artists_card-03@2x.jpg 2x">
-                    <img src="img/artists_card-03@1x.jpg" alt="Zivert" width="304" height="198">
+                    <img src="img/artists_card-03@1x.jpg" alt="Zivert" width="293" height="198">
                   </picture>
                   <p class="artists__name">Zivert</p>
                 </a>
@@ -311,7 +358,7 @@
                     <source srcset="img/artists_card-03-4k@1x.jpg 1x, img/artists_card-03-4k@2x.jpg 2x" media="(min-width: 3840px)">
                     <source srcset="img/artists_card-03-2k@1x.jpg 1x, img/artists_card-03-2k@2x.jpg 2x" media="(min-width: 1920px)">
                     <source srcset="img/artists_card-03@1x.jpg 1x, img/artists_card-03@2x.jpg 2x">
-                    <img src="img/artists_card-03@1x.jpg" alt="Zivert" width="304" height="198">
+                    <img src="img/artists_card-03@1x.jpg" alt="Zivert" width="293" height="198">
                   </picture>
                   <p class="artists__name">Zivert</p>
                 </a>
@@ -322,13 +369,13 @@
                     <source srcset="img/artists_card-03-4k@1x.jpg 1x, img/artists_card-03-4k@2x.jpg 2x" media="(min-width: 3840px)">
                     <source srcset="img/artists_card-03-2k@1x.jpg 1x, img/artists_card-03-2k@2x.jpg 2x" media="(min-width: 1920px)">
                     <source srcset="img/artists_card-03@1x.jpg 1x, img/artists_card-03@2x.jpg 2x">
-                    <img src="img/artists_card-03@1x.jpg" alt="Zivert" width="304" height="198">
+                    <img src="img/artists_card-03@1x.jpg" alt="Zivert" width="293" height="198">
                   </picture>
                   <p class="artists__name">Zivert</p>
                 </a>
               </div>
             </div>
-            <!-- <a href="#" class="artists__load-more">Загрузить еще</a> -->
+            <!-- <a href="#" class="artists__load-more">Еще</a> -->
           </div>
         </div>
       </section>
@@ -349,19 +396,19 @@
                 <a href="about.html" class="footer__menu-link">О компании</a>
               </li>
               <li class="footer__menu-item">
-                <a href="#" class="footer__menu-link">Сервисы</a>
+                <a href="services.html" class="footer__menu-link">Сервисы</a>
               </li>
               <li class="footer__menu-item">
-                <a href="partners.html" class="footer__menu-link">Партнеры</a>
+                <a href="partners.html" class="footer__menu-link footer__menu-link--active">Партнеры</a>
               </li>
               <li class="footer__menu-item">
-                <a href="#" class="footer__menu-link">Истории успеха</a>
+                <a href="reviews.html" class="footer__menu-link">Истории успеха</a>
               </li>
               <li class="footer__menu-item">
-                <a href="#" class="footer__menu-link">Новости</a>
+                <a href="news.html" class="footer__menu-link">Новости</a>
               </li>
               <li class="footer__menu-item">
-                <a href="#" class="footer__menu-link">FAQ</a>
+                <a href="faq.html" class="footer__menu-link">FAQ</a>
               </li>
               <li class="footer__menu-item">
                 <a href="contacts.html" class="footer__menu-link">Контакты</a>
@@ -371,16 +418,16 @@
         </div>
         <div class="footer__middle">
           <div class="footer__social">
-            <a href="#" class="footer__soial-link footer__soial-link--fb" target="_blank">
+            <a href="#" class="footer__social-link footer__social-link--fb" target="_blank">
               <span class="visually-hidden">Мы на Facebook</span>
             </a>
-            <a href="#" class="footer__soial-link footer__soial-link--ig" target="_blank">
+            <a href="#" class="footer__social-link footer__social-link--ig" target="_blank">
               <span class="visually-hidden">Мы в Instagram</span>
             </a>
-            <a href="#" class="footer__soial-link footer__soial-link--vk" target="_blank">
+            <a href="#" class="footer__social-link footer__social-link--vk" target="_blank">
               <span class="visually-hidden">Мы во ВКонтакте</span>
             </a>
-            <a href="#" class="footer__soial-link footer__soial-link--yt" target="_blank">
+            <a href="#" class="footer__social-link footer__social-link--yt" target="_blank">
               <span class="visually-hidden">Мы на YouTube</span>
             </a>
           </div>
@@ -424,6 +471,66 @@
         <span class="visually-hidden">Закрыть</span>
       </button>
     </section>
+    <section class="popup popup--artist">
+      <div class="popup__wrapper">
+        <div class="artist">
+          <div class="artist__image">
+            <picture>
+              <source srcset="img/artist_image-01-4k@1x.jpg 1x, img/artist_image-01-4k@2x.jpg 2x" media="(min-width: 3840px)">
+              <source srcset="img/artist_image-01@1x.jpg 1x, img/artist_image-01@2x.jpg 2x">
+              <img src="img/artist_image-01@1x.jpg" alt="Анита Цой" width="570" height="295">
+            </picture>
+            <h2 class="artist__name">Анита Цой</h2>
+          </div>
+          <table class="artist__links">
+            <tbody>
+              <tr class="artist__link-row">
+                <td class="artist__link-icon">
+                  <picture>
+                    <source srcset="img/artist_card-icon-apple-4k@1x.png 1x, img/artist_card-icon-apple-4k@2x.png 2x" media="(min-width: 3840px)">
+                    <source srcset="img/artist_card-icon-apple@1x.png 1x, img/artist_card-icon-apple@2x.png 2x">
+                    <img src="img/artist_card-icon-apple@1x.png" alt="" width="53" height="54">
+                  </picture>
+                </td>
+                <td class="artist__link-name">Apple Music</td>
+                <td class="artist__link-button">
+                  <a href="#" target="_blank" rel="nofollow noindex">перейти</a>
+                </td>
+              </tr>
+              <tr class="artist__link-row">
+                <td class="artist__link-icon">
+                  <picture>
+                    <source srcset="img/artist_card-icon-itunes-4k@1x.png 1x, img/artist_card-icon-itunes-4k@2x.png 2x" media="(min-width: 3840px)">
+                    <source srcset="img/artist_card-icon-itunes@1x.png 1x, img/artist_card-icon-itunes@2x.png 2x">
+                    <img src="img/artist_card-icon-itunes@1x.png" alt="" width="80" height="31">
+                  </picture>
+                </td>
+                <td class="artist__link-name">ITunes</td>
+                <td class="artist__link-button">
+                  <a href="#" target="_blank" rel="nofollow noindex">перейти</a>
+                </td>
+              </tr>
+              <tr class="artist__link-row">
+                <td class="artist__link-icon">
+                  <picture>
+                    <source srcset="img/artist_card-icon-boom-4k@1x.png 1x, img/artist_card-icon-boom-4k@2x.png 2x" media="(min-width: 3840px)">
+                    <source srcset="img/artist_card-icon-boom@1x.png 1x, img/artist_card-icon-boom@2x.png 2x">
+                    <img src="img/artist_card-icon-boom@1x.png" alt="" width="57" height="57">
+                  </picture>
+                </td>
+                <td class="artist__link-name">Boom</td>
+                <td class="artist__link-button">
+                  <a href="#" target="_blank" rel="nofollow noindex">перейти</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <button class="popup__close" type="button">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+    </section>
     <div class="cookies">
       <div class="container">
         <div class="cookies__wrapper">
@@ -449,7 +556,7 @@
             showItems: 4,
             button: {
               'class': 'artists__load-more',
-              'text': 'Загрузить еще'
+              'text': 'Ещё'
             }
           });
         } else {
@@ -458,10 +565,15 @@
             showItems: 6,
             button: {
               'class': 'artists__load-more',
-              'text': 'Загрузить еще'
+              'text': 'Ещё'
             }
           });
         }
+        $('.artists__load-more').click(function() {
+          $('html, body').animate({
+            scrollTop: $(document).scrollTop() + $('.loadMore').height()
+          }, 1000);
+        });
       });
     </script>
   </body>

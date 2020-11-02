@@ -8,7 +8,7 @@
 @import "misc/fonts";
 
 // Подключаем шаблонные и вспомогательные классы
-@import "misc/extends", "blocks/visually-hidden", "blocks/container", "blocks/columns", "blocks/rows", "blocks/overlay";
+@import "misc/extends", "blocks/visually-hidden", "blocks/container", "blocks/columns", "blocks/rows", "blocks/full-height", "blocks/overlay";
 
 // Подключаем анимацию
 @import "misc/animations";
@@ -17,7 +17,7 @@
 @import "misc/base", "blocks/page", "blocks/button", "blocks/slider-pagination", "blocks/cookies";
 
 // Подключаем стили шапки
-@import "blocks/header";
+@import "blocks/header", "blocks/mobile-menu";
 
 // Подключаем стили блока hero
 @import "blocks/hero";
@@ -46,8 +46,17 @@
 // Подключаем стили блока о компании
 @import "blocks/about";
 
+// Подключаем стили блока новостей
+@import "blocks/news", "blocks/news-post";
+
+// Подключаем стили страницы сервисов инфо
+@import "blocks/services-info";
+
+// Подключаем стили страниц сервисов
+@import "blocks/service-page";
+
 // Подключаем стили всплывающих окон
-@import "blocks/popup", "blocks/qa-answer", "blocks/feedback", "blocks/partner";
+@import "blocks/popup", "blocks/qa-answer", "blocks/feedback", "blocks/partner", "blocks/artist", "blocks/platform";
 
 // Подключаем стили блока footer
 @import "blocks/footer";
@@ -57,3 +66,6 @@
 
 // Подключаем стили страницы Politics
 @import "blocks/politics";
+
+// Подключаем стили страницы Services-inner
+@import "blocks/services-inner";

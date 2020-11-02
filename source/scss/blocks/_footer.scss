@@ -1,6 +1,12 @@
 .footer {
+  position: relative;
+  z-index: 1;
   background-color: $ColorPrimary200;
-  padding: 36px 0;
+  padding: 24px 0 26px;
+
+  @media (min-width: $widthDesktopSmall) {
+    padding: 36px 0;
+  }
 
   @media (min-width: $widthFHD) {
     padding: 26px 0 45px;
@@ -13,13 +19,21 @@
 
 .footer__top {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
   padding-bottom: 33px;
   border-bottom: 1px solid $ColorPrimary300;
+
+  @media (min-width: $widthDesktopSmall) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: initial;
+  }
 }
 
 .footer__logo {
   display: flex;
+  margin-bottom: 35px;
 
   img {
     display: block;
@@ -29,10 +43,38 @@
   span {
     display: inline-block;
     width: 100px;
-    margin: auto 33px;
+    margin: auto 21px;
     font-weight: $fontSemiBold;
     font-size: $fontTextRegular;
     color: $fontColorWhite;
+  }
+
+  @media (min-width: $widthTablet) {
+    img {
+      width: 119px;
+    }
+
+    span {
+      width: auto;
+      margin: auto 21px;
+      font-size: $fontTextLarge;
+      line-height: $lineHeightRegular2K;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 0;
+
+    img {
+      width: 65px;
+    }
+
+    span {
+      width: 100px;
+      margin: auto 33px;
+      font-size: $fontTextRegular;
+      line-height: $lineHeightRegular;
+    }
   }
 
   @media (min-width: $widthFHD) {
@@ -60,29 +102,46 @@
 }
 
 .footer__menu {
-  margin: auto 0;
+  @media (min-width: $widthDesktopSmall) {
+    margin: auto 0;
+  }
 }
 
 .footer__menu-list {
   @extend %list-reset;
-  display: flex;
-  flex-wrap: wrap;
+
+  @media (min-width: $widthDesktopSmall) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .footer__menu-item {
-  margin: 0 30px 5px;
+  margin-bottom: 25px;
 
-  &:last-child {
-    margin-right: 0;
+  @media (max-width: $widthDesktopSmall - 1) {
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
-  .page--inner & {
-    @media (min-width: $widthFHD) {
+  @media (min-width: $widthDesktopSmall) {
+    margin: 0 30px 5px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    .page--inner & {
       margin-right: 50px;
       margin-left: 50px;
     }
+  }
 
-    @media (min-width: $width4K) {
+  @media (min-width: $width4K) {
+    .page--inner & {
       margin-right: 110px;
       margin-left: 110px;
     }
@@ -90,17 +149,50 @@
 }
 
 .footer__menu-link {
+  position: relative;
   font-weight: $fontRegular;
   font-size: $fontTextRegular;
   line-height: $lineHeightSmall;
   color: $fontColorGrey;
   transition: color 0.3s;
 
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $ColorSecondary;
+    transition:
+      color 0.3s,
+      width 0.3s;
+  }
+
   &--active,
   &:hover,
   &:focus {
     color: $ColorSecondary;
     outline: none;
+
+    &::before {
+      width: 15px;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    font-size: $fontTextMedium;
+    line-height: $lineHeightRegular;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    &--active,
+    &:hover,
+    &:focus {
+      &::before {
+        width: 24px;
+      }
+    }
   }
 
   @media (min-width: $widthFHD) {
@@ -111,14 +203,31 @@
   @media (min-width: $width4K) {
     font-size: $fontTitleMedium;
     line-height: $lineHeightSmall4K;
+
+    &--active,
+    &:hover,
+    &:focus {
+      &::before {
+        width: 48px;
+        height: 2px;
+      }
+    }
   }
 }
 
 .footer__middle {
-  display: flex;
-  justify-content: space-between;
   padding-top: 24px;
-  padding-bottom: 7px;
+  padding-bottom: 5px;
+
+  @media (min-width: $widthDesktopSmall) {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 7px;
+
+    .page--index & {
+      display: none;
+    }
+  }
 
   @media (min-width: $widthFHD) {
     padding-top: 36px;
@@ -133,7 +242,17 @@
 .footer__social {
   display: flex;
   justify-content: space-between;
-  width: 170px;
+  width: 190px;
+  margin-bottom: 33px;
+
+  @media (min-width: $widthTablet) {
+    width: 240px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 170px;
+    margin-bottom: 0;
+  }
 
   @media (min-width: $widthFHD) {
     width: 220px;
@@ -144,10 +263,11 @@
   }
 }
 
-.footer__soial-link {
+.footer__social-link {
   width: 25px;
   height: 25px;
   background: center / contain no-repeat;
+  filter: grayscale(1) brightness(2.2);
   transition: filter 0.3s;
 
   @each $icon in fb, ig, vk, yt {
@@ -159,7 +279,17 @@
   &:hover,
   &:focus {
     outline: none;
-    filter: grayscale(1) brightness(0.8);
+    filter: none;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    filter: none;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      filter: grayscale(1) brightness(0.8);
+    }
   }
 
   @media (min-width: $widthFHD) {
@@ -182,13 +312,39 @@
   &::before {
     content: "";
     position: absolute;
-    bottom: 10px;
+    bottom: -4px;
     left: 0;
-    width: 128px;
+    width: 100%;
     height: 1px;
     background-color: $ColorSecondary;
-    transform: translateX(calc(-100% - 25px));
+    transition: width 0.3s;
     pointer-events: none;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &::before {
+      width: 0;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    font-size: $fontTextMedium;
+    line-height: $lineHeightSubtitleRegular;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    font-size: $fontTextRegular;
+    line-height: $lineHeightSmall;
+
+    &::before {
+      content: none;
+      // bottom: 10px;
+      // width: 128px;
+      // transform: translateX(calc(-100% - 25px));
+    }
   }
 
   @media (min-width: $widthFHD) {
@@ -196,29 +352,34 @@
     font-size: $fontTextLarge;
     line-height: $lineHeightSmall2K;
 
-    &::before {
-      bottom: 18px;
-      width: 170px;
-      height: 3px;
-    }
+    // &::before {
+    //   bottom: 18px;
+    //   width: 170px;
+    //   height: 3px;
+    // }
   }
 
   @media (min-width: $width4K) {
     font-size: $fontTextSmall4K;
     line-height: $lineHeightNormal;
 
-    &::before {
-      bottom: 22px;
-      width: 360px;
-      transform: translateX(calc(-100% - 60px));
-    }
+    // &::before {
+    //   bottom: 22px;
+    //   width: 360px;
+    //   transform: translateX(calc(-100% - 60px));
+    // }
   }
 }
 
 .footer__bottom {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column-reverse;
   padding-top: 24px;
+
+  @media (min-width: $widthDesktopSmall) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
   @media (min-width: $widthFHD) {
     padding-top: 36px;
@@ -245,5 +406,34 @@
   @media (min-width: $width4K) {
     font-size: $fontTextRegular4K;
     line-height: $lineHeightMedium4K;
+  }
+}
+
+.footer__bottom-copyright {
+  @media (max-width: $widthDesktopSmall - 1) {
+    padding-top: 22px;
+    text-align: center;
+    border-top: 1px solid $ColorPrimary300;
+
+    @media (min-width: $widthTablet) {
+      font-size: $fontTextMedium;
+      line-height: $lineHeightSubtitleRegular;
+    }
+  }
+}
+
+.footer__bottom-link {
+  margin-bottom: 23px;
+
+  &:last-child {
+    display: none;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 0;
+
+    &:last-child {
+      display: initial;
+    }
   }
 }

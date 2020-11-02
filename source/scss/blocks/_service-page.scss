@@ -1,0 +1,698 @@
+.service-page {
+  max-width: 100vw;
+  padding-top: 50px;
+  padding-bottom: 40px;
+
+  @media (min-width: $widthMobile) {
+    padding-top: 26px;
+  }
+
+  @media (min-width: $widthTablet) {
+    padding-top: 50px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    max-width: initial;
+    background: url("../img/service-page_bg@1x.png") top -500px right -700px / 1438px no-repeat;
+
+    @media (min-resolution: 144dpi) {
+      background-image: url("../img/service-page_bg@2x.png");
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @media (min-width: $width4K) {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+}
+
+.service-page__title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 20px;
+  font-weight: $fontBold;
+  font-size: $fontTextHuge;
+  line-height: $lineHeightTitleRegular;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 87px;
+    height: 2px;
+    background-color: $ColorSecondary;
+  }
+
+  @media (min-width: $widthMobile) {
+    line-height: 28px;
+
+    &::before {
+      top: -5px;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 28px;
+
+    &::before {
+      width: 124px;
+      height: 4px;
+      top: -10px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 43px;
+    padding-top: 24px;
+    font-size: $fontTitleRegular;
+    line-height: $lineHeightTitleRegular;
+
+    &::before {
+      width: 124px;
+      height: 4px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    margin-bottom: 80px;
+    padding-top: 25px;
+    font-size: $fontTitleSmall4K;
+    line-height: $lineHeightTitleRegular4K;
+
+    &::before {
+      width: 360px;
+      height: 9px;
+    }
+  }
+}
+
+.service-page__image {
+  --color-stop-1: #{$ColorSecondary400};
+  --color-stop-2: #{$ColorSecondary};
+  display: none;
+  float: right;
+
+  stop {
+    transition: all 0.4s;
+  }
+
+  &:hover {
+    --color-stop-1: #{$ColorSecondary};
+    --color-stop-2: #{$ColorSecondary400};
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    display: block;
+    margin-left: 130px;
+    transform: translateY(-50px);
+
+    svg {
+      width: 207px;
+      height: 237px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    margin-left: 130px;
+    transform: translateY(-100px);
+
+    svg {
+      width: 570px;
+      height: 653px;
+    }
+  }
+}
+
+.service-page__content {
+  font-weight: $fontMedium;
+  font-size: $fontTextMedium;
+  line-height: $lineHeightHuge;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    padding-left: 27px;
+    font-weight: $fontMedium;
+    font-size: $fontTextHuge;
+    line-height: $lineHeightLarge;
+    color: $ColorSecondary;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 13px;
+      left: 0;
+      width: 11px;
+      height: 12px;
+      background-color: $ColorSecondary;
+      border-radius: 2px;
+    }
+  }
+
+  p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  ul {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding-left: 20px;
+    list-style: none;
+    font-size: $fontTextRegular;
+    line-height: $lineHeightSubtitleLarge;
+  }
+
+  li {
+    position: relative;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: -20px;
+      width: 7px;
+      height: 8px;
+      background: $ColorSecondary;
+      border-radius: 2px;
+    }
+  }
+
+  @media (min-width: $widthMobile) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      &::before {
+        top: 6px;
+      }
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    font-size: $fontTextLarge;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding-left: 30px;
+      font-size: $fontTitleRegular;
+      line-height: $lineHeightXHuge;
+
+      &::before {
+        top: 10px;
+      }
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    font-size: $fontTextHuge;
+
+    ul {
+      font-size: $fontTextMedium;
+      line-height: $lineHeightNormal;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    font-size: $fontTextLarge4K;
+    line-height: $lineHeightTitleXLarge;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding-left: 60px;
+      font-size: $fontTitleTiny4K;
+      line-height: $lineHeightNormal;
+
+      &::before {
+        top: 26px;
+        width: 21px;
+        height: 25px;
+      }
+    }
+
+    ul {
+      padding-left: 60px;
+      font-size: $fontTitleLarge;
+    }
+
+    li {
+      &::before {
+        top: 15px;
+        left: -60px;
+        width: 21px;
+        height: 23px;
+      }
+    }
+  }
+}
+
+.service-page__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+
+  @media (min-width: $widthMobile) {
+    flex-direction: column;
+    min-height: 100px;
+    align-items: flex-start;
+    margin-top: 0;
+  }
+
+  @media (min-width: $widthTablet) {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 40px;
+
+    .service-page--platform & {
+      justify-content: space-between;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    margin-top: 90px;
+  }
+}
+
+.service-page__button {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0;
+  padding-left: 28px;
+  font-weight: $fontSemiBold;
+  font-size: $fontTextLarge;
+  line-height: $lineHeightMedium;
+  vertical-align: middle;
+  text-align: center;
+  color: $ColorSecondary;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background: none;
+  border: none;
+  transition: filter 0.3s;
+  cursor: pointer;
+  appearance: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 18px;
+    height: 8px;
+    background: url("../img/icon-arrow.svg") center / contain no-repeat;
+    transform: scaleX(-1);
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    filter: grayscale(1) brightness(0.7);
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-right: 30px;
+  }
+
+  @media (min-width: $width4K) {
+    margin-right: 90px;
+    padding-left: 130px;
+    font-size: $fontTextLarge4K;
+    line-height: $lineHeightTitleXLarge;
+
+    &::before {
+      top: 14px;
+      width: 78px;
+      height: 24px;
+    }
+  }
+}
+
+.service-page__slider-wide {
+  width: 100vw;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  transform: translateX(-15px);
+
+  @media (min-width: $widthMobile) {
+    background-color: $fontColorHeaders;
+  }
+
+  @media (min-width: $widthTablet) {
+    background-color: $fontColorHeaders;
+    width: 100%;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 100vw;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background:
+      url("../img/service-page_slider-bg-01@1x.png") top 0 right -250px / 439px no-repeat,
+      url("../img/service-page_slider-bg-02@1x.png") -140px 50px / 275px no-repeat $fontColorHeaders;
+    transform: translateX(calc(585px - 50vw));
+
+    @media (min-resolution: 144dpi) {
+      background-image:
+        url("../img/service-page_slider-bg-01@2x.png"),
+        url("../img/service-page_slider-bg-02@2x.png");
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    transform: translateX(calc(885px - 50vw));
+  }
+
+  @media (min-width: $width4K) {
+    margin-top: 90px;
+    margin-bottom: 90px;
+    transform: translateX(calc(1685px - 50vw));
+  }
+}
+
+.service-page__slider-wide-wrapper {
+  padding-top: 30px;
+  padding-bottom: 93px;
+
+  @media (min-width: $widthTablet) {
+    padding-top: 72px;
+    padding-bottom: 117px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    padding-top: 45px;
+    padding-bottom: 107px;
+  }
+
+  @media (min-width: $widthFHD) {
+    padding-top: 53px;
+    padding-bottom: 138px;
+  }
+
+  @media (min-width: $width4K) {
+    padding-top: 106px;
+    padding-bottom: 295px;
+  }
+}
+
+.service-page__slider-wide-list {
+  width: 100%;
+  height: 100%;
+}
+
+.service-page__slide-wide {
+  width: 290px;
+  overflow: hidden;
+  border-radius: 5px;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+  filter: drop-shadow(0 0 25px rgba($ColorSecondary, 0.25));
+
+  img {
+    display: block;
+    width: 290px;
+  }
+
+  &--active,
+  &.swiper-slide-active,
+  &:hover,
+  &:focus {
+    outline: none;
+    opacity: 1;
+  }
+
+  @media (min-width: $widthTablet) {
+    width: 477px;
+
+    img {
+      width: 477px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 382px;
+
+    img {
+      width: 382px;
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    width: 577px;
+
+    img {
+      width: 577px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    width: 1095px;
+
+    img {
+      width: 1095px;
+    }
+  }
+}
+
+.service-page__slider {
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  @media (min-width: $widthFHD) {
+    margin-top: 30px;
+  }
+
+  @media (min-width: $width4K) {
+    margin-top: 90px;
+  }
+}
+
+.service-page__slider-wrapper {
+  @media (min-width: $widthDesktopSmall) {
+    padding-top: 50px;
+  }
+
+  @media (min-width: $widthFHD) {
+    padding-top: 60px;
+  }
+
+  @media (min-width: $width4K) {
+    padding-top: 140px;
+  }
+}
+
+.service-page__slide {
+  width: 270px;
+  height: 105px;
+  overflow: hidden;
+  background-color: $ColorWhite;
+  border-radius: 6px;
+  transition: box-shadow 0.3s;
+
+  img {
+    display: block;
+    width: 270px;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba($ColorSecondary, 0.25);
+  }
+
+  @media (min-width: $widthMobile) {
+    height: 65px;
+  }
+
+  @media (min-width: $widthTablet) {
+    height: 105px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 270px;
+    height: 105px;
+
+    img {
+      width: 270px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    width: 554px;
+    height: 308px;
+
+    img {
+      width: 554px;
+    }
+  }
+}
+
+.service-page__slider-control {
+  position: absolute;
+  left: 0;
+  bottom: 22px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  width: 170px;
+
+  .service-page--platform & {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+  }
+
+  @media (min-width: $widthTablet) {
+    bottom: 27px;
+  }
+
+  @media (max-width: $widthDesktopSmall - 1) {
+    .service-page--platform & {
+      display: none;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+  }
+
+  @media (min-width: $widthFHD) {
+    bottom: 37px;
+  }
+
+  @media (min-width: $width4K) {
+    bottom: 90px;
+    width: 456px;
+  }
+}
+
+.service-page__slider-button {
+  width: 70px;
+  height: 42px;
+  padding: 0;
+  background: url("../img/icon-arrow-white.svg") center / 40px no-repeat $fontColorLightGrey;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &--left {
+    transform: scaleX(-1);
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: $ColorSecondary;
+  }
+
+  @media (min-width: $width4K) {
+    width: 188px;
+    height: 113px;
+    background-size: 109px;
+  }
+}
+
+.service-page__slider-pagination {
+  position: absolute;
+  right: 0;
+  left: auto;
+  bottom: 22px;
+  width: auto;
+  font-weight: $fontMedium;
+  font-size: $fontTextLarge;
+  line-height: $lineHeightHuge;
+  color: $ColorWhite;
+  transition: color 0.3s;
+
+  @media (min-width: $widthTablet) {
+    bottom: 27px;
+  }
+
+  @media (min-width: $widthFHD) {
+    bottom: 37px;
+  }
+
+  @media (min-width: $width4K) {
+    bottom: 90px;
+    font-size: $fontTitleRegular4K;
+  }
+}
+
+.service-page__slider-pagination-current {
+  font-size: $fontTitleTiny;
+  color: $ColorSecondary;
+
+  @media (min-width: $width4K) {
+    font-size: $fontTitleHuge4K;
+  }
+}
+
+.service-page__slider-pagination-total {
+  font-size: $fontTextRegular;
+
+  @media (min-width: $width4K) {
+    font-size: $fontTitleRegular4K;
+  }
+}
+
+.sl-overlay {
+  background-color: $ColorPrimary200 !important;
+}
+
+.sl-close {
+  color: $ColorSecondary !important;
+}
+
+.sl-prev,
+.sl-next {
+  color: $ColorSecondary !important;
+}
+
+.service-page__slider-list {
+  @media (min-width: $widthMobile) {
+    height: 180px;
+  }
+
+  @media (min-width: $widthTablet) {
+    height: 250px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    height: auto;
+  }
+}

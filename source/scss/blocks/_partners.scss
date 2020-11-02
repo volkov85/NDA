@@ -1,8 +1,22 @@
 .partners {
-  margin-bottom: 10px;
+  width: 100vw;
+  margin-bottom: 15px;
 
   .columns {
-    grid-template-columns: 1fr calc(50% + 85px);
+    flex-direction: column;
+  }
+
+  @media (min-width: $widthTablet) {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: auto;
+    margin-bottom: 10px;
+
+    .columns {
+      grid-template-columns: 1fr calc(50% + 85px);
+    }
   }
 
   @media (min-width: $widthFHD) {
@@ -24,41 +38,78 @@
 
 .partners__col-left-wrapper {
   box-sizing: border-box;
-  width: 532px;
-  margin-left: auto;
-  padding: 50px 30px 40px 30px;
+  width: 100%;
+  padding: 26px 15px 20px;
+
+  @media (min-width: $widthTablet) {
+    padding: 38px 39px 30px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 517px;
+    margin-left: auto;
+    padding: 50px 30px 40px 15px;
+
+    @media (max-height: 810px) {
+      // padding-top: calc(50vh - 355px);
+      padding-bottom: calc(50vh - 365px);
+      padding-bottom: Max(calc(50vh - 365px), 10px);
+    }
+  }
 
   @media (min-width: $widthFHD) {
     width: 870px;
-    padding-right: 30px;
+    padding-top: 80px;
+    padding-left: 30px;
     padding-bottom: 10px;
   }
 
   @media (min-width: $width4K) {
-    width: 1640px;
+    width: 1700px;
     padding-top: 140px;
     padding-bottom: 70px;
     padding-left: 60px;
+
+    @media (max-height: 810px) {
+      // padding-top: calc(50vh - 265px);
+      padding-bottom: calc(50vh - 335px);
+      padding-bottom: Max(calc(50vh - 335px), 10px);
+    }
   }
 }
 
 .partners__title {
   position: relative;
   margin: 0;
-  margin-bottom: 23px;
-  padding-top: 16px;
+  margin-bottom: 10px;
   font-weight: $fontBold;
-  font-size: $fontTitleSmall;
-  line-height: $lineHeightTitleSmall;
+  font-size: $fontTextHuge;
+  line-height: $lineHeightTitleRegular;
 
   &::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 124px;
-    height: 4px;
+    width: 87px;
+    height: 2px;
     background-color: $ColorSecondary;
+  }
+
+  @media (min-width: $widthTablet) {
+    margin-bottom: 33px;
+    padding-top: 16px;
+    font-size: $fontTitleRegular;
+
+    &::before {
+      width: 124px;
+      height: 4px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 23px;
+    line-height: $lineHeightTitleRegular;
   }
 
   @media (min-width: $widthFHD) {
@@ -83,9 +134,23 @@
 .partners__text {
   margin: 0;
   font-weight: $fontSemiBold;
-  font-size: $fontTextLarge;
-  line-height: $fontTitleRegular;
+  font-size: $fontTextMedium;
+  line-height: $lineHeightRegular2K;
   color: $ColorPrimary300;
+
+  @media (min-width: $widthTablet) {
+    font-size: $fontTitleTiny;
+    line-height: $lineHeightRegular4K;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    font-size: $fontTextLarge;
+    line-height: $fontTitleRegular;
+
+    @media (max-height: 700px) {
+      font-size: $fontTextRegular;
+    }
+  }
 
   @media (min-width: $widthFHD) {
     font-weight: $fontBold;
@@ -101,20 +166,33 @@
 
 .partners__col-right {
   display: flex;
-  background: url("../img/partners_bg@1x.png") -180px -570px no-repeat $ColorPrimary200;
+  background: url("../img/partners_bg-mobile@1x.png") top -110px right -280px / 559px no-repeat $ColorPrimary200;
 
   @media (min-resolution: 144dpi) {
-    background-image: url("../img/partners_bg@2x.png");
+    background-image: url("../img/partners_bg-mobile@2x.png");
+  }
+
+  @media (min-width: $widthTablet) {
+    background-image: none;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    background-image: url("../img/partners_bg@1x.png");
+    background-position: top -565px right -760px;
     background-size: 1777px;
+
+    @media (min-resolution: 144dpi) {
+      background-image: url("../img/partners_bg@2x.png");
+    }
   }
 
   @media (min-width: $widthFHD) {
-    background-position-x: -80px;
+    background-position: top -585px right -695px;
   }
 
   @media (min-width: $width4K) {
     background-image: url("../img/partners_bg-4k@1x.png");
-    background-position: 100px -1470px;
+    background-position: top -1480px right -1175px;
     background-size: 3227px;
 
     @media (min-resolution: 144dpi) {
@@ -125,19 +203,47 @@
 
 .partners__col-right-wrapper {
   box-sizing: border-box;
-  width: 698px;
-  padding: 80px 30px 40px 32px;
+  width: 100%;
+  padding: 36px 15px 36px;
+
+  @media (min-width: $widthTablet) {
+    padding: 33px 39px 35px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 683px;
+    padding: 80px 15px 40px 32px;
+
+    @media (max-height: 810px) {
+      // padding-top: calc(50vh - 325px);
+      // padding-top: Max(calc(50vh - 325px), 30px);
+      padding-bottom: calc(50vh - 365px);
+      padding-bottom: Max(calc(50vh - 365px), 10px);
+    }
+  }
 
   @media (min-width: $widthFHD) {
     width: 960px;
-    padding-top: 106px;
+    padding-top: 136px;
     padding-bottom: 20px;
     padding-left: 40px;
+
+    @media (max-height: 810px) {
+      // padding-top: calc(50vh - 299px);
+      // padding-top: Max(calc(50vh - 299px), 56px);
+    }
   }
 
   @media (min-width: $width4K) {
     width: 1845px;
     padding: 150px 60px 70px 100px;
+
+    @media (max-height: 810px) {
+      // padding-top: calc(50vh - 255px);
+      // padding-top: Max(calc(50vh - 255px), 10px);
+      padding-bottom: calc(50vh - 335px);
+      padding-bottom: Max(calc(50vh - 335px), 10px);
+    }
   }
 }
 
@@ -146,6 +252,20 @@
   font-weight: $fontMedium;
   line-height: $lineHeightHuge;
   color: $ColorWhite;
+
+  @media (min-width: $widthTablet) {
+    font-size: $fontTitleTiny;
+    line-height: $lineHeightRegular4K;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    font-size: $fontTextMedium;
+    line-height: $lineHeightHuge;
+
+    @media (max-height: 700px) {
+      font-size: $fontTextSmall;
+    }
+  }
 
   @media (min-width: $widthFHD) {
     font-size: $fontTextRegular;

@@ -13,5 +13,9 @@
   &--shown {
     opacity: 1;
     pointer-events: auto;
+
+    // .page--inner & {
+    //   overflow-y: scroll;
+    // }
   }
 }

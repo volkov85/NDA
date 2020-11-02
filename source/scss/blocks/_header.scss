@@ -9,56 +9,80 @@
     transform 0.3s;
   pointer-events: none;
 
-  &--hidden {
-    transform: translateY(-100%);
-  }
-
   &--dark {
-    background-color: $ColorPrimary200;
+    background-color: $fontColorHeaders;
   }
 
   .page--inner & {
     position: relative;
-    background-color: $ColorWhite;
+    box-shadow: 0 4px 15px rgba($ColorBlack, 0.1);
+
+    @media (min-width: $widthMobile) {
+      position: sticky;
+      background-color: #ffffff;
+    }
+
+    @media (min-width: $widthTablet) {
+      position: relative;
+      background: none;
+    }
+
+    &--dark {
+      background-color: $fontColorHeaders;
+
+      @media (min-width: $widthMobile) {
+        background-color: $fontColorHeaders;
+      }
+
+      @media (min-width: $widthTablet) {
+        background-color: $fontColorHeaders;
+      }
+    }
+  }
+
+  .page--404 & {
+    &--no-bg {
+      background: none;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    &--hidden {
+      transform: translateY(-100%);
+    }
+
+    &--no-bg {
+      background: none;
+    }
   }
 }
 
 .header__wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding-top: 14px;
-  padding-bottom: 30px;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 
-  .page--inner & {
-    padding-bottom: 14px;
+  @media (min-width: $widthTablet) {
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
 
-  .header--small & {
-    padding-top: 30px;
-    padding-bottom: 30px;
+  @media (min-width: $widthDesktopSmall) {
+    align-items: flex-start;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 
   @media (min-width: $widthFHD) {
     padding-top: 28px;
     padding-bottom: 28px;
-
-    .page--inner &,
-    .header--small & {
-      padding-top: 28px;
-      padding-bottom: 28px;
-    }
   }
 
   @media (min-width: $width4K) {
     padding-top: 61px;
     padding-bottom: 61px;
-
-    .page--inner &,
-    .header--small & {
-      padding-top: 61px;
-      padding-bottom: 61px;
-    }
   }
 }
 
@@ -68,61 +92,37 @@
 
   img {
     display: block;
-    width: 116px;
+    width: 41px;
     transition: width 0.3s;
-
-    .page--inner & {
-      width: 85%;
-    }
-
-    .header--small & {
-      width: 61px;
-    }
   }
 
-  @media (min-width: $widthFHD) {
+  @media (min-width: $widthTablet) {
     img {
-      width: 94px;
-
-      .header--small & {
-        width: 94px;
-      }
+      width: 58px;
     }
   }
 
   @media (min-width: $width4K) {
     img {
       width: 116px;
-
-      .page--inner & {
-        width: 116px;
-      }
     }
   }
 }
 
 .header__menu {
-  margin-top: 40px;
+  display: none;
+  margin-top: 15px;
   margin-right: 60px;
   margin-left: 20px;
   transition: margin-top 0.3s;
   pointer-events: auto;
 
-  .page--inner & {
-    margin-top: 31px;
+  @media (min-width: $widthDesktopSmall) {
+    display: block;
   }
 
-  .header--small & {
-    margin-top: 19px;
-  }
-
-  @media (min-width: $widthFHD) {
-    margin-top: 34px;
-
-    .page--inner &,
-    .header--small & {
-      margin-top: 34px;
-    }
+  @media (min-width: $width4K) {
+    margin-top: 30px;
   }
 }
 
@@ -160,8 +160,19 @@
       width 0.3s;
   }
 
+  .page--index & {
+    @media (max-width: $widthFHD - 1) {
+      text-shadow:
+        -2px -2px 7px $ColorWhite,
+        2px -2px 7px $ColorWhite,
+        2px 2px 7px $ColorWhite,
+        -2px 2px 7px $ColorWhite;
+    }
+  }
+
   .header--dark & {
     color: $ColorWhite;
+    text-shadow: none;
   }
 
   &--active,
@@ -196,26 +207,17 @@
 }
 
 .header__lang {
-  display: flex;
-  margin-top: 43px;
+  display: none;
+  margin-top: 16px;
   transition: margin-top 0.3s;
   pointer-events: auto;
 
-  .page--inner & {
-    margin-top: 33px;
+  @media (min-width: $widthDesktopSmall) {
+    display: flex;
   }
 
-  .header--small & {
-    margin-top: 20px;
-  }
-
-  @media (min-width: $widthFHD) {
+  @media (min-width: $width4K) {
     margin-top: 30px;
-
-    .page--inner &,
-    .header--small & {
-      margin-top: 30px;
-    }
   }
 }
 
@@ -268,5 +270,32 @@
 
   @media (min-width: $width4K) {
     font-size: $fontTitleSmall;
+  }
+}
+
+.header__mobile-menu-toggle {
+  position: relative;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background: url("../img/icon-menu-toggle.svg") center / contain no-repeat;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;
+  appearance: none;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
+  @media (min-width: $widthTablet) {
+    width: 39px;
+    height: 39px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    display: none;
   }
 }

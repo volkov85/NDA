@@ -10,17 +10,29 @@
 
 .cookies__wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
+
+  @media (min-width: $widthDesktopSmall) {
+    flex-direction: row;
+  }
 }
 
 .cookies__text {
   margin: 0;
+  margin-bottom: 10px;
   font-weight: $fontSemiBold;
   font-size: $fontTextHuge;
   line-height: $lineHeightNormal;
+  text-align: center;
   color: $ColorSecondary;
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 0;
+    text-align: left;
+  }
 
   @media (min-width: $width4K) {
     font-size: $fontTextSmall4K;

@@ -1,7 +1,19 @@
 .artists {
+  width: 100vw;
   margin-bottom: 30px;
 
+  @media (min-width: $widthTablet) {
+    margin-bottom: 50px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: auto;
+    margin-bottom: 30px;
+  }
+
   @media (min-width: $widthFHD) {
+    margin-bottom: 80px;
+
     .container {
       max-width: 1770px;
     }
@@ -18,10 +30,21 @@
 
 .artists__title {
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   font-weight: $fontBold;
-  font-size: $fontTitleSmall;
-  line-height: $lineHeightTitleSmall;
+  font-size: $fontTextHuge;
+  line-height: $lineHeightTitleRegular;
+
+  @media (min-width: $widthTablet) {
+    display: none;
+    font-size: $fontTitleRegular;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    display: block;
+    margin-bottom: 15px;
+    line-height: $lineHeightTitleRegular;
+  }
 
   @media (min-width: $widthFHD) {
     font-size: $fontTitleRegular;
@@ -42,19 +65,45 @@
 
 .artists__list {
   display: grid;
-  grid-template-columns: 285px 297px 304px 285px;
+  grid-template-columns: repeat(auto-fill, 290px);
   grid-auto-rows: 198px;
+  justify-content: center;
   align-self: center;
-  margin-bottom: 12px;
+  width: 100%;
+  margin-bottom: 22px;
+
+  @media (min-width: $widthTablet) {
+    grid-template-columns: repeat(auto-fill, 345px);
+    grid-auto-rows: 240px;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    grid-template-columns: repeat(4, 293px);
+    grid-auto-rows: 198px;
+    justify-content: initial;
+    width: auto;
+    margin-bottom: 12px;
+
+    @media (max-height: 810px) {
+      grid-auto-rows: calc(50vh - 207px);
+      grid-auto-rows: Max(calc(50vh - 207px), 122px);
+    }
+  }
 
   @media (min-width: $widthFHD) {
-    grid-template-columns: repeat(2, 285px 297px 304px);
+    grid-template-columns: repeat(6, 293px);
     grid-auto-rows: 242px;
     margin-bottom: 22px;
+
+    @media (max-height: 810px) and (max-width: $width4K - 1) {
+      grid-auto-rows: calc(50vh - 163px);
+      grid-auto-rows: Max(calc(50vh - 163px), 145px);
+    }
   }
 
   @media (min-width: $width4K) {
-    grid-template-columns: repeat(2, 542px 565px 579px);
+    grid-template-columns: repeat(6, 562px);
     grid-auto-rows: 553px;
     margin-bottom: 50px;
   }
@@ -135,9 +184,12 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     transition: filter 0.3s;
     filter: none;
+
+    @media (max-width: $widthDesktopSmall - 1) {
+      height: 100%;
+    }
   }
 }
 
@@ -171,6 +223,14 @@
     &::before {
       width: 100%;
     }
+  }
+
+  @media (min-width: $widthTablet) {
+    font-size: $fontTextLarge;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    font-size: $fontTextRegular;
   }
 
   @media (min-width: $widthFHD) {

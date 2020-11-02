@@ -1,6 +1,8 @@
 .rows {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  height: 100%;
-  background-color: $ColorWhite;
+  @media (min-width: $widthDesktopSmall) {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 100%;
+    background-color: $ColorWhite;
+  }
 }

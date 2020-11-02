@@ -1,0 +1,26 @@
+.full-height {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  // justify-content: space-evenly;
+  box-sizing: border-box;
+  min-height: calc(100vh - 77px);
+
+  @media (min-width: $widthTablet) {
+    min-height: calc(100vh - 103px);
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    min-height: calc(100vh - 92px);
+  }
+
+  @media (min-width: $widthFHD) {
+    .page--partners & {
+      justify-content: space-between;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    min-height: calc(100vh - 227px);
+  }
+}

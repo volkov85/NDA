@@ -1,35 +1,49 @@
 .partnership {
-  display: flex;
-  align-items: center;
   background-image: linear-gradient(57deg, $ColorPrimary400, $ColorPrimary300 257%);
+
+  @media (min-width: $widthDesktopSmall) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .partnership__wrapper {
   box-sizing: border-box;
-  width: 700px;
-  min-height: 700px;
-  margin-left: auto;
-  padding: 4px 85px 4px 30px;
+  padding: 28px 15px;
+
+  @media (min-width: $widthTablet) {
+    padding: 48px 39px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 700px;
+    min-height: 700px;
+    margin-left: auto;
+    padding: 4px 85px 4px 30px;
+  }
 
   @media (min-width: $widthFHD) {
     width: 877px;
+    padding: 0;
+    margin: auto;
   }
 
   @media (min-width: $width4K) {
-    width: 1595px;
+    width: 1800px;
     padding-left: 60px;
-    min-height: 900px;
+    min-height: 1273px;
+    display: flex;
+    flex-direction: column;
   }
 }
 
 .partnership__title {
   position: relative;
   display: block;
-  margin-bottom: 45px;
-  padding-top: 24px;
+  margin-bottom: 20px;
   font-weight: $fontBold;
-  font-size: $fontTitleRegular;
-  line-height: 1.2;
+  font-size: $fontTextHuge;
+  line-height: $lineHeightTitleRegular;
   color: $ColorSecondary300;
 
   &::before {
@@ -37,23 +51,43 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 124px;
-    height: 4px;
+    width: 87px;
+    height: 2px;
     background-color: $ColorWhite;
   }
 
-  @media (min-width: $width4K) {
-    font-size: $fontTitleRegular * 1.5;
+  @media (min-width: $widthTablet) {
+    margin-bottom: 20px;
+    padding-top: 24px;
+    font-size: $fontTitleRegular;
 
     &::before {
-      width: 200px;
-      height: 6px;
+      width: 124px;
+      height: 4px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 45px;
+    line-height: $lineHeightNormal;
+  }
+
+  @media (min-width: $width4K) {
+    font-size: $fontTitleRegular4K;
+    line-height: $lineHeightTitleRegular4K;
+    margin-bottom: 150px;
+
+    &::before {
+      width: 360px;
+      height: 9px;
     }
   }
 }
 
 .partnership__form-wrapper {
-  width: 572px;
+  @media (min-width: $widthDesktopSmall) {
+    width: 572px;
+  }
 
   @media (min-width: $widthFHD) {
     width: 100%;
@@ -62,7 +96,19 @@
 
 .partnership__form-variants {
   display: flex;
-  margin-bottom: 52px;
+  width: 290px;
+  justify-content: space-between;
+  margin-bottom: 25px;
+
+  @media (min-width: $widthTablet) {
+    width: auto;
+    margin-bottom: 52px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    justify-content: initial;
+    margin-bottom: 46px;
+  }
 }
 
 .partnership__form-variant {
@@ -74,10 +120,6 @@
   border: none;
   cursor: pointer;
   appearance: none;
-
-  &:not(:last-child) {
-    margin-right: 115px;
-  }
 
   &:focus {
     outline: none;
@@ -98,30 +140,76 @@
       }
     }
   }
+
+  @media (min-width: $widthTablet) {
+    box-sizing: content-box;
+    width: 200px;
+  }
+
+  @media (max-width: $widthDesktopSmall - 1) {
+    &:not(:first-child) {
+      padding-left: 7px;
+      border-left: 1px solid $ColorSecondary;
+    }
+
+    @media (min-width: $widthTablet) {
+      &:not(:first-child) {
+        padding-left: 60px;
+        border-left-width: 2px;
+      }
+
+      &:last-child {
+        margin-right: calc(50vw - 260px - 39px);
+      }
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    box-sizing: border-box;
+    width: auto;
+
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    &:not(:last-child) {
+      margin-right: 150px;
+    }
+  }
 }
 
 .partnership__form-variant-title {
   margin: 0;
-  margin-bottom: 11px;
+  margin-bottom: 3px;
   font-weight: $fontSemiBold;
-  font-size: $fontTextLarge;
-  line-height: $lineHeightMedium;
+  font-size: $fontTextSmall;
+  line-height: $lineHeightSmall;
   color: $ColorPrimary300;
   text-transform: uppercase;
   transition: color 0.3s;
 
+  @media (min-width: $widthTablet) {
+    margin-bottom: 11px;
+    font-size: $fontTextLarge;
+    line-height: $lineHeightMedium;
+  }
+
   @media (min-width: $width4K) {
-    font-size: $fontTextLarge * 1.2;
-    line-height: 1.2;
+    font-size: $fontTitleTiny4K;
+    line-height: $lineHeightTiny4K;
+    margin-bottom: 40px;
   }
 }
 
 .partnership__form-variant-desc {
   position: relative;
   margin: 0;
+  padding-bottom: 5px;
   font-weight: $fontMedium;
-  font-size: $fontTextSmall;
-  line-height: $lineHeightTiny;
+  font-size: $fontTextTiny;
+  line-height: $lineHeightNormal;
   color: $ColorPrimary300;
   text-transform: uppercase;
   transition: color 0.3s;
@@ -129,7 +217,7 @@
   &::before {
     content: "";
     position: absolute;
-    bottom: -6px;
+    bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
@@ -138,9 +226,15 @@
     transition: width 0.3s;
   }
 
+  @media (min-width: $widthTablet) {
+    padding-bottom: 6px;
+    font-size: $fontTextSmall;
+    line-height: $lineHeightTiny;
+  }
+
   @media (min-width: $width4K) {
-    font-size: $fontTextSmall * 1.2;
-    line-height: 1.2;
+    font-size: $fontTextRegular4K;
+    line-height: $lineHeightRegular4K;
   }
 }
 
@@ -163,16 +257,31 @@
 
 .partnership__form-fields {
   display: grid;
-  grid-template-columns: repeat(2, 270px);
-  gap: 36px 32px;
-  margin-bottom: 16px;
+  grid-template-columns: 1fr;
+  gap: 11px;
 
-  @media (max-height: 683px) {
-    row-gap: calc((100vh - 555px) / 3);
+  @media (min-width: $widthTablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 44px 38px;
+    margin-bottom: 22px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    grid-template-columns: repeat(2, 270px);
+    gap: 36px 32px;
+    margin-bottom: 16px;
+
+    @media (max-height: 683px) {
+      row-gap: Max(calc((100vh - 575px) / 3), 10px);
+    }
   }
 
   @media (min-width: $widthFHD) {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $width4K) {
+    gap: 78px 32px;
   }
 }
 
@@ -181,7 +290,7 @@
   min-height: 54px;
   font-weight: $fontMedium;
   font-size: $fontTextRegular;
-  line-height: $lineHeightRegular;
+  line-height: $lineHeightSmall;
   color: $ColorWhite;
 
   input,
@@ -231,13 +340,15 @@
   }
 
   textarea {
-    height: 110px;
+    height: 190px;
+    padding-top: 30px;
   }
 
   span {
     position: absolute;
     top: 17px;
     left: 15px;
+    width: calc(100% - 30px);
     transform-origin: left;
     transition:
       color 0.3s,
@@ -246,82 +357,170 @@
     user-select: none;
   }
 
-  &--wide {
-    grid-column: 1 / 3;
+  @media (min-width: $widthTablet) {
+    min-height: 65px;
+    font-size: $fontTextMedium;
+    line-height: $lineHeightRegular;
+
+    input,
+    textarea {
+      padding: 22px;
+    }
+
+    [type="tel"] {
+      &.filled,
+      &:focus {
+        padding-left: 22px;
+      }
+    }
+
+    textarea {
+      height: 135px;
+      padding-top: 22px;
+    }
+
+    span {
+      top: 22px;
+      left: 22px;
+      width: calc(100% - 44px);
+    }
+
+    &--wide {
+      grid-column: 1 / 3;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    min-height: 54px;
+    font-size: $fontTextRegular;
+
+    input,
+    textarea {
+      padding: 17px 15px;
+    }
+
+    [type="tel"] {
+      &.filled,
+      &:focus {
+        padding-left: 15px;
+      }
+    }
+
+    textarea {
+      height: 110px;
+      padding-top: 17px;
+    }
+
+    span {
+      top: 17px;
+      left: 15px;
+      width: calc(100% - 30px);
+    }
   }
 
   @media (min-width: $width4K) {
     min-height: 75px;
-    font-size: $fontTextRegular * 1.5;
-    line-height: 1.2;
+    font-size: $fontTextRegular4K;
+    line-height: $lineHeightMedium4K;
 
     input,
     textarea {
-      padding: 24px 20px;
+      padding: 44px 40px;
 
       &.filled,
       &:focus {
         + span {
-          transform: translateY(-20px) scale(0.8);
+          transform: translateY(-40px) scale(0.8);
         }
       }
     }
 
     [type="tel"] {
-      padding-left: 140px;
+      padding-left: 220px;
 
       &.filled,
       &:focus {
-        padding-left: 20px;
+        padding-left: 40px;
       }
     }
 
     textarea {
-      height: 180px;
+      height: 200px;
     }
 
     span {
-      top: 24px;
-      left: 20px;
+      width: calc(100% - 40px);
+      top: 44px;
+      left: 40px;
     }
   }
 }
 
 .partnership__form-row {
-  margin-bottom: 3px;
+  margin-top: 15px;
+  margin-bottom: 10px;
 
   p {
     margin: 0;
-    margin-bottom: 13px;
+    margin-bottom: 16px;
     font-weight: $fontMedium;
     font-size: $fontTextRegular;
     line-height: $lineHeightSmall;
     color: $ColorSecondary;
+  }
 
-    @media (min-width: $width4K) {
-      font-size: $fontTextRegular * 1.3;
-      line-height: 1.2;
+  @media (min-width: $widthTablet) {
+    margin-top: 22px;
+
+    @media (max-width: $widthDesktopSmall - 1) {
+      + .partnership__form-privacy {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-top: 0;
+    margin-bottom: 3px;
+
+    p {
+      margin-bottom: 13px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    p {
+      font-size: $fontTextSmall4K;
+      line-height: $lineHeightSmall4K;
+      margin-top: 40px;
+      margin-bottom: 25px;
     }
   }
 }
 
 .partnership__form-checkbox-wrapper {
   display: flex;
+  flex-direction: column;
+
+  @media (min-width: $widthTablet) {
+    flex-direction: row;
+  }
 }
 
 .partnership__form-checkbox {
   position: relative;
   display: inline-block;
+  margin-bottom: 18px;
   padding-left: 26px;
   font-weight: $fontMedium;
   font-size: $fontTextRegular;
-  line-height: $lineHeightRegular;
+  line-height: $lineHeightSmall;
   color: $ColorWhite;
   transition: color 0.3s;
   cursor: pointer;
 
-  &:not(:last-child) {
-    margin-right: 36px;
+  &:last-child {
+    margin-bottom: 0;
   }
 
   input {
@@ -373,21 +572,37 @@
     color: $ColorPrimary100;
   }
 
+  @media (min-width: $widthTablet) {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 0;
+    font-size: $fontTextRegular;
+    line-height: $lineHeightRegular;
+
+    &:not(:last-child) {
+      margin-right: 36px;
+    }
+  }
+
   @media (min-width: $width4K) {
-    padding-left: 32px;
-    font-size: $fontTextRegular * 1.5;
-    line-height: 1.2;
+    padding-left: 60px;
+    font-size: $fontTextSmall4K;
+    line-height: $lineHeightSmall4K;
 
     input {
-      width: 21px;
-      height: 21px;
+      width: 40px;
+      height: 40px;
     }
 
     span {
       &::before {
-        top: 2px;
-        width: 21px;
-        height: 21px;
+        top: 0;
+        width: 40px;
+        height: 40px;
       }
 
       &::after {
@@ -402,11 +617,11 @@
 .partnership__form-privacy {
   position: relative;
   display: inline-block;
-  margin-top: 25px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 18px;
   padding-left: 32px;
   font-weight: $fontMedium;
-  font-size: $fontTextRegular;
+  font-size: $fontTextSmall;
   line-height: $lineHeightRegular;
   color: $ColorPrimary300;
   transition: color 0.3s;
@@ -460,26 +675,41 @@
     color: $ColorPrimary100;
   }
 
+  @media (min-width: $widthTablet) {
+    margin-bottom: 30px;
+    font-size: $fontTextMedium;
+    line-height: $lineHeightSubtitleRegular;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-top: 25px;
+    font-size: $fontTextRegular;
+    line-height: $lineHeightRegular;
+  }
+
   @media (min-width: $width4K) {
-    font-size: $fontTextRegular * 1.5;
-    line-height: 1.2;
+    font-size: $fontTextSmall4K;
+    line-height: $lineHeightSmall4K;
+    padding-left: 60px;
+    margin: 66px 0;
 
     input {
-      width: 21px;
-      height: 21px;
+      width: 40px;
+      height: 40px;
     }
 
     span {
       &::before {
-        top: 2px;
-        width: 21px;
-        height: 21px;
+        top: 0;
+        width: 40px;
+        height: 40px;
       }
 
       &::after {
-        top: 7px;
-        width: 11px;
-        height: 11px;
+        top: 12px;
+        left: 12px;
+        width: 20px;
+        height: 20px;
       }
     }
   }
@@ -489,8 +719,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 470px;
-  margin-top: -13px;
+  width: 100%;
+  max-width: 316px;
+
+  @media (min-width: $widthTablet) {
+    max-width: 400px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 470px;
+    max-width: initial;
+    margin-top: -13px;
+  }
 
   @media (min-width: $width4K) {
     width: 520px;
@@ -538,13 +778,58 @@
 
   @media (min-width: $width4K) {
     padding-left: 40px;
-    font-size: $fontTextLarge * 1.5;
-    line-height: 1.2;
+    font-size: $fontTitleRegular;
+    line-height: $lineHeightNormal;
 
     &::before {
       top: 12px;
       width: 27px;
       height: 12px;
     }
+  }
+}
+
+.partnership__form-arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  margin: 0 40px;
+
+  @media (min-width: $widthMobile) {
+    display: none;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    display: flex;
+  }
+
+  @media (min-width: $width4K) {
+    display: none;
+  }
+
+  &--active {
+    .partnership__form-arrow-top {
+      fill: #c81b75;
+    }
+
+    .partnership__form-arrow-bottom {
+      fill: #b4b1b1;
+    }
+  }
+}
+
+.partnership__form-arrow-top {
+  fill: #b4b1b1;
+}
+
+.partnership__form-arrow-bottom {
+  fill: #c81b75;
+}
+
+.partnership__form-button-next {
+  @media (min-width: $width4K) {
+    width: 382px;
   }
 }

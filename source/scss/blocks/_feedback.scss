@@ -1,21 +1,36 @@
 .feedback {
   box-sizing: border-box;
-  height: 100%;
-  padding: 50px 33px 43px;
+  // height: 100%;
+  padding: 40px 20px;
 
   .button {
     min-width: 200px;
     max-width: 200px;
+  }
+
+  @media (min-width: $widthTablet) {
+    padding: 40px;
+    padding-right: 46px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    padding: 50px 33px 43px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    .button {
+      min-width: 320px;
+      max-width: 573px;
+    }
   }
 }
 
 .feedback__title {
   position: relative;
   margin: 0;
-  margin-bottom: 40px;
-  padding-top: 16px;
+  margin-bottom: 12px;
   font-weight: $fontSemiBold;
-  font-size: $fontTitleRegular;
+  font-size: $fontTextHuge;
   line-height: $lineHeightTitleRegular;
   color: $ColorSecondary;
 
@@ -24,9 +39,25 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 124px;
-    height: 4px;
+    width: 87px;
+    height: 2px;
     background-color: $ColorPrimary300;
+  }
+
+  @media (min-width: $widthTablet) {
+    margin-bottom: 40px;
+    padding-top: 16px;
+    font-size: $fontTitleRegular;
+
+    &::before {
+      width: 124px;
+      height: 4px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 40px;
+    line-height: $lineHeightTitleRegular;
   }
 
   @media (min-width: $width4K) {
@@ -44,13 +75,32 @@
 .feedback__form {
   display: flex;
   flex-direction: column;
-  width: 637px;
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 637px;
+  }
+
+  @media (min-width: $widthFHD) {
+    width: 70%;
+  }
 }
 
 .feedback__form-fields {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
+
+  @media (min-width: $widthTablet) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: $widthFHD) {
+    margin-bottom: 25px;
+  }
 }
 
 .feedback__form-field {
@@ -65,7 +115,7 @@
   textarea {
     box-sizing: border-box;
     width: 100%;
-    padding: 17px 35px;
+    padding: 17px 20px;
     font: inherit;
     color: inherit;
     background: none;
@@ -94,13 +144,13 @@
   }
 
   textarea {
-    height: 107px;
+    height: 185px;
   }
 
   span {
     position: absolute;
     top: 17px;
-    left: 35px;
+    left: 20px;
     transform-origin: left;
     transition:
       color 0.3s,
@@ -110,33 +160,58 @@
   }
 
   &:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: $widthTablet) {
+    input,
+    textarea {
+      padding-right: 35px;
+      padding-left: 35px;
+    }
+
+    textarea {
+      height: 107px;
+    }
+
+    span {
+      left: 35px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
   }
 
   @media (min-width: $width4K) {
     min-height: 75px;
-    font-size: $fontTextLarge;
-    line-height: $lineHeightNormal;
+    font-size: $fontTextRegular4K;
+    line-height: $lineHeightMedium4K;
 
     input,
     textarea {
-      padding: 24px 20px;
+      padding: 44px 40px;
 
       &.filled,
       &:focus {
         + span {
-          transform: translateY(-20px) scale(0.8);
+          transform: translateY(-40px) scale(0.8);
         }
       }
     }
 
     textarea {
-      height: 180px;
+      height: 200px;
     }
 
     span {
-      top: 24px;
-      left: 20px;
+      width: calc(100% - 40px);
+      top: 44px;
+      left: 40px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
     }
   }
 }
@@ -144,11 +219,11 @@
 .feedback__form-privacy {
   position: relative;
   display: inline-block;
-  margin-bottom: 45px;
+  margin-bottom: 27px;
   padding-left: 32px;
   font-weight: $fontMedium;
-  font-size: $fontTextRegular;
-  line-height: $fontTextMedium;
+  font-size: $fontTextTiny;
+  line-height: $lineHeightSmall;
   color: $ColorPrimary300;
   transition: color 0.3s;
   cursor: pointer;
@@ -201,26 +276,38 @@
     color: $ColorPrimary100;
   }
 
+  @media (min-width: $widthTablet) {
+    margin-bottom: 35px;
+    font-size: $fontTextRegular;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 45px;
+  }
+
   @media (min-width: $width4K) {
-    font-size: $fontTextLarge;
-    line-height: $lineHeightNormal;
+    margin-bottom: 85px;
+    padding-left: 60px;
+    font-size: $fontTextSmall4K;
+    line-height: $lineHeightSmall4K;
 
     input {
-      width: 21px;
-      height: 21px;
+      width: 40px;
+      height: 40px;
     }
 
     span {
       &::before {
-        top: 2px;
-        width: 21px;
-        height: 21px;
+        top: 0;
+        width: 40px;
+        height: 40px;
       }
 
       &::after {
-        top: 7px;
-        width: 11px;
-        height: 11px;
+        top: 12px;
+        left: 12px;
+        width: 20px;
+        height: 20px;
       }
     }
   }

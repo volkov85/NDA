@@ -24,19 +24,19 @@
                 <a href="about.html" class="header__menu-link">О нас</a>
               </li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Сервисы</a>
+                <a href="services.html" class="header__menu-link">Сервисы</a>
               </li>
               <li class="header__menu-item">
                 <a href="partners.html" class="header__menu-link">Партнеры</a>
               </li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Истории успеха</a>
+                <a href="reviews.html" class="header__menu-link">Истории успеха</a>
               </li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Частые вопросы</a>
+                <a href="faq.html" class="header__menu-link">Частые вопросы</a>
               </li>
               <li class="header__menu-item">
-                <a href="#" class="header__menu-link">Новости</a>
+                <a href="news.html" class="header__menu-link">Новости</a>
               </li>
               <li class="header__menu-item">
                 <a href="contacts.html" class="header__menu-link header__menu-link--active">Контакты</a>
@@ -47,11 +47,58 @@
             <a class="header__lang-item header__lang-item--active">Ru</a>
             <a href="#" class="header__lang-item">En</a>
           </div>
+          <button type="button" class="header__mobile-menu-toggle">
+            <span class="visually-hidden">Открыть меню</span>
+          </button>
         </div>
       </div>
     </header>
+    <div class="mobile-menu">
+      <div class="mobile-menu__wrapper">
+        <div class="mobile-menu__top">
+          <a class="mobile-menu__logo">
+            <picture>
+              <source srcset="img/logo@1x.png 1x, img/logo@2x.png 2x">
+              <img src="img/logo@1x.png" alt="Логотип Национального Цифрового Агрегатора" width="116" height="105">
+            </picture>
+          </a>
+          <button class="mobile-menu__close" type="button">
+            <span class="visually-hidden">Закрыть меню</span>
+          </button>
+        </div>
+        <nav class="mobile-menu__nav">
+          <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+              <a href="about.html" class="mobile-menu__link">О нас</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="services.html" class="mobile-menu__link">Сервисы</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="partners.html" class="mobile-menu__link">Партнеры</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="reviews.html" class="mobile-menu__link">Истории успеха</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="faq.html" class="mobile-menu__link">Частые вопросы</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="news.html" class="mobile-menu__link">Новости</a>
+            </li>
+            <li class="mobile-menu__item">
+              <a href="contacts.html" class="mobile-menu__link mobile-menu__link--active">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="mobile-menu__lang">
+          <a class="mobile-menu__lang-item mobile-menu__lang-item--active">Ru</a>
+          <a href="#" class="mobile-menu__lang-item">En</a>
+        </div>
+      </div>
+    </div>
     <main>
-      <section class="contacts">
+      <section class="contacts full-height">
         <div class="container">
           <div class="contacts__wrapper">
             <h2 class="contacts__title">Контакты</h2>
@@ -107,6 +154,9 @@
                 </div>
               </div>
               <div class="contacts__block contacts__block--center">
+                <a href="#" class="button button--contact contacts__button">Связаться с нами</a>
+              </div>
+              <div class="contacts__block contacts__block--center">
                 <a href="#" class="contacts__block-link-ask">Задайте свой вопрос</a>
               </div>
             </address>
@@ -130,38 +180,38 @@
                 <a href="about.html" class="footer__menu-link">О компании</a>
               </li>
               <li class="footer__menu-item">
-                <a href="#" class="footer__menu-link">Сервисы</a>
+                <a href="services.html" class="footer__menu-link">Сервисы</a>
               </li>
               <li class="footer__menu-item">
                 <a href="partners.html" class="footer__menu-link">Партнеры</a>
               </li>
               <li class="footer__menu-item">
-                <a href="#" class="footer__menu-link">Истории успеха</a>
+                <a href="reviews.html" class="footer__menu-link">Истории успеха</a>
               </li>
               <li class="footer__menu-item">
-                <a href="#" class="footer__menu-link">Новости</a>
+                <a href="news.html" class="footer__menu-link">Новости</a>
               </li>
               <li class="footer__menu-item">
-                <a href="#" class="footer__menu-link">FAQ</a>
+                <a href="faq.html" class="footer__menu-link">FAQ</a>
               </li>
               <li class="footer__menu-item">
-                <a href="contacts.html" class="footer__menu-link">Контакты</a>
+                <a href="contacts.html" class="footer__menu-link footer__menu-link--active">Контакты</a>
               </li>
             </ul>
           </nav>
         </div>
         <div class="footer__middle">
           <div class="footer__social">
-            <a href="#" class="footer__soial-link footer__soial-link--fb" target="_blank">
+            <a href="#" class="footer__social-link footer__social-link--fb" target="_blank">
               <span class="visually-hidden">Мы на Facebook</span>
             </a>
-            <a href="#" class="footer__soial-link footer__soial-link--ig" target="_blank">
+            <a href="#" class="footer__social-link footer__social-link--ig" target="_blank">
               <span class="visually-hidden">Мы в Instagram</span>
             </a>
-            <a href="#" class="footer__soial-link footer__soial-link--vk" target="_blank">
+            <a href="#" class="footer__social-link footer__social-link--vk" target="_blank">
               <span class="visually-hidden">Мы во ВКонтакте</span>
             </a>
-            <a href="#" class="footer__soial-link footer__soial-link--yt" target="_blank">
+            <a href="#" class="footer__social-link footer__social-link--yt" target="_blank">
               <span class="visually-hidden">Мы на YouTube</span>
             </a>
           </div>
@@ -169,11 +219,42 @@
         </div>
         <div class="footer__bottom">
           <p class="footer__bottom-copyright">Copyright 2020. Все права защищены</p>
-          <a href="#" class="footer__bottom-link">Политика конфиденциальности</a>
+          <a href="politics.html" class="footer__bottom-link">Политика конфиденциальности</a>
           <a href="#" class="footer__bottom-link">Разработка сайта - maggregator.com</a>
         </div>
       </div>
     </footer>
+    <section class="popup popup--feedback">
+      <div class="popup__wrapper">
+        <div class="feedback">
+          <h2 class="feedback__title">Связаться с нами</h2>
+          <form action="#" method="post" class="feedback__form">
+            <div class="feedback__form-fields">
+              <label class="feedback__form-field">
+                <input type="text" name="userName" required>
+                <span>Ваше имя*</span>
+              </label>
+              <label class="feedback__form-field">
+                <input type="email" name="email">
+                <span>E-mail</span>
+              </label>
+              <label class="feedback__form-field">
+                <textarea name="message"></textarea>
+                <span>Ваше сообщение</span>
+              </label>
+            </div>
+            <label class="feedback__form-privacy">
+              <input type="checkbox" name="privacy" required>
+              <span>Соглашаюсь с правилами обработки персональных данных</span>
+            </label>
+            <button class="button" type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+      <button class="popup__close" type="button">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+    </section>
     <section class="popup popup--question">
       <div class="popup__wrapper">
         <div class="feedback">

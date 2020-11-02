@@ -1,49 +1,108 @@
 .contacts {
   .page--index & {
-    display: flex;
-    align-items: center;
     background:
-      linear-gradient(80deg, rgba($ColorBlack, 0.85) -11%, rgba($fontColorHeaders, 0.6) 120%),
-      url("../img/contacts_bg@1x.jpg") top left / cover no-repeat;
+      linear-gradient(80deg, rgba($ColorBlack, 0.9) -11%, rgba($fontColorHeaders, 0.64) 120%),
+      url("../img/contacts_bg-mobile@1x.jpg") center / cover no-repeat;
 
     @media (min-resolution: 144dpi) {
       background-image:
-        linear-gradient(80deg, rgba($ColorBlack, 0.85) -11%, rgba($fontColorHeaders, 0.6) 120%),
-        url("../img/contacts_bg@2x.jpg");
+        linear-gradient(80deg, rgba($ColorBlack, 0.9) -11%, rgba($fontColorHeaders, 0.64) 120%),
+        url("../img/contacts_bg-mobile@2x.jpg");
     }
   }
 
-  .page--inner & {
-    padding-top: 50px;
-    padding-bottom: 80px;
-    background: url("../img/contacts_bg-inner@1x.png") 430px -950px no-repeat;
+  @media (min-width: $widthMobile) {
+    .page--inner & {
+      padding-top: 28px;
+      padding-bottom: 48px;
+      background-image: url("../img/contacts_bg-inner@1x.png");
+      background-position: top -350px right -360px;
+      background-size: 750px;
+      background-repeat: no-repeat;
+    }
+  }
 
-    &--dark {
-      background-color: $fontColorHeaders;
+  @media (min-width: $widthTablet) {
+    .page--index & {
+      background-image:
+        linear-gradient(80deg, rgba($ColorBlack, 0.9) -11%, rgba($fontColorHeaders, 0.64) 120%),
+        url("../img/contacts_bg-tablet@1x.jpg");
+      background-position:
+        0 0,
+        top left;
+
+      @media (min-resolution: 144dpi) {
+        background-image:
+          linear-gradient(80deg, rgba($ColorBlack, 0.9) -11%, rgba($fontColorHeaders, 0.64) 120%),
+          url("../img/contacts_bg-tablet@2x.jpg");
+      }
     }
 
-    @media (min-resolution: 144dpi) {
-      background-image: url("../img/contacts_bg-inner@2x.png");
-      background-size: 2047px;
+    .page--inner & {
+      padding-top: 56px;
+      padding-bottom: 66px;
+      background-image: url("../img/contacts_bg-inner@1x.png");
+      background-position: top -250px right -370px;
+      background-size: 800px;
+      background-repeat: no-repeat;
+
+      @media (min-resolution: 144dpi) {
+        background-image: url("../img/contacts_bg-inner@2x.png");
+      }
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    .page--index & {
+      display: flex;
+      align-items: center;
+      background-image:
+        linear-gradient(80deg, rgba($ColorBlack, 0.85) -11%, rgba($fontColorHeaders, 0.6) 120%),
+        url("../img/contacts_bg@1x.jpg");
+
+      @media (min-resolution: 144dpi) {
+        background-image:
+          linear-gradient(80deg, rgba($ColorBlack, 0.85) -11%, rgba($fontColorHeaders, 0.6) 120%),
+          url("../img/contacts_bg@2x.jpg");
+      }
     }
 
-    @media (min-width: $widthFHD) {
+    .page--inner & {
+      padding-top: 50px;
+      padding-bottom: 80px;
+      background: url("../img/contacts_bg-inner@1x.png") top -970px right -960px no-repeat;
+
+      &--dark {
+        background-color: $fontColorHeaders;
+      }
+
+      @media (min-resolution: 144dpi) {
+        background-image: url("../img/contacts_bg-inner@2x.png");
+        background-size: 2047px;
+      }
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    .page--inner & {
       padding-top: 80px;
       padding-bottom: 65px;
       background-image: url("../img/contacts_bg-inner-2k@2x.png");
-      background-position: 560px -1270px;
+      background-position: top -1220px right -1215px;
       background-size: 2545px;
 
       @media (min-resolution: 144dpi) {
         background-image: url("../img/contacts_bg-inner-2k@2x.png");
       }
     }
+  }
 
-    @media (min-width: $width4K) {
+  @media (min-width: $width4K) {
+    .page--inner & {
       padding-top: 140px;
       padding-bottom: 220px;
       background-image: url("../img/contacts_bg-inner-4k@2x.png");
-      background-position: 2000px -1320px;
+      background-position: top -1300px right -1850px;
       background-size: 3835px;
 
       @media (min-resolution: 144dpi) {
@@ -53,13 +112,36 @@
   }
 }
 
+.contacts__wrapper {
+  .page--index & {
+    padding-top: 40px;
+    padding-bottom: 47px;
+  }
+
+  @media (min-width: $widthTablet) {
+    .page--index & {
+      padding-top: 50px;
+      padding-bottom: 43px;
+    }
+
+    @media (max-width: $widthDesktopSmall - 1) {
+      position: relative;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    .page--index & {
+      padding: 0;
+    }
+  }
+}
+
 .contacts__title {
   position: relative;
   margin: 0;
-  margin-bottom: 31px;
-  padding-top: 16px;
+  margin-bottom: 35px;
   font-weight: $fontBold;
-  font-size: $fontTitleRegular;
+  font-size: $fontTextHuge;
   line-height: $lineHeightTitleRegular;
 
   &::before {
@@ -67,8 +149,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 124px;
-    height: 4px;
+    width: 87px;
+    height: 2px;
     background-color: $ColorSecondary;
   }
 
@@ -79,6 +161,53 @@
 
   .page--inner & {
     margin-bottom: 100px;
+  }
+
+  @media (min-width: $widthMobile) {
+    .page--inner & {
+      margin-bottom: 45px;
+      font-size: 20px;
+
+      &::before {
+        width: 87px;
+        height: 2px;
+        left: 0;
+        top: -2px;
+      }
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    margin-bottom: 46px;
+    padding-top: 16px;
+    font-size: $fontTitleRegular;
+
+    &::before {
+      width: 124px;
+      height: 4px;
+    }
+
+    .page--inner & {
+      margin-bottom: 66px;
+      font-weight: $fontBold;
+      font-size: $fontTitleRegular;
+      line-height: 35px;
+
+      &::before {
+        top: -14px;
+        width: 124px;
+        height: 4px;
+      }
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 31px;
+    line-height: $lineHeightTitleRegular;
+
+    .page--inner & {
+      margin-bottom: 100px;
+    }
   }
 
   @media (min-width: $widthFHD) {
@@ -100,26 +229,57 @@
 
     .page--inner & {
       margin-bottom: 260px;
+
+      @media (min-width: $width4K) {
+        margin-bottom: 100px;
+        padding-top: 25px;
+        font-size: $fontTitleSmall4K;
+        line-height: $lineHeightTitleRegular4K;
+
+        &::before {
+          width: 360px;
+          height: 9px;
+        }
+      }
     }
   }
 }
 
 .contacts__info {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 110px;
-  width: 820px;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(60px, auto);
   font-style: normal;
 
   .page--index & {
-    margin-bottom: 28px;
+    gap: 15px;
+    margin-bottom: 35px;
   }
 
-  .page--inner & {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 130px) 90px;
-    gap: 20px;
-    width: 900px;
+  @media (min-width: $widthTablet) {
+    .page--index & {
+      gap: 29px;
+      width: 90%;
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 110px;
+
+    .page--index & {
+      gap: initial;
+      width: 820px;
+      margin-bottom: 28px;
+    }
+
+    .page--inner & {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 130px) 90px;
+      gap: 20px;
+      width: 900px;
+    }
   }
 
   @media (min-width: $widthFHD) {
@@ -134,11 +294,20 @@
 
   @media (min-width: $width4K) {
     grid-auto-rows: 280px;
-    width: 1800px;
+    width: 2700px;
+
+    .page--index & {
+      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 100px;
+      gap: 50px;
+      grid-auto-rows: 280px;
+      width: 2700px;
+    }
 
     .page--inner & {
       grid-template-rows: repeat(3, 350px);
       column-gap: 84px;
+      row-gap: 100px;
       width: 2620px;
     }
   }
@@ -149,19 +318,62 @@
     align-self: center;
   }
 
-  &:last-child {
-    grid-column-end: -1;
+  &--4k {
+    display: none;
+  }
+
+  .page--inner & {
+    margin-bottom: auto;
+  }
+
+  @media (min-width: $widthMobile) {
+    .page--inner & {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    .page--inner & {
+      margin-bottom: 50px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    .page--inner & {
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      grid-column-end: -1;
+    }
   }
 
   @media (min-width: $widthFHD) {
     .page--inner & {
-      &:last-child {
-        justify-self: end;
-      }
+      margin-bottom: auto;
+
+      // &:last-child {
+      //   justify-self: end;
+      // }
     }
   }
 
   @media (min-width: $width4K) {
+    &--4k {
+      display: block;
+    }
+
+    .page--index & {
+      &:last-child {
+        grid-column-end: initial;
+      }
+
+      &--center,
+      &--social {
+        align-self: flex-end;
+      }
+    }
+
     .page--inner & {
       &:last-child {
         justify-self: auto;
@@ -174,18 +386,45 @@
   display: block;
   margin-bottom: 10px;
   font-weight: $fontBold;
-  font-size: $fontTitleTiny;
-  line-height: $lineHeightTitleTiny;
+  font-size: $fontTextLarge;
+  line-height: $lineHeightMedium;
   color: $ColorSecondary;
+
+  @media (min-width: $widthMobile) {
+    .page--inner & {
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    font-size: $fontTitleTiny;
+    line-height: $lineHeightTitleTiny;
+
+    .page--inner & {
+      font-size: 26px;
+      line-height: 32px;
+    }
+  }
 
   @media (min-width: $widthFHD) {
     font-size: $fontTitleRegular;
     line-height: $lineHeightTitleRegular;
+
+    .page--inner & {
+      font-size: 28px;
+      line-height: 35px;
+    }
   }
 
   @media (min-width: $width4K) {
     font-size: $fontTitleRegular4K;
     line-height: $lineHeightTitleMedium4K;
+
+    .page--inner & {
+      font-size: 64px;
+      line-height: 79px;
+    }
   }
 }
 
@@ -211,24 +450,71 @@
     }
   }
 
+  @media (min-width: $widthMobile) {
+    .page--inner & {
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    font-size: $fontTextHuge;
+    line-height: $lineHeightXLarge;
+
+    .page--inner & {
+      font-size: 28px;
+      line-height: 40px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    font-size: $fontTextLarge;
+  }
+
   @media (min-width: $widthFHD) {
     font-size: $fontTitleTiny;
     line-height: $lineHeightTitleRegular;
+
+    .page--inner & {
+      font-size: 24px;
+      line-height: 29px;
+    }
   }
 
   @media (min-width: $width4K) {
     font-size: $fontTextHuge4K;
     line-height: $lineHeightLarge4K;
+
+    .page--inner & {
+      font-size: 52px;
+      line-height: 63px;
+    }
   }
 }
 
 .contacts__socials {
   display: flex;
   justify-content: space-between;
-  width: 265px;
+  width: 190px;
 
   .page--index & {
-    margin-top: 19px;
+    margin-top: 20px;
+  }
+
+  @media (min-width: $widthTablet) {
+    width: 250px;
+
+    .page--inner & {
+      width: 390px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 265px;
+
+    .page--index & {
+      margin-top: 19px;
+    }
   }
 
   @media (min-width: $width4K) {
@@ -239,7 +525,7 @@
     }
 
     .page--inner & {
-      width: 880px;
+      width: 817px;
       margin-right: -65px;
     }
   }
@@ -264,6 +550,32 @@
     filter: none;
   }
 
+  .page--inner & {
+    width: 25px;
+    height: 25px;
+  }
+
+  @media (min-width: $widthTablet) {
+    .page--inner & {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    .page--inner & {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    .page--inner & {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
   @media (min-width: $width4K) {
     width: 65px;
     height: 65px;
@@ -279,9 +591,8 @@
   position: relative;
   display: inline-block;
   font-weight: $fontSemiBold;
-  font-size: $fontTitleSmall;
-  line-height: $lineHeightTitleSmall;
-  text-align: center;
+  font-size: $fontTitleTiny;
+  line-height: $lineHeightXLarge;
   color: $ColorSecondary;
   text-transform: uppercase;
 
@@ -296,16 +607,41 @@
     transition: width 0.3s;
   }
 
-  .page--inner & {
-    margin-left: -20px;
-  }
-
   &:hover,
   &:focus {
     outline: none;
 
     &::before {
       width: 100%;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    .page--inner & {
+      font-size: 24px;
+      line-height: 29px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    .page--inner & {
+      font-size: $fontTitleMedium4K;
+      line-height: $lineHeightTitleLarge4K;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    font-size: $fontTitleSmall;
+    line-height: $lineHeightTitleSmall;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    font-size: $fontTitleSmall;
+    line-height: $lineHeightTitleSmall;
+    text-align: center;
+
+    .page--inner & {
+      margin-left: -20px;
     }
   }
 
@@ -321,6 +657,16 @@
 
     &::before {
       height: 3px;
+    }
+  }
+}
+
+.contacts__button {
+  @media (min-width: $widthTablet) {
+    @media (max-width: $widthDesktopSmall - 1) {
+      position: absolute;
+      right: 60px;
+      bottom: 43px;
     }
   }
 }

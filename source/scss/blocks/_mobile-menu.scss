@@ -1,0 +1,263 @@
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 15;
+  display: none;
+  width: 100%;
+  max-width: 350px;
+  background: url("../img/header_mobile-menu-bg@1x.png") top -185px right -320px / 701px no-repeat $ColorWhite;
+  pointer-events: auto;
+
+  @media (min-resolution: 144dpi) {
+    background-image: url("../img/header_mobile-menu-bg@2x.png");
+  }
+
+  &--shown {
+    display: block;
+    animation: 0.3s both menu-show;
+  }
+
+  .header--dark + & {
+    background: linear-gradient(197deg, $fontColorMaintext -35%, $fontColorHeaders);
+  }
+
+  @media (min-width: $widthTablet) {
+    max-width: 609px;
+    background: $ColorWhite;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    display: none;
+  }
+}
+
+.mobile-menu__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+
+  @media (min-width: 350px) {
+    padding: 30px 20px;
+  }
+
+  @media (min-width: $widthTablet) {
+    padding: 32px 38px;
+  }
+}
+
+.mobile-menu__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-right: 10px;
+
+  @media (min-width: 350px) {
+    margin-bottom: 30px;
+    padding-right: 5px;
+  }
+}
+
+.mobile-menu__logo {
+  margin-right: auto;
+
+  img {
+    display: block;
+    width: 59px;
+  }
+
+  @media (min-width: $widthTablet) {
+    visibility: hidden;
+  }
+}
+
+.mobile-menu__close {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 1px;
+    width: 100%;
+    height: 3px;
+    background-color: $ColorSecondary;
+    border-radius: 2px;
+    transition: transform 0.3s;
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(135deg);
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    width: 40px;
+    height: 40px;
+
+    &::before,
+    &::after {
+      top: 17px;
+      left: 1px;
+      height: 5px;
+    }
+  }
+}
+
+.mobile-menu__list {
+  @extend %list-reset;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 290px;
+  margin-bottom: 10px;
+
+  @media (min-width: 350px) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $widthTablet) {
+    max-width: 482px;
+  }
+}
+
+.mobile-menu__item {
+  border-bottom: 1px solid $ColorPrimary;
+
+  .header--dark + .mobile-menu & {
+    border-bottom-color: $ColorWhite;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.mobile-menu__link {
+  position: relative;
+  display: block;
+  padding: 18px 0 18px 20px;
+  font-weight: $fontSemiBold;
+  font-size: $fontTextMedium;
+  line-height: $lineHeightNormal;
+  color: inherit;
+  text-transform: uppercase;
+  transition: color 0.3s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: 0;
+    width: 6px;
+    height: 7px;
+    background-color: $ColorPrimary;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+  }
+
+  .header--dark + .mobile-menu & {
+    color: $ColorWhite;
+  }
+
+  &--active,
+  &:hover,
+  &:focus {
+    color: $ColorSecondary !important;
+    outline: none;
+
+    &::before {
+      background-color: $ColorSecondary;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    padding: 30px 0 27px 40px;
+    font-size: $fontTextHuge;
+
+    &::before {
+      top: 36px;
+      width: 10px;
+      height: 11px;
+    }
+  }
+}
+
+.mobile-menu__lang {
+  display: flex;
+}
+
+.mobile-menu__lang-item {
+  position: relative;
+  margin-right: 13px;
+  font-weight: $fontMedium;
+  font-size: $fontTextMedium;
+  line-height: $lineHeightNormal;
+  color: $fontColorMaintext;
+  text-transform: capitalize;
+  transition: color 0.3s;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $ColorSecondary;
+    transition:
+      color 0.3s,
+      width 0.3s;
+  }
+
+  .header--dark + .mobile-menu & {
+    color: $ColorWhite;
+  }
+
+  &--active,
+  &:hover,
+  &:focus {
+    color: $ColorSecondary300 !important;
+    outline: none;
+
+    &::before {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    margin-right: 20px;
+    font-size: $fontTitleSmall;
+  }
+}

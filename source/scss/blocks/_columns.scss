@@ -1,6 +1,11 @@
 .columns {
-  display: grid;
-  grid-template-columns: calc(50% + 85px) 1fr;
-  height: 100%;
-  background-color: $ColorWhite;
+  display: flex;
+  flex-direction: column-reverse;
+
+  @media (min-width: $widthDesktopSmall) {
+    display: grid;
+    grid-template-columns: calc(50% + 85px) 1fr;
+    height: 100%;
+    background-color: $ColorWhite;
+  }
 }

@@ -1,0 +1,508 @@
+.services-inner {
+  display: flex;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: url("../img/service-inner_bg@1x.png") top 112px left -600px no-repeat;
+  background-attachment: fixed;
+
+  &.full-height {
+    justify-content: flex-start;
+  }
+
+  @media (min-width: $widthMobile) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: none;
+  }
+
+  @media (min-width: $widthTablet) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    background: url("../img/service-inner_bg@1x.png") top 112px left -600px no-repeat;
+    background-attachment: fixed;
+  }
+
+  @media (min-width: $widthFHD) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @media (min-width: $width4K) {
+    padding-top: 140px;
+    padding-bottom: 200px;
+    background-image: url("../img/service-inner_bg@2x.png");
+    background-position: top 112px left -1200px;
+
+    .news-post + .news & {
+      padding-top: 100px;
+    }
+  }
+}
+
+.services-inner__title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 20px;
+  padding-top: 24px;
+  font-weight: $fontBold;
+  font-size: $fontTitleRegular;
+  line-height: $lineHeightTitleRegular;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 124px;
+    height: 4px;
+    background-color: $ColorSecondary;
+  }
+
+  @media (min-width: $widthMobile) {
+    padding-top: 14px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 35px;
+    margin-bottom: 22px;
+
+    &::before {
+      width: 87px;
+      height: 2px;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    padding-top: 14px;
+    font-size: 28px;
+    line-height: 28px;
+    margin-bottom: 36px;
+  }
+
+  @media (min-width: $widthFHD) {
+    padding-top: 24px;
+    margin-bottom: 47px;
+    font-size: $fontTitleRegular;
+    line-height: $lineHeightTitleRegular;
+  }
+
+  @media (min-width: $width4K) {
+    margin-bottom: 63px;
+    padding-top: 25px;
+    font-size: $fontTitleSmall4K;
+    line-height: $lineHeightTitleRegular4K;
+
+    &::before {
+      width: 360px;
+      height: 9px;
+    }
+  }
+}
+
+.services-inner__list {
+  display: grid;
+  grid-template-columns: repeat(2, 570px);
+  gap: 30px 35px;
+
+  @media (min-width: $widthMobile) {
+    grid-template-columns: repeat(1, auto);
+    gap: 10px;
+  }
+
+  @media (min-width: $widthTablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 13px 30px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    grid-template-columns: repeat(2, 570px);
+  }
+
+  @media (min-width: $widthDesktop) {
+    grid-template-columns: repeat(2, 570px);
+  }
+
+  @media (min-width: $widthFHD) {
+    grid-template-columns: repeat(3, 570px);
+  }
+
+  @media (min-width: $width4K) {
+    grid-template-columns: repeat(3, 1090px);
+    gap: 55px 60px;
+  }
+}
+
+.services-inner__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  height: 230px;
+  transition: all 0.4s;
+  box-shadow: 0 0 25px rgba(197, 197, 197, 0.25);
+  cursor: pointer;
+
+  @media (min-width: $widthMobile) {
+    height: auto;
+    min-height: 240px;
+
+    svg {
+      display: none;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    min-height: 240px;
+
+    svg {
+      display: none;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    svg {
+      display: initial;
+    }
+  }
+
+  @media (min-width: $widthDesktop) {
+    svg {
+      display: initial;
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    svg {
+      display: initial;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    min-height: 532px;
+    padding: 50px 20px 50px 50px;
+  }
+
+  svg {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: 0.4s;
+
+    .main-stop {
+      stop-color: #d9d9d9;
+      transition: 0.4s;
+    }
+
+    .alt-stop {
+      stop-color: #d9d9d9;
+      transition: 0.4s;
+    }
+
+    @media (min-width: $width4K) {
+      height: 216px;
+      width: 189px;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(255, 70, 167, 0.25);
+    border-radius: 6px;
+    background: $ColorWhite;
+
+    .services-inner__card-title {
+      color: $ColorSecondary;
+
+      &::before {
+        opacity: 0;
+      }
+    }
+
+    .services-inner__card-text {
+      color: $ColorBlack;
+    }
+
+    .services-inner__card-link {
+      color: $ColorSecondary;
+    }
+
+    svg {
+      filter: drop-shadow(0 0 3px rgba(200, 51, 152, 0.7));
+
+      .main-stop {
+        stop-color: $ColorSecondary400;
+      }
+
+      .alt-stop {
+        stop-color: $ColorSecondary;
+      }
+    }
+  }
+}
+
+.services-inner__card-title {
+  max-width: 376px;
+  min-height: 56px;
+  font-weight: $fontBold;
+  font-size: $fontTextLarge;
+  line-height: $lineHeightRegular2K;
+  color: $fontColorDarkGrey;
+  position: relative;
+  margin: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    width: 6px;
+    height: 6px;
+    background-color: $ColorSecondary;
+    border-radius: 2px;
+    transition: 0.4s;
+
+    @media (min-width: $widthMobile) {
+      width: 7px;
+      height: 8px;
+      left: 0;
+    }
+
+    @media (min-width: $widthTablet) {
+      width: 7px;
+      height: 8px;
+      left: 0;
+      top: 6px;
+    }
+
+    @media (min-width: $widthDesktopSmall) {
+      width: 7px;
+      height: 8px;
+      left: 0;
+    }
+
+    @media (min-width: $width4K) {
+      width: 12px;
+      height: 12px;
+      top: 20px;
+      left: -25px;
+    }
+  }
+
+  @media (min-width: $widthMobile) {
+    width: auto;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 28px;
+    padding-left: 15px;
+  }
+
+  @media (min-width: $widthTablet) {
+    width: auto;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    padding-left: 15px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    font-weight: $fontBold;
+    font-size: $fontTextLarge;
+    line-height: $lineHeightRegular2K;
+    padding-left: 15px;
+  }
+
+  @media (min-width: $width4K) {
+    min-height: 140px;
+    max-width: 700px;
+    font-weight: $fontBold;
+    font-size: 42px;
+    line-height: 56px;
+  }
+}
+
+.services-inner__card-text {
+  max-width: 450px;
+  height: 80px;
+  overflow: hidden;
+  font-weight: $fontMedium;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightRegular2K;
+  color: $fontColorHeaders;
+  margin: 0;
+
+  @media (min-width: $widthMobile) {
+    max-width: none;
+    height: auto;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 28px;
+  }
+
+  @media (min-width: $widthTablet) {
+    width: 100%;
+    height: auto;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    max-width: 450px;
+    font-weight: $fontMedium;
+    font-size: $fontTextRegular;
+    line-height: $lineHeightRegular2K;
+  }
+
+  @media (min-width: $width4K) {
+    max-width: 775px;
+    font-weight: $fontMedium;
+    font-size: 26px;
+    line-height: 48px;
+    height: auto;
+  }
+}
+
+.services-inner__card-link {
+  font-size: $fontTextRegular;
+  line-height: $lineHeightRegular2K;
+  color: $fontColorDarkGrey;
+  text-align: right;
+  align-self: flex-end;
+  font-weight: $fontSemiBold;
+
+  @media (min-width: $widthMobile) {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 28px;
+    text-align: left;
+    width: 100%;
+    color: #ff46a7;
+  }
+
+  @media (min-width: $widthTablet) {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 28px;
+    text-align: left;
+    width: 100%;
+    color: #ff46a7;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    font-size: $fontTextRegular;
+    line-height: $lineHeightRegular2K;
+    color: $fontColorDarkGrey;
+    text-align: right;
+    align-self: flex-end;
+    font-weight: $fontSemiBold;
+  }
+
+  @media (min-width: $width4K) {
+    font-size: 28px;
+    line-height: 28px;
+  }
+}
+
+.services-inner__image-wrapper {
+  display: flex;
+  width: 450px;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  @media (min-width: $widthMobile) {
+    width: 100%;
+  }
+
+  @media (min-width: $widthTablet) {
+    width: 100%;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 420px;
+  }
+
+  @media (min-width: $width4K) {
+    width: 700px;
+  }
+}
+
+.services-inner__card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: $widthMobile) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @media (min-width: $widthTablet) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    flex-direction: row;
+  }
+}
+
+.services-inner__images {
+  margin-right: 30px;
+
+  @media (min-width: $widthTablet) {
+    margin-right: 25px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-right: 30px;
+  }
+
+  @media (min-width: $width4K) {
+    margin-right: 70px;
+  }
+
+  &--last {
+    @media (min-width: $widthMobile) {
+      display: none;
+    }
+
+    @media (min-width: $widthTablet) {
+      display: none;
+    }
+
+    @media (min-width: $widthDesktopSmall) {
+      display: initial;
+    }
+
+    @media (min-width: $width4K) {
+      display: initial;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+
+    @media (min-width: $widthTablet) {
+      max-height: none;
+      // width: auto;
+    }
+
+    @media (min-width: $widthDesktopSmall) {
+      max-height: none;
+      min-height: 24px;
+      height: auto;
+      width: auto;
+    }
+
+    @media (min-width: $width4K) {
+      width: auto;
+      max-height: none;
+    }
+  }
+}

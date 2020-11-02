@@ -50,6 +50,7 @@
     "fullpage.js": "^3.0.9",
     "imask": "^6.0.5",
     "parallax-js": "^3.1.0",
-    "swiper": "^6.2.0"
+    "simplelightbox": "^2.4.1",
+    "swiper": "^6.3.2"
   }
 }

@@ -24,6 +24,16 @@
     outline: none;
   }
 
+  @media (min-width: $widthTablet) {
+    width: 48px;
+    height: 12px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 24px;
+    height: 10px;
+  }
+
   @media (min-width: $width4K) {
     width: 32px;
     height: 12px;

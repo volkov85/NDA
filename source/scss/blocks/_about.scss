@@ -1,45 +1,76 @@
 .about {
   position: relative;
-  padding-top: 50px;
-  padding-bottom: 30px;
-  overflow: hidden;
+  width: 100vw;
+  padding-top: 26px;
+  padding-bottom: 36px;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(73deg, $ColorPrimary400, rgba($ColorPrimary300, 0.67) 116%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
+  @media (min-width: $widthTablet) {
+    padding-top: 38px;
   }
 
-  &--dark {
+  @media (max-width: $widthDesktopSmall - 1) {
+    background: url("../img/about_bg@1x.png") top -300px right -350px / 675px no-repeat;
+
+    @media (min-resolution: 144dpi) {
+      background-image: url("../img/about_bg@2x.png");
+    }
+
+    &--dark {
+      background-color: $fontColorHeaders;
+    }
+
+    @media (min-width: $widthTablet) {
+      background-position: top -300px right -390px;
+      background-size: 838px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: auto;
+    padding-top: 50px;
+    padding-bottom: 30px;
+
     &::before {
-      opacity: 1;
+      content: "";
+      position: absolute;
+      top: -184px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(73deg, $ColorPrimary400, rgba($ColorPrimary300, 0.67) 116%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    &--dark {
+      &::before {
+        opacity: 1;
+      }
     }
   }
 
   @media (min-width: $widthFHD) {
-    padding-bottom: 50px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   @media (min-width: $width4K) {
     padding-top: 140px;
     padding-bottom: 150px;
+
+    &::before {
+      top: -454px;
+    }
   }
 }
 
 .about__title {
   position: relative;
   margin: 0;
-  margin-bottom: 22px;
-  padding-top: 16px;
+  margin-bottom: 18px;
   font-weight: $fontBold;
-  font-size: $fontTitleRegular;
+  font-size: $fontTextHuge;
   line-height: $lineHeightTitleRegular;
   transition: color 0.3s;
 
@@ -48,13 +79,29 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 124px;
-    height: 4px;
+    width: 87px;
+    height: 2px;
     background-color: $ColorSecondary;
   }
 
   .about--dark & {
     color: $ColorWhite;
+  }
+
+  @media (min-width: $widthTablet) {
+    margin-bottom: 50px;
+    padding-top: 16px;
+    font-size: $fontTitleRegular;
+
+    &::before {
+      width: 124px;
+      height: 4px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 22px;
+    line-height: $lineHeightTitleRegular;
   }
 
   @media (min-width: $widthFHD) {
@@ -75,8 +122,22 @@
 }
 
 .about__wrapper {
-  padding-bottom: 100px;
-  overflow: visible;
+  padding-bottom: 50px;
+
+  @media (min-width: $widthTablet) {
+    padding-bottom: 80px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    padding-bottom: 100px;
+    overflow: visible;
+
+    @media (max-width: $widthFHD - 1) {
+      @media (max-height: 700px) {
+        padding-bottom: Max(calc(100vh - 620px), 60px);
+      }
+    }
+  }
 
   @media (min-width: $width4K) {
     padding-bottom: 220px;
@@ -89,8 +150,7 @@
 
 .about__slide {
   width: 100%;
-  height: 100%;
-  min-height: 416px;
+  height: auto;
 
   @media (min-width: $widthFHD) {
     min-height: 458px;
@@ -102,7 +162,9 @@
 }
 
 .about__slide-content {
-  width: 770px;
+  @media (min-width: $widthDesktopSmall) {
+    width: 770px;
+  }
 
   @media (min-width: $widthFHD) {
     width: 1170px;
@@ -114,14 +176,38 @@
 }
 
 .about__slide-title {
-  width: 500px;
+  width: 290px;
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   font-weight: $fontBold;
-  font-size: $fontTitleMedium;
-  line-height: $lineHeightTitleLarge;
+  font-size: $fontTextHuge;
+  line-height: $lineHeightHuge;
   color: $ColorSecondary;
   text-transform: uppercase;
+
+  @media (min-width: $widthTablet) {
+    width: 500px;
+    margin-bottom: 20px;
+    font-size: $fontTitleMedium;
+    line-height: $lineHeightTitleLarge;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 500px;
+    margin-bottom: 30px;
+    font-size: $fontTitleMedium;
+    line-height: $lineHeightTitleLarge;
+
+    @media (max-width: $widthFHD - 1) {
+      @media (max-height: 755px) {
+        width: auto;
+      }
+
+      @media (max-height: 700px) {
+        margin-bottom: 4vh;
+      }
+    }
+  }
 
   @media (min-width: $widthFHD) {
     margin-bottom: 25px;
@@ -137,6 +223,7 @@
 
 .about__slide-text {
   margin: 0;
+  margin-bottom: 30px;
   font-weight: $fontMedium;
   line-height: $lineHeightDouble;
   transition: color 0.3s;
@@ -145,37 +232,56 @@
     color: $ColorWhite;
   }
 
-  &:not(:last-child) {
-    margin-bottom: 30px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $widthTablet) {
+    font-size: $fontTitleTiny;
+    line-height: $lineHeightTitleLarge;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    font-size: $fontTextMedium;
+    line-height: $lineHeightDouble;
+
+    @media (max-width: $widthFHD - 1) {
+      @media (max-height: 700px) {
+        margin-bottom: 4vh;
+      }
+    }
   }
 
   @media (min-width: $widthFHD) {
+    margin-bottom: 25px;
     font-size: $fontTitleTiny;
-
-    &:not(:last-child) {
-      margin-bottom: 25px;
-    }
   }
 
   @media (min-width: $width4K) {
+    margin-bottom: 50px;
     font-size: $fontTextLarge4K;
     line-height: $lineHeightHuge4K;
-
-    &:not(:last-child) {
-      margin-bottom: 50px;
-    }
   }
 }
 
 .about__slide-image {
-  position: absolute;
-  top: 50%;
-  // right: -740px;
-  right: calc(-10px - 50vw);
-  transform: translateY(-50%);
+  display: none;
 
   img {
+    display: none;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    position: absolute;
     display: block;
+    top: 50%;
+    // right: -740px;
+    right: calc(-10px - 50vw);
+    transform: translateY(-50%);
+
+    img {
+      display: block;
+    }
   }
 
   @media (min-width: $widthFHD) {
@@ -199,7 +305,11 @@
   z-index: 1;
   display: flex;
   justify-content: space-between;
-  width: 170px;
+  width: 130px;
+
+  @media (min-width: $widthTablet) {
+    width: 170px;
+  }
 
   @media (min-width: $width4K) {
     width: 456px;
@@ -207,12 +317,12 @@
 }
 
 .about__slider-button {
-  width: 70px;
-  height: 42px;
+  width: 54px;
+  height: 37px;
   padding: 0;
-  background: url("../img/icon-arrow-white.svg") center / 40px no-repeat $fontColorLightGrey;
+  background: url("../img/icon-arrow-white.svg") center / 21px no-repeat $fontColorLightGrey;
   border: none;
-  border-radius: 10px;
+  border-radius: 7px;
   cursor: pointer;
   transition: background-color 0.3s;
 
@@ -224,6 +334,13 @@
   &:focus {
     outline: none;
     background-color: $ColorSecondary;
+  }
+
+  @media (min-width: $widthTablet) {
+    width: 70px;
+    height: 42px;
+    background-size: 40px;
+    border-radius: 10px;
   }
 
   @media (min-width: $width4K) {
@@ -248,14 +365,26 @@
     color: $ColorWhite;
   }
 
+  @media (min-width: $widthTablet) {
+    font-size: $fontTitleTiny;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    font-size: $fontTextLarge;
+  }
+
   @media (min-width: $width4K) {
     font-size: $fontTitleRegular4K;
   }
 }
 
 .about__slider-pagination-current {
-  font-size: $fontTitleTiny;
+  font-size: $fontTextLarge;
   color: $ColorSecondary;
+
+  @media (min-width: $widthTablet) {
+    font-size: $fontTitleTiny;
+  }
 
   @media (min-width: $width4K) {
     font-size: $fontTitleHuge4K;

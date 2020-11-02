@@ -1,10 +1,10 @@
 .button {
   display: inline-block;
   box-sizing: border-box;
-  min-width: 270px;
-  max-width: 345px;
-  min-height: 55px;
-  padding: 12px 15px;
+  min-width: 200px;
+  max-width: 290px;
+  min-height: 45px;
+  padding: 12px;
   font-weight: $fontSemiBold;
   font-size: $fontTextLarge;
   line-height: $lineHeightMedium;
@@ -23,17 +23,12 @@
   &--cookies {
     padding: 6px 15px;
     min-width: 240px;
-    min-height: 45px;
-  }
-
-  &--contact {
-    padding-top: 16px;
   }
 
   &:hover {
     outline: none;
     background: linear-gradient(90deg, $ColorSecondary100 0.15%, $ColorSecondary400 100%);
-    box-shadow: 0 4px 15px rgba(223, 63, 147, 0.5);
+    box-shadow: 0 4px 15px rgba($ColorSecondary300, 0.5);
   }
 
   &:focus {
@@ -42,14 +37,68 @@
 
   &:active {
     background: linear-gradient(90deg, $ColorSecondary100 0.15%, $ColorSecondary400 100%);
-    box-shadow: 0 5px 0 rgba(167, 26, 100, 0.5), 0 5px 15px $ColorSecondary500;
+    box-shadow:
+      0 5px 0 rgba($ColorSecondary200, 0.5),
+      0 5px 15px $ColorSecondary500;
+  }
+
+  &--white {
+    color: $ColorSecondary;
+    background: $ColorWhite;
+    border: 1px solid currentColor;
+    box-shadow: none;
+    transition: color 0.3s;
+
+    &:hover,
+    &:focus {
+      color: $fontColorHeaders;
+      background: $ColorWhite;
+      box-shadow: none;
+    }
+
+    &:active {
+      background: $ColorWhite;
+      box-shadow: none;
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    min-width: 225px;
+    max-width: 345px;
+    min-height: 55px;
+    padding: 16px 15px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    min-width: 270px;
+
+    &--cookies {
+      min-height: 45px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    &--white {
+      min-width: 200px;
+    }
   }
 
   @media (min-width: $width4K) {
     min-width: 320px;
-    max-width: 380px;
-    min-height: 76px;
-    font-size: $fontTextLarge * 1.5;
-    line-height: 1.2;
+    max-width: 573px;
+    min-height: 111px;
+    padding: 36px 50px;
+    font-size: $fontTitleMedium;
+    line-height: $lineHeightRegular4K;
+
+    &--cookies {
+      min-height: 76px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    &--white {
+      min-width: 300px;
+    }
   }
 }

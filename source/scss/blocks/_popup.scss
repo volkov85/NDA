@@ -1,62 +1,147 @@
 .popup {
   position: fixed;
   top: 50%;
-  left: 50%;
+  right: 50%;
   z-index: 15;
   display: none;
-  width: 745px;
-  height: 487px;
+  width: calc(100% - 30px);
+  max-width: 745px;
+  height: auto;
+  max-height: calc(100vh - 30px);
   background-color: $ColorWhite;
-  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  transform: translate(50%, -50%);
 
   &--shown {
     display: flex;
     animation: 0.3s both fade-in;
   }
 
-  &--feedback,
-  &--question {
-    width: 970px;
-    height: 554px;
-    background-image: url("../img/popup_feedback-bg@1x.png");
-    background-position: top -420px right -960px;
-    background-size: 1833px;
-    background-repeat: no-repeat;
+  &--platform {
+    box-shadow: 0 5px 10px rgba($ColorSecondary, 0.25);
   }
 
-  &--feedback {
-    background-position: top -280px right -805px;
-    background-size: 1357px;
+  &--artist {
+    width: 290px;
+    max-height: calc(100vh - 100px);
   }
 
-  @media (min-resolution: 144dpi) {
+  @media (min-width: $widthTablet) {
+    width: calc(100% - 78px);
+    max-width: 745px;
+    max-height: calc(100vh - 78px);
+
+    &--artist {
+      width: 608px;
+      height: auto;
+      max-height: calc(100vh - 140px);
+      box-shadow: 0 5px 10px rgba($ColorSecondary, 0.25);
+      border-radius: 6px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 745px;
+    max-width: initial;
+    height: 487px;
+    max-height: initial;
+
     &--feedback,
     &--question {
-      background-image: url("../img/popup_feedback-bg@2x.png");
+      width: 970px;
+      height: auto;
+      background-image: url("../img/popup_feedback-bg@1x.png");
+      background-position: top -420px right -960px;
+      background-size: 1833px;
+      background-repeat: no-repeat;
+    }
+
+    &--feedback {
+      background-position: top -280px right -805px;
+      background-size: 1357px;
+    }
+
+    @media (min-resolution: 144dpi) {
+      &--feedback,
+      &--question {
+        background-image: url("../img/popup_feedback-bg@2x.png");
+      }
+    }
+
+    &--artist {
+      width: 608px;
+      height: auto;
+      max-height: calc(100vh - 140px);
+      box-shadow: 0 5px 10px rgba($ColorSecondary, 0.25);
+      border-radius: 6px;
+    }
+
+    &--platform {
+      width: 970px;
+      height: auto;
+      max-height: calc(100vh - 30px);
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    &--artist {
+      max-height: calc(100vh - 60px);
+    }
+
+    &--platform {
+      width: 1470px;
+      max-height: calc(100vh - 60px);
     }
   }
 
   @media (min-width: $width4K) {
     width: 1118px;
     height: 730px;
+
+    &--qa-answer {
+      width: 1470px;
+      height: auto;
+    }
+
+    &--feedback,
+    &--question {
+      width: 1470px;
+      height: auto;
+    }
+
+    &--artist {
+      width: 1140px;
+      height: auto;
+      max-height: calc(100vh - 120px);
+    }
+
+    &--platform {
+      width: 1470px;
+      height: auto;
+      max-height: calc(100vh - 120px);
+    }
   }
 }
 
 .popup__wrapper {
   width: 100%;
-  height: 100%;
+  overflow: auto;
+
+  .popup--artist &,
+  .popup--platform & {
+    overflow: initial;
+  }
 }
 
 .popup__close {
   position: absolute;
-  top: 28px;
-  right: 32px;
-  width: 43px;
-  height: 43px;
+  top: 15px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
   padding: 0;
-  background-color: $ColorSecondary;
+  background: none;
   border: none;
-  border-radius: 10px;
   cursor: pointer;
   appearance: none;
 
@@ -64,11 +149,12 @@
   &::after {
     content: "";
     position: absolute;
-    top: 21px;
-    left: 13px;
-    width: 18px;
-    height: 1px;
-    background-color: $ColorWhite;
+    top: 9px;
+    left: 1px;
+    width: 100%;
+    height: 3px;
+    background-color: $ColorSecondary;
+    border-radius: 2px;
     transition: transform 0.3s;
   }
 
@@ -78,11 +164,6 @@
 
   &::after {
     transform: rotate(45deg);
-  }
-
-  .popup--feedback &,
-  .popup--question & {
-    top: 50px;
   }
 
   &:hover,
@@ -95,6 +176,116 @@
 
     &::after {
       transform: rotate(135deg);
+    }
+  }
+
+  @media (max-width: $widthDesktopSmall - 1) {
+    .popup--artist &,
+    .popup--platform & {
+      top: 27px;
+      right: 12px;
+      width: 32px;
+      height: 32px;
+      background-color: $ColorSecondary;
+      border-radius: 6px;
+
+      &::before,
+      &::after {
+        top: 15px;
+        left: 6px;
+        width: 20px;
+        height: 1px;
+        background-color: $ColorWhite;
+        border-radius: 0;
+      }
+    }
+
+    .popup--artist & {
+      top: -40px;
+      right: 0;
+    }
+
+    @media (min-width: $widthTablet) {
+      .popup--artist & {
+        top: -50px;
+      }
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    top: 44px;
+    right: 27px;
+    width: 43px;
+    height: 43px;
+    background-color: $ColorSecondary;
+    border-radius: 10px;
+
+    &::before,
+    &::after {
+      top: 21px;
+      left: 13px;
+      width: 18px;
+      height: 1px;
+      background-color: $ColorWhite;
+      border-radius: 0;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    top: 28px;
+    right: 32px;
+
+    .popup--feedback &,
+    .popup--question & {
+      top: 50px;
+    }
+
+    .popup--artist & {
+      top: 0;
+      right: -64px;
+    }
+
+    .popup--platform & {
+      top: 47px;
+      right: 57px;
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    width: 64px;
+    height: 64px;
+
+    &::before,
+    &::after {
+      top: 30px;
+      left: 18px;
+      width: 30px;
+      height: 2px;
+    }
+
+    .popup--platform & {
+      top: 44px;
+      right: 28px;
+    }
+
+    .popup--artist & {
+      right: -84px;
+    }
+  }
+
+  @media (min-width: $width4K) {
+    .popup--artist & {
+      right: -125px;
+      width: 82px;
+      height: 82px;
+
+      &::before,
+      &::after {
+        top: 38px;
+        left: 15px;
+        width: 57px;
+        height: 3px;
+      }
     }
   }
 }

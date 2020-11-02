@@ -1,7 +1,21 @@
 .page {
   min-width: $widthMobile;
   margin: 0;
+  overflow: hidden auto;
   font: #{$fontTextMedium}/#{$lineHeightRegular} $fontBase;
-  color: $ColorPrimary200;
+  color: $fontColorHeaders;
   background-color: $ColorWhite;
+
+  &--inner {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+  }
+
+  &--block {
+    position: fixed;
+    right: 0;
+    left: 0;
+    overflow-y: scroll !important;
+  }
 }

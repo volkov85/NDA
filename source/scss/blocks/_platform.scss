@@ -1,0 +1,211 @@
+.platform {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 24px 12px 27px;
+
+  @media (min-width: $widthDesktopSmall) {
+    padding: 33px 44px 41px;
+  }
+
+  @media (min-width: $widthFHD) {
+    padding-bottom: 51px;
+  }
+}
+
+.platform__image {
+  img {
+    display: block;
+    width: 111px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    img {
+      width: 207px;
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    margin-bottom: 20px;
+
+    img {
+      width: 257px;
+    }
+  }
+}
+
+.platform__inner {
+  flex-shrink: 1;
+  overflow: auto;
+
+  @media (min-width: $widthDesktopSmall) {
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 8px;
+      background-color: $ColorPrimary;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $fontColorMaintext;
+    }
+  }
+}
+
+.platform__content {
+  font-weight: $fontMedium;
+  font-size: $fontTextRegular;
+  line-height: $lineHeightLarge;
+
+  p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    font-weight: $fontMedium;
+    font-size: $fontTextRegular;
+    line-height: $lineHeightHuge;
+    color: $ColorSecondary;
+  }
+
+  ul {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding-left: 20px;
+    list-style: none;
+    font-size: $fontTextRegular;
+  }
+
+  li {
+    position: relative;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 13px;
+      left: -20px;
+      width: 7px;
+      height: 8px;
+      background: $ColorSecondary;
+      border-radius: 2px;
+    }
+  }
+
+  a {
+    color: $ColorSecondary;
+    transition: color 0.3s;
+
+    &:hover,
+    &:focus {
+      color: $fontColorHeaders;
+      outline: none;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    font-size: $fontTextLarge;
+    line-height: $lineHeightHuge;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: $fontTitleRegular;
+    }
+  }
+
+  @media (min-width: $widthFHD) {
+    font-size: $fontTitleTiny;
+    line-height: $lineHeightTitleRegular;
+  }
+
+  @media (min-width: $width4K) {
+    font-size: $fontTitleHuge;
+    line-height: $lineHeightXLarge4K;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: $fontTextLarge4K;
+      line-height: $lineHeightNormal;
+    }
+
+    ul {
+      padding-left: 60px;
+      font-size: $fontTextRegular4K;
+    }
+
+    li {
+      &::before {
+        top: 15px;
+        left: -60px;
+        width: 21px;
+        height: 23px;
+      }
+    }
+  }
+}
+
+.platform__buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $widthDesktopSmall - 1) {
+    .button {
+      color: $ColorSecondary;
+      background: $ColorWhite;
+      border: 1px solid currentColor;
+      box-shadow: none;
+      transition: color 0.3s;
+
+      &:hover,
+      &:focus {
+        color: $fontColorHeaders;
+        background: $ColorWhite;
+        box-shadow: none;
+      }
+
+      &:active {
+        background: $ColorWhite;
+        box-shadow: none;
+      }
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-top: 35px;
+  }
+
+  @media (min-width: $widthFHD) {
+    margin-top: 55px;
+  }
+}
+
+.platform__close {
+  .popup:not(.popup--info) & {
+    display: none;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    display: inline-block;
+    margin-left: auto;
+  }
+}

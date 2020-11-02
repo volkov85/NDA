@@ -1,20 +1,51 @@
 .hero {
+  overflow: hidden;
+
   .container {
     position: relative;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    overflow: initial;
   }
 }
 
 .hero__wrapper {
   position: relative;
-  padding-top: 70px;
+  max-width: 400px;
+  padding-top: 90px;
   overflow: visible;
+
+  @media (min-width: $widthTablet) {
+    max-width: initial;
+    padding-top: 140px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    padding-top: 70px;
+  }
+}
+
+.hero__slider {
+  margin-bottom: 30px;
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 0;
+  }
 }
 
 .hero__slide {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  height: auto;
+
+  @media (min-width: $widthDesktopSmall) {
+    flex-direction: row;
+    justify-content: initial;
+    align-items: flex-start;
+  }
 
   @media (min-width: $widthDesktopWide) {
     align-items: center;
@@ -22,7 +53,7 @@
 
   @media (min-width: $widthFHD) {
     align-items: flex-start;
-    min-height: 560px;
+    min-height: 670px;
   }
 
   @media (min-width: $width4K) {
@@ -31,19 +62,30 @@
 }
 
 .hero__slide-content {
-  width: 430px;
-  margin-top: 23px;
+  box-sizing: border-box;
+  padding-right: 5px;
+  padding-left: 5px;
 
-  @media (max-height: 899px) {
-    width: calc(1vh * 48);
+  @media (min-width: $widthTablet) {
+    width: 70%;
+    padding-right: 0;
+    padding-left: 0;
   }
 
-  @media (max-height: 799px) and (max-width: $widthDesktopWide - 1) {
-    margin-top: 50px;
+  @media (min-width: $widthDesktopSmall) {
+    flex-shrink: 0;
+    width: 550px;
+    margin-top: 23px;
+    padding-right: 5px;
+    padding-left: 5px;
+
+    @media (max-height: 799px) and (max-width: $widthDesktopWide - 1) {
+      margin-top: 50px;
+    }
   }
 
   @media (min-width: $widthFHD) {
-    width: 460px;
+    width: 835px;
     margin-top: 120px;
   }
 
@@ -55,34 +97,57 @@
 
 .hero__slide-title {
   margin: 0;
-  margin-bottom: 27px;
   font-weight: $fontBold;
-  font-size: $fontTitleHuge;
-  line-height: $lineHeightTitleHuge;
+  font-size: $fontTextHuge;
+  line-height: $lineHeightXHuge;
   text-transform: uppercase;
 
-  @media (max-height: 899px) {
-    font-size: calc(1vh * 4.5);
-    line-height: 1.625;
+  @media (min-width: $widthTablet) {
+    font-size: $fontTextRegular4K;
+    line-height: $lineHeightTitleLarge;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    font-size: $fontTitleHuge;
+    line-height: $lineHeightTitleHuge;
+
+    @media (max-height: 899px) {
+      font-size: calc(1vh * 4.5);
+      line-height: 1.625;
+    }
   }
 
   @media (min-width: $width4K) {
     font-size: $fontTitleHuge4K;
-    line-height: 1.2;
+    line-height: $lineHeightNormal;
   }
 }
 
 .hero__slide-text {
-  width: 345px;
+  width: 70%;
   margin: 0;
+  margin-top: 10px;
   font-weight: $fontMedium;
-  font-size: $fontTitleRegular;
-  line-height: $lineHeightTitleMedium;
+  font-size: $fontTextMedium;
+  line-height: $lineHeightXLarge;
 
-  @media (max-height: 899px) {
-    width: calc(1vh * 38);
-    font-size: calc(1vh * 3);
-    line-height: 1.43;
+  @media (min-width: $widthTablet) {
+    width: auto;
+    font-size: $fontTitleTiny;
+    line-height: $lineHeightXLarge;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: 345px;
+    margin-top: 27px;
+    font-size: $fontTitleRegular;
+    line-height: $lineHeightTitleMedium;
+
+    @media (max-height: 899px) {
+      width: calc(1vh * 38);
+      font-size: calc(1vh * 3);
+      line-height: 1.43;
+    }
   }
 
   @media (min-width: $width4K) {
@@ -93,87 +158,203 @@
 }
 
 .hero__slide-artist {
-  &:hover,
-  &:focus {
-    outline: none;
+  align-self: center;
+
+  @media (min-width: $widthTablet) {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    flex-grow: 1;
+    align-self: stretch;
+    margin: 0;
   }
 }
 
 .hero__slide-image {
   position: relative;
-  padding-top: 30px;
+  display: block;
+  margin-bottom: 15px;
 
   img {
     display: block;
-    width: 100%;
-    max-height: 570px;
+    width: auto;
+    max-height: 279px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
 
-    @media (min-width: $widthDesktopWide) and (max-width: $widthFHD - 1) {
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
+  @media (min-width: $widthTablet) {
+    margin-bottom: 0;
+
+    picture {
+      top: 36px !important;
+    }
+
+    img {
+      max-height: 600px;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    picture {
+      top: -50px !important;
+      left: 50px !important;
+    }
+
+    img {
+      max-height: 541px;
+    }
+
+    @media (max-height: 719px) and (max-width: $widthFHD - 1) {
+      top: 25px;
+    }
+  }
+
+  @media (min-width: $widthDesktopWide) and (max-width: $widthFHD - 1) {
+    picture {
+      top: -25px !important;
+    }
+
+    img {
       @media (max-height: 1019px) {
         width: auto;
-        height: calc(100vh - 449px);
+        // height: calc(100vh - 449px);
+        max-height: 451px;
       }
 
       @media (max-height: 899px) {
-        height: calc(100vh - 400px);
+        max-height: calc(100vh - 400px);
       }
     }
   }
 
-  @media (max-height: 1019px) and (min-width: $widthDesktopWide) and (max-width: $widthFHD - 1) {
-    margin-right: 150px;
-  }
-
   @media (min-width: $widthFHD) {
-    margin-right: 0;
-    padding-top: 45px;
+    picture {
+      top: 0 !important;
+      left: 75px !important;
+    }
 
     img {
-      width: 785px;
+      // width: 785px;
       height: auto;
-      max-height: none;
+      max-height: 636px;
     }
   }
 
   @media (min-width: $width4K) {
-    padding-top: 67px;
+    picture {
+      left: 300px !important;
+    }
 
     img {
-      width: 1359px;
+      // width: 1359px;
+      max-height: 1204px;
     }
   }
 }
 
-.hero__slide-mediator {
+.hero__slide-bg-01,
+.hero__slide-bg-02,
+.hero__slide-bg-03 {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -40px !important;
+  left: -55px !important;
   z-index: -1;
-  width: 324px;
-  height: 318px;
-  background: url("../img/hero_mediator.svg") center / contain no-repeat;
+  width: 400px;
+  height: 358px;
+  background: center / contain no-repeat;
+
+  @media (min-width: $widthTablet) {
+    top: 20px !important;
+    left: -60px !important;
+    width: 768px;
+    height: 687px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    top: -60px !important;
+    left: 0 !important;
+    width: 679px;
+    height: 608px;
+  }
+
+  @media (min-width: $widthDesktopWide) and (max-width: $widthFHD - 1) {
+    @media (max-height: 1019px) {
+      top: -119px !important;
+      left: -75px !important;
+    }
+
+    @media (max-height: 899px) {
+      top: calc((100vh - 1600px) / 10) !important;
+      left: calc((100vh - 1000px) * 2 / 5) !important;
+      height: calc(100vh - 292px);
+    }
+  }
 
   @media (min-width: $widthFHD) {
-    width: 451px;
-    height: 390px;
+    top: -133px !important;
+    left: -75px !important;
+    width: 950px;
+    height: 850px;
   }
 
   @media (min-width: $width4K) {
-    width: 782px;
-    height: 708px;
+    top: -320px !important;
+    width: 1900px;
+    height: 1700px;
+  }
+}
+
+.hero__slide-bg-01 {
+  @for $i from 1 through 6 {
+    [data-swiper-slide-index="#{$i - 1}"] & {
+      background-image: url("../img/hero_slide-0#{$i}-bg-01.svg");
+    }
+  }
+}
+
+.hero__slide-bg-02 {
+  @for $i from 1 through 6 {
+    [data-swiper-slide-index="#{$i - 1}"] & {
+      background-image: url("../img/hero_slide-0#{$i}-bg-02.svg");
+    }
+  }
+}
+
+.hero__slide-bg-03 {
+  @for $i from 1 through 6 {
+    [data-swiper-slide-index="#{$i - 1}"] & {
+      background-image: url("../img/hero_slide-0#{$i}-bg-03.svg");
+    }
   }
 }
 
 .hero__slide-links {
-  position: absolute;
-  right: 12px;
-  bottom: 40px;
-  width: 400px;
-  display: flex;
-  justify-content: flex-end;
+  display: none;
 
-  @media (max-height: 899px) and (min-width: $widthDesktopWide) and (max-width: $widthFHD - 1) {
-    bottom: 30px;
+  @media (min-width: $widthTablet) {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    right: 12px;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: initial;
+    width: 400px;
   }
 }
 
@@ -182,10 +363,7 @@
 
   img {
     display: block;
-  }
-
-  &:not(:first-child) {
-    margin-left: 60px;
+    width: auto;
   }
 
   &:hover,
@@ -193,19 +371,58 @@
     outline: none;
     filter: drop-shadow(0 5px 10px rgba($ColorPrimary200, 0.7));
   }
+
+  @media (min-width: $widthTablet) {
+    height: 28px;
+    margin-top: 36px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-top: 0;
+    margin-left: 60px;
+
+    img {
+      height: 17px;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
 }
 
 .hero__slider-control {
-  position: absolute;
-  right: 15px;
-  bottom: 107px;
+  position: relative;
   z-index: 1;
-  display: none;
-  flex-direction: column;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 180px;
+  margin-right: auto;
+  margin-left: auto;
 
-  &--shown {
-    display: flex;
-    animation: 0.5s 0.5s both move-left;
+  @media (min-width: $widthTablet) {
+    width: 130px;
+    margin-right: 0;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    position: absolute;
+    right: 15px;
+    bottom: 107px;
+    display: none;
+    flex-direction: column;
+    width: auto;
+    margin: 0;
+
+    &--shown {
+      display: flex;
+      animation: 0.5s 0.5s both move-left;
+    }
   }
 
   @media (min-width: $widthFHD) {
@@ -226,19 +443,22 @@
   cursor: pointer;
   filter: grayscale(1) brightness(2.5);
   transition: filter 0.3s;
+  appearance: none;
 
   &--left {
     transform: scaleX(-1);
-  }
-
-  &:not(:last-child) {
-    margin-bottom: 28px;
   }
 
   &:hover,
   &:focus {
     outline: none;
     filter: none;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    &:not(:last-child) {
+      margin-bottom: 28px;
+    }
   }
 
   @media (min-width: $width4K) {
@@ -255,11 +475,6 @@
   display: none;
   flex-direction: column-reverse;
 
-  &--shown {
-    display: flex;
-    animation: 0.5s both move-left;
-  }
-
   span {
     margin-top: 55px;
     margin-left: -18px;
@@ -271,8 +486,15 @@
     transform: rotate(-90deg);
   }
 
-  @media (min-height: 1020px) {
-    top: 127px;
+  @media (min-width: $widthDesktopSmall) {
+    &--shown {
+      display: flex;
+      animation: 0.5s both move-left;
+    }
+
+    @media (min-height: 1020px) {
+      top: 127px;
+    }
   }
 
   @media (min-width: $widthFHD) {

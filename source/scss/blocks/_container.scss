@@ -1,28 +1,45 @@
 .container {
+  box-sizing: border-box;
   width: 100%;
-  max-width: 1170px;
+  max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
 
+  @media (min-width: $widthTablet) {
+    padding-right: 39px;
+    padding-left: 39px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
   @media (min-width: $widthFHD) {
-    max-width: 1524px;
+    max-width: 1584px;
     padding-right: 30px;
     padding-left: 30px;
 
     .page--inner & {
-      max-width: 1770px;
+      max-width: 1830px;
     }
   }
 
   @media (min-width: $width4K) {
-    max-width: 2900px;
+    max-width: 3020px;
     padding-right: 60px;
     padding-left: 60px;
 
     .page--inner & {
-      max-width: 3370px;
+      max-width: 3490px;
+    }
+  }
+
+  &--services {
+    @media (min-width: $width4K) {
+      max-width: 3600px;
     }
   }
 }

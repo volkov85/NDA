@@ -68,7 +68,8 @@ exports.js = js;
 function csslibs() {
   return src([
     `node_modules/swiper/swiper-bundle.min.{css,css.map}`,
-    `node_modules/fullpage.js/dist/fullpage.min.{css,css.map}`
+    `node_modules/fullpage.js/dist/fullpage.min.{css,css.map}`,
+    `node_modules/simplelightbox/dist/simple-lightbox.min.{css,css.map}`
   ])
     .pipe(dest(`build/css/vendors`));
 }
@@ -81,7 +82,8 @@ function jslibs() {
     `node_modules/fullpage.js/dist/fullpage.min.{js,js.map}`,
     `node_modules/fullpage.js/vendors/scrolloverflow.min.{js,js.map}`,
     `node_modules/parallax-js/dist/parallax.min.{js,js.map}`,
-    `node_modules/imask/dist/imask.min.{js,js.map}`
+    `node_modules/imask/dist/imask.min.{js,js.map}`,
+    `node_modules/simplelightbox/dist/simple-lightbox.min.{js,js.map}`
   ])
     .pipe(dest(`build/js/vendors`));
 }

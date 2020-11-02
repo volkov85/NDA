@@ -1,5 +1,15 @@
 .labels {
-  margin-bottom: 25px;
+  width: 100vw;
+  margin-bottom: 37px;
+
+  @media (min-width: $widthTablet) {
+    margin-bottom: 58px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    width: auto;
+    margin-bottom: 25px;
+  }
 
   @media (min-width: $widthFHD) {
     margin-bottom: 30px;
@@ -20,10 +30,20 @@
 
 .labels__title {
   margin: 0;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   font-weight: $fontBold;
-  font-size: $fontTitleSmall;
-  line-height: $lineHeightTitleSmall;
+  font-size: $fontTextHuge;
+  line-height: $lineHeightTitleRegular;
+
+  @media (min-width: $widthTablet) {
+    margin-bottom: 38px;
+    font-size: $fontTitleRegular;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    margin-bottom: 8px;
+    line-height: $lineHeightTitleRegular;
+  }
 
   @media (min-width: $widthFHD) {
     margin-bottom: 13px;
@@ -40,8 +60,18 @@
 
 .labels__slider {
   position: relative;
-  padding-right: 100px;
-  padding-left: 100px;
+  height: 153px;
+  padding-bottom: 70px;
+
+  @media (min-width: $widthTablet) {
+    height: auto;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    padding-right: 100px;
+    padding-bottom: 0;
+    padding-left: 100px;
+  }
 
   @media (min-width: $widthFHD) {
     padding-right: 105px;
@@ -54,12 +84,18 @@
   }
 }
 
+.labels__slider-wrapper {
+  height: 100%;
+}
+
 .labels__slide-list {
   display: flex;
   align-items: center;
 
-  &--linear {
-    transition-timing-function: linear !important;
+  @media (min-width: $widthTablet) {
+    &--linear {
+      transition-timing-function: linear !important;
+    }
   }
 }
 
@@ -94,13 +130,24 @@
 
 .labels__slider-control {
   position: absolute;
-  top: 15px;
-  right: 0;
+  bottom: 0;
   left: 0;
   z-index: 1;
   display: flex;
+  width: 130px;
   justify-content: space-between;
   pointer-events: none;
+
+  @media (min-width: $widthTablet) {
+    width: 140px;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    top: 15px;
+    right: 0;
+    bottom: auto;
+    width: initial;
+  }
 
   @media (min-width: $width4K) {
     top: 50px;
@@ -111,9 +158,9 @@
   width: 52px;
   height: 37px;
   padding: 0;
-  background: url("../img/icon-arrow-white.svg") center / 24px no-repeat $fontColorLightGrey;
+  background: url("../img/icon-arrow-white.svg") center / 21px no-repeat $fontColorLightGrey;
   border: none;
-  border-radius: 10px;
+  border-radius: 7px;
   cursor: pointer;
   transition: background-color 0.3s;
   pointer-events: auto;
@@ -126,6 +173,11 @@
   &:focus {
     outline: none;
     background-color: $ColorSecondary;
+  }
+
+  @media (min-width: $widthDesktopSmall) {
+    background-size: 24px;
+    border-radius: 10px;
   }
 
   @media (min-width: $width4K) {
